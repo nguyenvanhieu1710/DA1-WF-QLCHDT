@@ -118,16 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-load-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-load-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-user-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-user-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-home-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-home-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-login-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-login-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye-close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-cart-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-cart-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-mobile-phone-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-mobile-phone-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-filter-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-filter-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-register-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-register-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-login-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-login-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-mobile-phone-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-mobile-phone-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eye-open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye-open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-save-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-save-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-load-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-load-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-basket-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-basket-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-save-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-save-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-info-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-info-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-info-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-info-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-overview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-register-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-register-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-vô-cực" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-vô-cực.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-overview-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-overview-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-cart-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-cart-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-list-gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-list-gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-email-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-email-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-basket-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-basket-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -52,47 +52,158 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDangKy.cs">
+    <Compile Include="FormBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDangKy.Designer.cs">
-      <DependentUpon>FormDangKy.cs</DependentUpon>
+    <Compile Include="FormBill.Designer.cs">
+      <DependentUpon>FormBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDangNhap.cs">
+    <Compile Include="FormCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDangNhap.Designer.cs">
-      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    <Compile Include="FormCart.Designer.cs">
+      <DependentUpon>FormCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPay.Designer.cs">
+      <DependentUpon>FormPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductManagement.Designer.cs">
+      <DependentUpon>FormProductManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoading.Designer.cs">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStaffManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaffManagement.Designer.cs">
+      <DependentUpon>FormStaffManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserManagement.Designer.cs">
+      <DependentUpon>FormUserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVoucher.Designer.cs">
+      <DependentUpon>FormVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormDangKy.resx">
-      <DependentUpon>FormDangKy.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDangNhap.resx">
-      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FormBill.resx">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCart.resx">
+      <DependentUpon>FormCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPay.resx">
+      <DependentUpon>FormPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductManagement.resx">
+      <DependentUpon>FormProductManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoading.resx">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStaffManagement.resx">
+      <DependentUpon>FormStaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserManagement.resx">
+      <DependentUpon>FormUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVoucher.resx">
+      <DependentUpon>FormVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -116,13 +227,97 @@
     <None Include="Resources\User.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Password.png" />
+    <None Include="Resources\logo-vô-cực.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye-close.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-overview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-overview-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-list-gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-info-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-mobile-phone-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-home-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-filter-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-user-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-mobile-phone-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-info-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-save-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-save-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-load-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-load-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-login-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-login-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-register-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-register-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-email-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-cart-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-cart-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-basket-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-basket-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

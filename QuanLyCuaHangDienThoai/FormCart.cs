@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangDienThoai
 {
-    public partial class Form1 : Form
+    public partial class FormCart : Form
     {
-        public Form1()
+        public FormCart()
         {
             InitializeComponent();
         }
