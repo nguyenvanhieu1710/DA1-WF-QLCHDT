@@ -17,5 +17,34 @@ namespace BLL_CuaHangDienThoai
             List<Product_DTO> productList = Product_DAL.ProductList();
             return productList;
         }
+
+
+        public List<Product_DTO> searchProduct(Product_DTO Product)
+        {
+            List<Product_DTO> Products = ProductList();
+            List<Product_DTO> list = new List<Product_DTO>();
+            foreach (Product_DTO item in Products)
+            {
+                if (item.ProductName == Product.ProductName)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+
+        public List<Product_DTO> searchProductByIdCategory(int id)
+        {
+            List<Product_DTO> Products = ProductList();
+            List<Product_DTO> list = new List<Product_DTO>();
+            foreach (Product_DTO item in Products)
+            {
+                if (item.IdCategory == id)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
     }
 }

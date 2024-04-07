@@ -324,11 +324,13 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
-            if (!CheckRegex())
+            if (txtUserName.Text.Trim() == "")
             {
+                MessageBox.Show("please enter customer name");
                 return;
             }
-            Customer_DTO customer = AssignDataDTO();
+            Customer_DTO customer = new Customer_DTO();
+            customer.CustomerName = txtUserName.Text.Trim();
             List<Customer_DTO> customerList_search = customer_BLL.searchCustomer(customer);
             flpContainerCustomer.Controls.Clear();
             foreach (Customer_DTO customers in customerList_search)

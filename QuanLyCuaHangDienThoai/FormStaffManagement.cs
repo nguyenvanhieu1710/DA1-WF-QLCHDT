@@ -330,11 +330,13 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnSearchStaff_Click(object sender, EventArgs e)
         {
-            if (!CheckRegex())
+            if (txtStaffName.Text.Trim() == "")
             {
+                MessageBox.Show("please enter staff name");
                 return;
             }
-            Staff_DTO Staff = AssignDataDTO();
+            Staff_DTO Staff = new Staff_DTO();
+            Staff.StaffName = txtStaffName.Text.Trim();
             List<Staff_DTO> StaffList_search = Staff_BLL.searchStaff(Staff);
             flpContainerStaff.Controls.Clear();
             foreach (Staff_DTO Staffs in StaffList_search)

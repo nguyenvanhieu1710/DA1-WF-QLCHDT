@@ -20,6 +20,7 @@ namespace QuanLyCuaHangDienThoai
             InitializeComponent();
         }
         Product_BLL product_BLL = new Product_BLL();
+        Category_BLL Category_BLL = new Category_BLL();
         private Panel GenerateProduct(Product_DTO product)
         {
             Panel panel = new Panel();
@@ -102,13 +103,57 @@ namespace QuanLyCuaHangDienThoai
             panel.Controls.Add(buttonBuyNow);
             return panel;
         }
-        private void FormProduct_Load(object sender, EventArgs e)
+        private Guna2Button GenerateCategory(Category_DTO category)
         {
+            Guna2Button button = new Guna2Button();
+            button.BorderColor = System.Drawing.Color.DodgerBlue;
+            button.BorderThickness = 1;
+            button.Cursor = System.Windows.Forms.Cursors.Hand;
+            button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            button.FillColor = System.Drawing.Color.White;
+            button.Font = new System.Drawing.Font("Tahoma", 12F);
+            button.ForeColor = System.Drawing.Color.Black;
+            button.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            button.HoverState.ForeColor = System.Drawing.Color.White;
+            button.Location = new System.Drawing.Point(182, 3);
+            button.Name = "btnCategoryName";
+            button.Size = new System.Drawing.Size(173, 67);
+            button.TabIndex = 51;
+            button.Text = category.CategoryName;
+            button.Click += (s, e) =>
+            {
+                searchCategory(category);
+            };
+            return button;
+        }
+        private void searchCategory(Category_DTO category_DTO)
+        {
+            List<Product_DTO> productList_search = product_BLL.searchProductByIdCategory(category_DTO.IdCategory);
+            flpContainerProduct.Controls.Clear();
+            foreach (Product_DTO product in productList_search)
+            {
+                flpContainerProduct.Controls.Add(GenerateProduct(product));
+            }
+        }
+        private void Refrech()
+        {
+            List<Category_DTO> list = Category_BLL.CategoryList();
+            foreach (Category_DTO category in list)
+            {
+                flpContainerCategory.Controls.Add(GenerateCategory(category));
+            }
             List<Product_DTO> products = product_BLL.ProductList();
             foreach (Product_DTO product in products)
             {
                 flpContainerProduct.Controls.Add(GenerateProduct(product));
             }
+        }
+        private void FormProduct_Load(object sender, EventArgs e)
+        {
+            Refrech();
         }
         public event EventHandler openNewForm;
         private void picImageProduct_Click(object sender, EventArgs e)
@@ -122,6 +167,28 @@ namespace QuanLyCuaHangDienThoai
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSearchProduct_Click(object sender, EventArgs e)
+        {
+            if (txtProduct.Text.Trim() == "")
+            {
+                MessageBox.Show("please enter product name");
+                return;
+            }
+            Product_DTO Product = new Product_DTO();
+            Product.ProductName = txtProduct.Text.Trim();
+            List<Product_DTO> ProductList_search = product_BLL.searchProduct(Product);
+            flpContainerProduct.Controls.Clear();
+            foreach (Product_DTO Products in ProductList_search)
+            {
+                flpContainerProduct.Controls.Add(GenerateProduct(Products));
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
         {
 
         }

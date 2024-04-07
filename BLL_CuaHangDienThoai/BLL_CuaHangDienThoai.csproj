@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Account_BLL.cs" />
     <Compile Include="AddStaff.cs" />
+    <Compile Include="Category_BLL.cs" />
+    <Compile Include="ConvertData.cs" />
     <Compile Include="Customer_BLL.cs" />
     <Compile Include="Product_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

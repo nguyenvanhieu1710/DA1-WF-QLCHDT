@@ -28,40 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpContainerCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNewPhone = new Guna.UI2.WinForms.Guna2Button();
             this.flpContainerProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlContainerProduct = new Guna.UI2.WinForms.Guna2Panel();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.btnBuyNow = new Guna.UI2.WinForms.Guna2Button();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearchProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.txtProduct = new Guna.UI2.WinForms.Guna2TextBox();
+            this.flpContainerCategory.SuspendLayout();
             this.flpContainerProduct.SuspendLayout();
             this.pnlContainerProduct.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flpContainerCategory
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Controls.Add(this.btnCategory);
-            this.flowLayoutPanel1.Controls.Add(this.btnNewPhone);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(893, 76);
-            this.flowLayoutPanel1.TabIndex = 40;
+            this.flpContainerCategory.AutoScroll = true;
+            this.flpContainerCategory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flpContainerCategory.Controls.Add(this.btnCategory);
+            this.flpContainerCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpContainerCategory.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpContainerCategory.Location = new System.Drawing.Point(0, 0);
+            this.flpContainerCategory.Name = "flpContainerCategory";
+            this.flpContainerCategory.Size = new System.Drawing.Size(893, 76);
+            this.flpContainerCategory.TabIndex = 40;
             // 
             // btnCategory
             // 
@@ -85,26 +83,6 @@
             this.btnCategory.TabIndex = 50;
             this.btnCategory.Text = "Category:";
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
-            // 
-            // btnNewPhone
-            // 
-            this.btnNewPhone.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnNewPhone.BorderThickness = 1;
-            this.btnNewPhone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewPhone.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewPhone.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNewPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNewPhone.FillColor = System.Drawing.Color.White;
-            this.btnNewPhone.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnNewPhone.ForeColor = System.Drawing.Color.Black;
-            this.btnNewPhone.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnNewPhone.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnNewPhone.Location = new System.Drawing.Point(182, 3);
-            this.btnNewPhone.Name = "btnNewPhone";
-            this.btnNewPhone.Size = new System.Drawing.Size(173, 67);
-            this.btnNewPhone.TabIndex = 51;
-            this.btnNewPhone.Text = "New Phone";
             // 
             // flpContainerProduct
             // 
@@ -146,107 +124,6 @@
             this.lblProductName.Size = new System.Drawing.Size(179, 24);
             this.lblProductName.TabIndex = 41;
             this.lblProductName.Text = "Iphone 15 pro max";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.cbFilter);
-            this.panel2.Controls.Add(this.btnFilter);
-            this.panel2.Controls.Add(this.guna2Button5);
-            this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 597);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(893, 70);
-            this.panel2.TabIndex = 46;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.BackColor = System.Drawing.Color.Transparent;
-            this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbFilter.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbFilter.ItemHeight = 30;
-            this.cbFilter.Location = new System.Drawing.Point(596, 16);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(140, 36);
-            this.cbFilter.TabIndex = 9;
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.AutoRoundedCorners = true;
-            this.guna2Button5.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button5.BorderRadius = 21;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.White;
-            this.guna2Button5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Location = new System.Drawing.Point(220, 7);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button5.TabIndex = 7;
-            this.guna2Button5.Text = "Search";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnFilter.BorderThickness = 1;
-            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFilter.FillColor = System.Drawing.Color.White;
-            this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFilter.ForeColor = System.Drawing.Color.Black;
-            this.btnFilter.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnFilter.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter_white;
-            this.btnFilter.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter;
-            this.btnFilter.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnFilter.ImageOffset = new System.Drawing.Point(3, 0);
-            this.btnFilter.Location = new System.Drawing.Point(742, 9);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(137, 49);
-            this.btnFilter.TabIndex = 8;
-            this.btnFilter.Text = "Filter";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.AutoRoundedCorners = true;
-            this.txtSearch.BorderRadius = 19;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_search;
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtSearch.Location = new System.Drawing.Point(11, 12);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.PlaceholderText = "Product Name";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(202, 40);
-            this.txtSearch.TabIndex = 6;
             // 
             // picImageProduct
             // 
@@ -307,6 +184,109 @@
             this.btnBuyNow.Size = new System.Drawing.Size(78, 45);
             this.btnBuyNow.TabIndex = 36;
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.cbFilter);
+            this.panel2.Controls.Add(this.btnFilter);
+            this.panel2.Controls.Add(this.btnSearchProduct);
+            this.panel2.Controls.Add(this.txtProduct);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 597);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(893, 70);
+            this.panel2.TabIndex = 46;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFilter.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbFilter.ItemHeight = 30;
+            this.cbFilter.Location = new System.Drawing.Point(596, 16);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(140, 36);
+            this.cbFilter.TabIndex = 9;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnFilter.BorderThickness = 1;
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFilter.FillColor = System.Drawing.Color.White;
+            this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFilter.ForeColor = System.Drawing.Color.Black;
+            this.btnFilter.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnFilter.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter_white;
+            this.btnFilter.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter;
+            this.btnFilter.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnFilter.ImageOffset = new System.Drawing.Point(3, 0);
+            this.btnFilter.Location = new System.Drawing.Point(742, 9);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(137, 49);
+            this.btnFilter.TabIndex = 8;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // btnSearchProduct
+            // 
+            this.btnSearchProduct.AutoRoundedCorners = true;
+            this.btnSearchProduct.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchProduct.BorderRadius = 21;
+            this.btnSearchProduct.BorderThickness = 1;
+            this.btnSearchProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearchProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearchProduct.FillColor = System.Drawing.Color.White;
+            this.btnSearchProduct.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSearchProduct.ForeColor = System.Drawing.Color.Black;
+            this.btnSearchProduct.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchProduct.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProduct.Location = new System.Drawing.Point(220, 7);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(180, 45);
+            this.btnSearchProduct.TabIndex = 7;
+            this.btnSearchProduct.Text = "Search";
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
+            // 
+            // txtProduct
+            // 
+            this.txtProduct.AutoRoundedCorners = true;
+            this.txtProduct.BorderRadius = 19;
+            this.txtProduct.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtProduct.DefaultText = "";
+            this.txtProduct.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProduct.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProduct.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProduct.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtProduct.ForeColor = System.Drawing.Color.DimGray;
+            this.txtProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProduct.IconLeft = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_search;
+            this.txtProduct.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtProduct.Location = new System.Drawing.Point(11, 12);
+            this.txtProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.PasswordChar = '\0';
+            this.txtProduct.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtProduct.PlaceholderText = "Product Name";
+            this.txtProduct.SelectedText = "";
+            this.txtProduct.Size = new System.Drawing.Size(202, 40);
+            this.txtProduct.TabIndex = 6;
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -315,7 +295,7 @@
             this.ClientSize = new System.Drawing.Size(893, 666);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flpContainerProduct);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpContainerCategory);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -323,18 +303,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProduct";
             this.Load += new System.EventHandler(this.FormProduct_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flpContainerCategory.ResumeLayout(false);
             this.flpContainerProduct.ResumeLayout(false);
             this.pnlContainerProduct.ResumeLayout(false);
             this.pnlContainerProduct.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpContainerCategory;
         private System.Windows.Forms.FlowLayoutPanel flpContainerProduct;
         private Guna.UI2.WinForms.Guna2Panel pnlContainerProduct;
         private System.Windows.Forms.Label lblProductPrice;
@@ -343,10 +323,9 @@
         private Guna.UI2.WinForms.Guna2Button btnAddToCart;
         private Guna.UI2.WinForms.Guna2Button btnBuyNow;
         private Guna.UI2.WinForms.Guna2Button btnCategory;
-        private Guna.UI2.WinForms.Guna2Button btnNewPhone;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2Button btnSearchProduct;
+        private Guna.UI2.WinForms.Guna2TextBox txtProduct;
         private Guna.UI2.WinForms.Guna2Button btnFilter;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
     }

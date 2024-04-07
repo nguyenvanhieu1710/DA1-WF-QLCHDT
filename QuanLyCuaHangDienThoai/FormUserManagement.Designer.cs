@@ -47,18 +47,11 @@
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.flpContainerCustomer = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlContainerUser = new System.Windows.Forms.Panel();
-            this.lblNameUser = new System.Windows.Forms.Label();
-            this.lblIdUser = new System.Windows.Forms.Label();
-            this.picImageUser = new System.Windows.Forms.PictureBox();
             this.btnRefrech = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerImage)).BeginInit();
             this.panel2.SuspendLayout();
-            this.flpContainerCustomer.SuspendLayout();
-            this.pnlContainerUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImageUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -400,51 +393,11 @@
             // 
             this.flpContainerCustomer.AutoScroll = true;
             this.flpContainerCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flpContainerCustomer.Controls.Add(this.pnlContainerUser);
             this.flpContainerCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpContainerCustomer.Location = new System.Drawing.Point(0, 55);
             this.flpContainerCustomer.Name = "flpContainerCustomer";
             this.flpContainerCustomer.Size = new System.Drawing.Size(893, 308);
             this.flpContainerCustomer.TabIndex = 22;
-            // 
-            // pnlContainerUser
-            // 
-            this.pnlContainerUser.Controls.Add(this.lblNameUser);
-            this.pnlContainerUser.Controls.Add(this.lblIdUser);
-            this.pnlContainerUser.Controls.Add(this.picImageUser);
-            this.pnlContainerUser.Location = new System.Drawing.Point(3, 3);
-            this.pnlContainerUser.Name = "pnlContainerUser";
-            this.pnlContainerUser.Size = new System.Drawing.Size(169, 198);
-            this.pnlContainerUser.TabIndex = 0;
-            // 
-            // lblNameUser
-            // 
-            this.lblNameUser.AutoSize = true;
-            this.lblNameUser.Location = new System.Drawing.Point(9, 165);
-            this.lblNameUser.Name = "lblNameUser";
-            this.lblNameUser.Size = new System.Drawing.Size(62, 24);
-            this.lblNameUser.TabIndex = 2;
-            this.lblNameUser.Text = "Name";
-            // 
-            // lblIdUser
-            // 
-            this.lblIdUser.AutoSize = true;
-            this.lblIdUser.Location = new System.Drawing.Point(9, 141);
-            this.lblIdUser.Name = "lblIdUser";
-            this.lblIdUser.Size = new System.Drawing.Size(31, 24);
-            this.lblIdUser.TabIndex = 2;
-            this.lblIdUser.Text = "ID";
-            // 
-            // picImageUser
-            // 
-            this.picImageUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picImageUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picImageUser.Location = new System.Drawing.Point(9, 3);
-            this.picImageUser.Name = "picImageUser";
-            this.picImageUser.Size = new System.Drawing.Size(149, 135);
-            this.picImageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImageUser.TabIndex = 1;
-            this.picImageUser.TabStop = false;
             // 
             // btnRefrech
             // 
@@ -504,10 +457,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerImage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.flpContainerCustomer.ResumeLayout(false);
-            this.pnlContainerUser.ResumeLayout(false);
-            this.pnlContainerUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImageUser)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -531,10 +480,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSearchUser;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flpContainerCustomer;
-        private System.Windows.Forms.Panel pnlContainerUser;
-        private System.Windows.Forms.Label lblNameUser;
-        private System.Windows.Forms.Label lblIdUser;
-        private System.Windows.Forms.PictureBox picImageUser;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerBirthday;
         private System.Windows.Forms.Label label1;

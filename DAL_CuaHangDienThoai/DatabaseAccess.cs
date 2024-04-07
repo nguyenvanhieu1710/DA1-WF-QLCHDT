@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -80,6 +81,27 @@ namespace DAL_CuaHangDienThoai
                     return result;
                 }
             }
+        }
+        /// <summary>
+        /// Phương thức thực thi câu lệnh SQL rồi trả ra 1 DataTable
+        /// </summary>
+        /// <param name="command">Chuỗi câu lệnh SQL mà bạn muốn thực hiện</param>
+        /// <returns></returns>
+        public static DataTable GetDataTable(string command)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(strConnect))
+            {
+                sqlConnection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(command, sqlConnection))
+                {
+                    DataTable dataTable = new DataTable();
+                    // fill là lấy dữ liệu của sql điền vào dataTable
+                    // và fill có thể tự động đóng mở kết nối(tuy rằng đã using hahaha)
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            
         }
     }
 }
