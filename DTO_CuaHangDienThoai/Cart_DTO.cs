@@ -8,7 +8,7 @@ namespace DTO_CuaHangDienThoai
 {
     public class Cart_DTO
     {
-        private int idProduct;
-        private int idCustomer;
+        public int idProduct { get; set; } = 0;
+        public int idCustomer { get; set; } = 0;
     }
 }

@@ -23,7 +23,8 @@ namespace QuanLyCuaHangDienThoai
             InitializeComponent();
         }
         Customer_BLL customer_BLL = new Customer_BLL();
-        string saveImage;
+        string saveImage; // đường dẫn đầy đủ tới nơi lưu ảnh
+        string fileName; // tên file ảnh được chọn
         private void btnChooseImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -33,13 +34,13 @@ namespace QuanLyCuaHangDienThoai
                 picCustomerImage.Image = new Bitmap(openFileDialog.FileName);
                 // MessageBox.Show("Đường dẫn của tệp hình ảnh đã chọn: " + openFileDialog.FileName);
             }
-            string fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+            fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
             // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
             // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
             saveImage = Application.StartupPath + @"\Image\" + fileName;
             // MessageBox.Show(saveImage);
         }
-        private Panel GennerateCustomer(Customer_DTO customer_DTO)
+        private Panel GenerateCustomer(Customer_DTO customer_DTO)
         {
             // 
             // pnlContainerUser
@@ -55,13 +56,24 @@ namespace QuanLyCuaHangDienThoai
             // 
             PictureBox pictureBox = new PictureBox();
             pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox.Location = new System.Drawing.Point(9, 3);
             pictureBox.Name = "picImageUser";
             pictureBox.Size = new System.Drawing.Size(149, 135);
             pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox.TabIndex = 1;
             pictureBox.TabStop = false;
-            pictureBox.ImageLocation = customer_DTO.ImageCustomer;
+            pictureBox.ImageLocation = customer_DTO.ImageCustomer; // đường dẫn cục bộ
+            pictureBox.Click += (s, e) =>
+            {
+                int id = customer_DTO.IdCustomer;
+                txtIdUser.Text = id.ToString();
+                txtUserName.Text = customer_DTO.CustomerName;
+                txtPhoneNumber.Text = customer_DTO.PhoneNumber;
+                cboGender.Text = customer_DTO.Gender;
+                DateTimePickerBirthday.Text = customer_DTO.Birthday.ToString();
+                picCustomerImage.ImageLocation = customer_DTO.ImageCustomer;
+            };
             // 
             // lblIdUser
             // 
@@ -90,45 +102,70 @@ namespace QuanLyCuaHangDienThoai
         }
         private void Refrech()
         {
+            flpContainerCustomer.Controls.Clear();
             List<Customer_DTO> customerList = customer_BLL.customerList();
             foreach (Customer_DTO customer in customerList)
             {
-                flpContainerCustomer.Controls.Add(GennerateCustomer(customer));
+                // thêm các panel vào trong flowPanel
+                flpContainerCustomer.Controls.Add(GenerateCustomer(customer));
             }
+            // số lượng user
             lblQuantity.Text = customerList.Count.ToString() + " User";
+            // cập nhật lại để tránh khi không chọn ảnh
+            // mà vẫn có đường dẫn được lưu vào biến này sau lần nhấn trước đó
+            saveImage = ""; 
         }
         private void FormUserManagement_Load(object sender, EventArgs e)
         {
             Refrech();
         }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
+        private bool CheckRegex()
         {
-            if (txtIdUser.Text == "")
+            if(txtIdUser.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter ID Customer");
-                return;
+                return false;
             }
-            if (txtUserName.Text == "")
+            if(!RegexData.IsValidId(txtIdUser.Text.Trim()))
+            {
+                MessageBox.Show("ID Customer not valid");
+                return false;
+            }
+            if (txtUserName.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter Customer name");
-                return;
+                return false;
             }
-            if (cboGender.Text == "")
-            {
-                MessageBox.Show("Please enter gender");
-                return;
-            }
-            if(picCustomerImage.Image == null)
+            //if (!RegexData.IsValidName(txtUserName.Text))
+            //{
+            //    MessageBox.Show("Customer Name not valid");
+            //    return false;
+            //}
+            //if (cboGender.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("Please enter gender");
+            //    return false;
+            //}
+            if (picCustomerImage.Image == null)
             {
                 MessageBox.Show("Please choose image");
-                return;
+                return false;
             }
-            if (txtPhoneNumber.Text == "")
+            if (txtPhoneNumber.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter phone number");
-                return;
+                return false;
             }
+            if (!RegexData.IsValidPhoneNumber(txtPhoneNumber.Text))
+            {
+                MessageBox.Show("Phone number not valid");
+                return false;
+            }
+            return true;
+        }
+        private Customer_DTO AssignDataDTO()
+        {
+            // Hàm gán dữ liệu trở lại đối tượng DTO
             Customer_DTO customer_DTO = new Customer_DTO();
             customer_DTO.IdCustomer = int.Parse(txtIdUser.Text);
             customer_DTO.CustomerName = txtUserName.Text;
@@ -136,43 +173,188 @@ namespace QuanLyCuaHangDienThoai
             customer_DTO.PhoneNumber = txtPhoneNumber.Text;
             customer_DTO.ImageCustomer = saveImage;
             customer_DTO.Gender = cboGender.Text;
+            return customer_DTO;
+        }
+        private void ChooseImage(Customer_DTO customer_DTO)
+        {
+            // lưu vô đối tượng DTO để cho vào cơ sở dữ liệu
+            customer_DTO.ImageCustomer = saveImage;
+            picCustomerImage.Image.Save($@"{saveImage}");
+        }
+        private void NoChooseImage(Customer_DTO customer_DTO)
+        {
+            // nghĩa là ảnh cũ đã được lưu vào pictureBox từ trước rồi
+            // thì dùng luôn đường dẫn cũ rồi cho vào database luôn
+            customer_DTO.ImageCustomer = picCustomerImage.ImageLocation;
+            string OldPath = picCustomerImage.ImageLocation;
 
-            if(customer_BLL.CheckExit(customer_DTO))
+            // Kiểm tra xem đường dẫn cũ tồn tại không
+            var directory = Path.GetDirectoryName(OldPath);
+            if (!Directory.Exists(directory)) // nếu đường dẫn không tồn tại
+            {
+                if(OldPath == "" || OldPath == null || OldPath == "No Image")
+                {
+                    // nếu trong database là ảnh trống thì cứ để nguyên và thoát ra thôi
+                    return;
+                }
+                // Tạo đường dẫn nếu nó không tồn tại
+                Directory.CreateDirectory(directory);
+                picCustomerImage.Image.Save($@"{OldPath}");
+            }
+            // nếu đường dẫn đã tồn tại thì không cần save lại nữa
+        }
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            if (!CheckRegex())
+            {
+                return;
+            }
+            Customer_DTO customer_DTO = AssignDataDTO();
+
+            if (customer_BLL.CheckExit(customer_DTO))
             {
                 MessageBox.Show("The customer already exists");
                 return;
             }
+            if (saveImage == null || saveImage == "") 
+            {
+                // không chọn ảnh -> đường dẫn trống
+                NoChooseImage(customer_DTO);
+            }
+            else 
+            {
+                // chọn ảnh -> có đường dẫn
+                ChooseImage(customer_DTO);
+            }
+            int result = 2; //kiểm tra số bản ghi thêm vào có đúng không
+            // lưu vào database
+            if (customer_BLL.addCustomer(customer_DTO) == result)
+            {
+                MessageBox.Show("Added customers successfully");
+                Refrech();
+                return;
+            }
             else
             {
-                int result = 2;
-                if(customer_BLL.addCustomer(customer_DTO) == result) 
-                {
-                    MessageBox.Show("Added customers successfully");
-                    picCustomerImage.Image.Save($@"{saveImage}");
-                    Refrech();
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Adding failed customers");
-                    Refrech();
-                    return;
-                }
-                customer_BLL.AddCustomer(customer_DTO);
-                picCustomerImage.Image.Save($@"{saveImage}");
-                // MessageBox.Show("susscess");
-                if (customer_BLL.CheckExit(customer_DTO))
-                {
-                    MessageBox.Show("Added customers successfully");
-                    Refrech();
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Adding failed customers");
-                    return;
-                }
-            }         
+                MessageBox.Show("Adding failed customers");
+                Refrech();
+                return;
+            }
+        }
+
+        private void btnFixUser_Click(object sender, EventArgs e)
+        {
+            if (!CheckRegex())
+            {
+                return;
+            }
+            Customer_DTO customer_DTO = AssignDataDTO();
+
+            if (!customer_BLL.CheckExit(customer_DTO))
+            {
+                MessageBox.Show("Customer does not exist");
+                return;
+            }
+
+            if (saveImage == null || saveImage == "")
+            {
+                // không chọn ảnh -> đường dẫn trống
+                NoChooseImage(customer_DTO);
+            }
+            else
+            {
+                // chọn ảnh -> có đường dẫn
+                ChooseImage(customer_DTO);
+            }
+
+            int result = 1; //kiểm tra số bản ghi sửa có đúng không
+            if (customer_BLL.fixCustomer(customer_DTO) == result)
+            {
+                MessageBox.Show("Fixed customers successfully");
+                Refrech();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Fix failed customers");
+                Refrech();
+                return;
+            }
+        }
+
+        private void btnRefrech_Click(object sender, EventArgs e)
+        {
+            Refrech();
+            txtIdUser.Text = "";
+            txtUserName.Text = "";
+            txtPhoneNumber.Text = "";
+            picCustomerImage.Image = null;
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (!CheckRegex())
+            {
+                return;
+            }
+            Customer_DTO customer_DTO = AssignDataDTO();
+
+            if (!customer_BLL.CheckExit(customer_DTO))
+            {
+                MessageBox.Show("Customer does not exist");
+                return;
+            }
+
+            // vì không xác định được chính xác số bản ghi bị ảnh hưởng nên cứ để chạy bình thường thôi
+            customer_BLL.deleteCustomer(customer_DTO);
+
+            if (!customer_BLL.CheckExit(customer_DTO))
+            {
+                MessageBox.Show("Delete customer success");
+                Refrech();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Delete fail customer");
+                Refrech();
+                return;
+            }
+        }
+
+        private void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            if (!CheckRegex())
+            {
+                return;
+            }
+            Customer_DTO customer = AssignDataDTO();
+            List<Customer_DTO> customerList_search = customer_BLL.searchCustomer(customer);
+            flpContainerCustomer.Controls.Clear();
+            foreach (Customer_DTO customers in customerList_search)
+            {
+                flpContainerCustomer.Controls.Add(GenerateCustomer(customers));
+            }
+            // số lượng user
+            lblQuantity.Text = customerList_search.Count.ToString() + " User";
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if(cbFilter.Text == "")
+            {
+                MessageBox.Show("Please choose combobox");
+                return;
+            }
+            
+            List<Customer_DTO> customerFilter = customer_BLL.filterCustomer(cbFilter.Text);
+            flpContainerCustomer.Controls.Clear();
+            foreach (Customer_DTO customers in customerFilter)
+            {
+                flpContainerCustomer.Controls.Add(GenerateCustomer(customers));
+            }
+            // số lượng user
+            lblQuantity.Text = customerFilter.Count.ToString() + " User";
         }
     }
 }

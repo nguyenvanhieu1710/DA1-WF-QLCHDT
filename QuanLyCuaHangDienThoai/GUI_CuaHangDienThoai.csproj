@@ -70,6 +70,12 @@
     <Compile Include="FormCart.Designer.cs">
       <DependentUpon>FormCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCategoryManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoryManagement.Designer.cs">
+      <DependentUpon>FormCategoryManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="FormProduct.Designer.cs">
       <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductDetail.Designer.cs">
+      <DependentUpon>FormProductDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProductManagement.cs">
       <SubType>Form</SubType>
@@ -152,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCart.resx">
       <DependentUpon>FormCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoryManagement.resx">
+      <DependentUpon>FormCategoryManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessage.resx">
       <DependentUpon>FormMessage.cs</DependentUpon>

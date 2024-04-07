@@ -15,10 +15,8 @@ namespace DAL_CuaHangDienThoai
         {
             try
             {
-                DatabaseAccess.OpenConnect();
                 List<Account_DTO> list = new List<Account_DTO>();
-                DatabaseAccess.ExecuteCommand("selectAccount");
-                SqlDataReader reader = DatabaseAccess.ExecuteReader();
+                SqlDataReader reader = DatabaseAccess.ExecuteReader("selectAccount");
                 while (reader.Read())
                 {
                     Account_DTO account = new Account_DTO()
@@ -39,20 +37,17 @@ namespace DAL_CuaHangDienThoai
             {
                 throw ex;            
             }
-            finally { DatabaseAccess.CloseConnect(); }
         }
         public void insertAccountCustomer_DAL(string Account, string Password, string Email)
         {
             try
             {
-                DatabaseAccess.OpenConnect();
                 DatabaseAccess.ExecuteCommand($"insertAccountCustomer {Account}, {Password}, {Email} ");
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally { DatabaseAccess.CloseConnect(); }
         }
     }
 }

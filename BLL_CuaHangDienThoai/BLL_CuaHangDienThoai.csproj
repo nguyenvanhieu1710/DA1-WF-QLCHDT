@@ -46,7 +46,7 @@
     <Compile Include="Customer_BLL.cs" />
     <Compile Include="Product_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Regex.cs" />
+    <Compile Include="RegexData.cs" />
     <Compile Include="Staff_BLL.cs" />
   </ItemGroup>
   <ItemGroup>

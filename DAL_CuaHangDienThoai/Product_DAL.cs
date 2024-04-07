@@ -15,10 +15,8 @@ namespace DAL_CuaHangDienThoai
         {
             try
             {
-                DatabaseAccess.OpenConnect();
                 List<Product_DTO> list = new List<Product_DTO>();
-                DatabaseAccess.ExecuteCommand("selectProduct");
-                SqlDataReader sqlDataReader = DatabaseAccess.ExecuteReader();
+                SqlDataReader sqlDataReader = DatabaseAccess.ExecuteReader("selectProduct");
                 while (sqlDataReader.Read())
                 {
                     Product_DTO product = new Product_DTO()
@@ -42,7 +40,7 @@ namespace DAL_CuaHangDienThoai
             {
                 throw ex;
             }
-            finally { DatabaseAccess.CloseConnect(); }
+            finally { DatabaseAccess.CloseConnecGlobal(); }
         }
     }
 }

@@ -92,5 +92,11 @@ namespace QuanLyCuaHangDienThoai
             picTopic.Image = Properties.Resources.User;
             content(new FormProfile());
         }
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            lblTopic.Text = "Category Management";
+            picTopic.Image = Properties.Resources.icon_login_blue;
+            content(new FormCategoryManagement());
+        }
     }
 }

@@ -28,14 +28,58 @@ namespace BLL_CuaHangDienThoai
             }
             return false;
         }
-        public void AddCustomer(Customer_DTO customer)
+        public bool CheckImage(Customer_DTO customer_DTO)
         {
-            Customer_DAL.AddCustomer(customer);
+            List<Customer_DTO> list = customerList();
+            foreach (Customer_DTO item in list)
+            {
+                if (customer_DTO.ImageCustomer == item.ImageCustomer)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public int addCustomer(Customer_DTO customer)
         {
             int result = Customer_DAL.addCustomer(customer);
             return result;
+        }
+        public int fixCustomer(Customer_DTO customer)
+        {
+            int result = Customer_DAL.fixCustomer(customer);
+            return result;
+        }
+        public int deleteCustomer(Customer_DTO customer)
+        {
+            int result = Customer_DAL.deleteCustomer(customer);
+            return result;
+        }
+        public List<Customer_DTO> searchCustomer(Customer_DTO customer)
+        {
+            List <Customer_DTO> customers = customerList();
+            List<Customer_DTO> list = new List<Customer_DTO>();   
+            foreach(Customer_DTO item in customers)
+            {
+                if(item.CustomerName == customer.CustomerName)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+        public List<Customer_DTO> filterCustomer(string filter)
+        {
+            List<Customer_DTO> customers = customerList();
+            List<Customer_DTO> list = new List<Customer_DTO>();
+            foreach (Customer_DTO item in customers)
+            {
+                if (item.Gender == filter)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
         }
     }
 }

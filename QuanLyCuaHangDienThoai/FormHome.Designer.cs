@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btnProductManagement = new Guna.UI2.WinForms.Guna2Button();
@@ -50,7 +51,7 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.pnlContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -68,6 +69,7 @@
             this.guna2Panel1.Controls.Add(this.btnProfile);
             this.guna2Panel1.Controls.Add(this.btnRegister);
             this.guna2Panel1.Controls.Add(this.btnLogin);
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btnProductManagement);
             this.guna2Panel1.Controls.Add(this.btnStaffManagement);
             this.guna2Panel1.Controls.Add(this.btnUserManagement);
@@ -142,6 +144,31 @@
             this.guna2PictureBox2.TabIndex = 5;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnProfile.FillColor = System.Drawing.Color.White;
+            this.btnProfile.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnProfile.ForeColor = System.Drawing.Color.Black;
+            this.btnProfile.HoverState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnProfile.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnProfile.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_user_white;
+            this.btnProfile.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.User;
+            this.btnProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnProfile.ImageOffset = new System.Drawing.Point(4, 0);
+            this.btnProfile.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnProfile.Location = new System.Drawing.Point(0, 375);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(206, 40);
+            this.btnProfile.TabIndex = 4;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnRegister
             // 
@@ -388,30 +415,30 @@
             this.pnlContent.Size = new System.Drawing.Size(893, 666);
             this.pnlContent.TabIndex = 2;
             // 
-            // btnProfile
+            // guna2Button1
             // 
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProfile.FillColor = System.Drawing.Color.White;
-            this.btnProfile.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnProfile.ForeColor = System.Drawing.Color.Black;
-            this.btnProfile.HoverState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnProfile.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnProfile.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_user_white;
-            this.btnProfile.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.User;
-            this.btnProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnProfile.ImageOffset = new System.Drawing.Point(4, 0);
-            this.btnProfile.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnProfile.Location = new System.Drawing.Point(0, 375);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(206, 40);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_mobile_phone_white;
+            this.guna2Button1.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_mobile_phone_blue;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(4, 0);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2Button1.Location = new System.Drawing.Point(1, 421);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(206, 40);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "Category";
+            this.guna2Button1.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // FormHome
             // 
@@ -464,5 +491,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRegister;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

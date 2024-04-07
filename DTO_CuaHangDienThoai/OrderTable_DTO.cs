@@ -8,7 +8,7 @@ namespace DTO_CuaHangDienThoai
 {
     public class OrderTable_DTO
     {
-        private int idOrderTable;
+        public int idOrderTable { get; set; } = 0;
         public int idCustomer { get; set; } = 0;
         public int idStaff { get; set; } = 0;
         public string Orderstatus { get; set; } = string.Empty;

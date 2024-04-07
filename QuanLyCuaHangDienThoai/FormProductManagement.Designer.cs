@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblQuantityProduct = new System.Windows.Forms.Label();
+            this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.btnFixUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchUser = new Guna.UI2.WinForms.Guna2Button();
@@ -47,13 +46,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnDeleteUser = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblQuantityProduct = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -66,6 +62,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(893, 55);
             this.panel2.TabIndex = 22;
+            // 
+            // lblQuantityProduct
+            // 
+            this.lblQuantityProduct.AutoSize = true;
+            this.lblQuantityProduct.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblQuantityProduct.Location = new System.Drawing.Point(12, 12);
+            this.lblQuantityProduct.Name = "lblQuantityProduct";
+            this.lblQuantityProduct.Size = new System.Drawing.Size(159, 24);
+            this.lblQuantityProduct.TabIndex = 9;
+            this.lblQuantityProduct.Text = "Quantity Product";
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFilter.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbFilter.ItemHeight = 30;
+            this.cbFilter.Location = new System.Drawing.Point(607, 12);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(140, 36);
+            this.cbFilter.TabIndex = 8;
             // 
             // btnFilter
             // 
@@ -367,83 +388,13 @@
             this.btnDeleteUser.TabIndex = 26;
             this.btnDeleteUser.Text = "Delete";
             // 
-            // dgvProduct
+            // flowLayoutPanel1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProduct.ColumnHeadersHeight = 26;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvProduct.Location = new System.Drawing.Point(12, 61);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.RowHeadersVisible = false;
-            this.dgvProduct.RowHeadersWidth = 51;
-            this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(869, 284);
-            this.dgvProduct.TabIndex = 27;
-            this.dgvProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvProduct.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvProduct.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvProduct.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvProduct.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvProduct.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvProduct.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvProduct.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProduct.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dgvProduct.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvProduct.ThemeStyle.HeaderStyle.Height = 26;
-            this.dgvProduct.ThemeStyle.ReadOnly = false;
-            this.dgvProduct.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvProduct.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvProduct.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dgvProduct.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvProduct.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.BackColor = System.Drawing.Color.Transparent;
-            this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbFilter.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbFilter.ItemHeight = 30;
-            this.cbFilter.Location = new System.Drawing.Point(607, 12);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(140, 36);
-            this.cbFilter.TabIndex = 8;
-            // 
-            // lblQuantityProduct
-            // 
-            this.lblQuantityProduct.AutoSize = true;
-            this.lblQuantityProduct.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblQuantityProduct.Location = new System.Drawing.Point(12, 12);
-            this.lblQuantityProduct.Name = "lblQuantityProduct";
-            this.lblQuantityProduct.Size = new System.Drawing.Size(159, 24);
-            this.lblQuantityProduct.TabIndex = 9;
-            this.lblQuantityProduct.Text = "Quantity Product";
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 55);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(893, 290);
+            this.flowLayoutPanel1.TabIndex = 29;
             // 
             // FormProductManagement
             // 
@@ -451,13 +402,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 654);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnFixUser);
             this.Controls.Add(this.btnSearchUser);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnDeleteUser);
-            this.Controls.Add(this.dgvProduct);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -469,7 +420,6 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,8 +442,8 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox cboGender;
         private Guna.UI2.WinForms.Guna2Button btnDeleteUser;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvProduct;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
         private System.Windows.Forms.Label lblQuantityProduct;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -32,6 +32,8 @@
             this.cboGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.picCustomerImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.DateTimePickerBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnChooseImage = new Guna.UI2.WinForms.Guna2Button();
             this.txtIdUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,15 +51,15 @@
             this.lblNameUser = new System.Windows.Forms.Label();
             this.lblIdUser = new System.Windows.Forms.Label();
             this.picImageUser = new System.Windows.Forms.PictureBox();
-            this.DateTimePickerBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnRefrech = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerImage)).BeginInit();
             this.panel2.SuspendLayout();
             this.flpContainerCustomer.SuspendLayout();
             this.pnlContainerUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageUser)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -103,7 +105,7 @@
             this.guna2GroupBox1.Controls.Add(this.txtUserName);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 369);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 6);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(869, 234);
             this.guna2GroupBox1.TabIndex = 21;
@@ -117,10 +119,37 @@
             this.picCustomerImage.Location = new System.Drawing.Point(676, 60);
             this.picCustomerImage.Name = "picCustomerImage";
             this.picCustomerImage.Size = new System.Drawing.Size(175, 150);
-            this.picCustomerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCustomerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCustomerImage.TabIndex = 17;
             this.picCustomerImage.TabStop = false;
             this.picCustomerImage.UseTransparentBackground = true;
+            // 
+            // DateTimePickerBirthday
+            // 
+            this.DateTimePickerBirthday.BorderColor = System.Drawing.Color.Transparent;
+            this.DateTimePickerBirthday.Checked = true;
+            this.DateTimePickerBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DateTimePickerBirthday.FillColor = System.Drawing.Color.White;
+            this.DateTimePickerBirthday.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DateTimePickerBirthday.ForeColor = System.Drawing.Color.Gray;
+            this.DateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateTimePickerBirthday.Location = new System.Drawing.Point(181, 165);
+            this.DateTimePickerBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerBirthday.Name = "DateTimePickerBirthday";
+            this.DateTimePickerBirthday.Size = new System.Drawing.Size(248, 36);
+            this.DateTimePickerBirthday.TabIndex = 1;
+            this.DateTimePickerBirthday.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(259, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Birthday";
             // 
             // btnChooseImage
             // 
@@ -222,11 +251,12 @@
             this.btnDeleteUser.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteUser.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnDeleteUser.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteUser.Location = new System.Drawing.Point(354, 609);
+            this.btnDeleteUser.Location = new System.Drawing.Point(332, 246);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(146, 45);
             this.btnDeleteUser.TabIndex = 19;
             this.btnDeleteUser.Text = "Delete";
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // lblQuantity
             // 
@@ -255,7 +285,7 @@
             this.btnAddUser.ForeColor = System.Drawing.Color.Black;
             this.btnAddUser.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnAddUser.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAddUser.Location = new System.Drawing.Point(72, 609);
+            this.btnAddUser.Location = new System.Drawing.Point(50, 246);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(133, 45);
             this.btnAddUser.TabIndex = 18;
@@ -279,11 +309,12 @@
             this.btnFixUser.ForeColor = System.Drawing.Color.Black;
             this.btnFixUser.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnFixUser.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnFixUser.Location = new System.Drawing.Point(211, 609);
+            this.btnFixUser.Location = new System.Drawing.Point(189, 246);
             this.btnFixUser.Name = "btnFixUser";
             this.btnFixUser.Size = new System.Drawing.Size(137, 45);
             this.btnFixUser.TabIndex = 16;
             this.btnFixUser.Text = "Fix";
+            this.btnFixUser.Click += new System.EventHandler(this.btnFixUser_Click);
             // 
             // btnSearchUser
             // 
@@ -302,14 +333,16 @@
             this.btnSearchUser.ForeColor = System.Drawing.Color.Black;
             this.btnSearchUser.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnSearchUser.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSearchUser.Location = new System.Drawing.Point(508, 609);
+            this.btnSearchUser.Location = new System.Drawing.Point(484, 246);
             this.btnSearchUser.Name = "btnSearchUser";
             this.btnSearchUser.Size = new System.Drawing.Size(146, 45);
             this.btnSearchUser.TabIndex = 17;
             this.btnSearchUser.Text = "Search";
+            this.btnSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.cbFilter);
             this.panel2.Controls.Add(this.btnFilter);
             this.panel2.Controls.Add(this.lblQuantity);
@@ -322,6 +355,7 @@
             // cbFilter
             // 
             this.cbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -360,10 +394,12 @@
             this.btnFilter.Size = new System.Drawing.Size(137, 49);
             this.btnFilter.TabIndex = 5;
             this.btnFilter.Text = "Filter";
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // flpContainerCustomer
             // 
             this.flpContainerCustomer.AutoScroll = true;
+            this.flpContainerCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpContainerCustomer.Controls.Add(this.pnlContainerUser);
             this.flpContainerCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpContainerCustomer.Location = new System.Drawing.Point(0, 55);
@@ -402,38 +438,13 @@
             // picImageUser
             // 
             this.picImageUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picImageUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picImageUser.Location = new System.Drawing.Point(9, 3);
             this.picImageUser.Name = "picImageUser";
             this.picImageUser.Size = new System.Drawing.Size(149, 135);
             this.picImageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImageUser.TabIndex = 1;
             this.picImageUser.TabStop = false;
-            // 
-            // DateTimePickerBirthday
-            // 
-            this.DateTimePickerBirthday.BorderColor = System.Drawing.Color.Transparent;
-            this.DateTimePickerBirthday.Checked = true;
-            this.DateTimePickerBirthday.FillColor = System.Drawing.Color.White;
-            this.DateTimePickerBirthday.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DateTimePickerBirthday.ForeColor = System.Drawing.Color.Gray;
-            this.DateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePickerBirthday.Location = new System.Drawing.Point(181, 165);
-            this.DateTimePickerBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateTimePickerBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateTimePickerBirthday.Name = "DateTimePickerBirthday";
-            this.DateTimePickerBirthday.Size = new System.Drawing.Size(248, 36);
-            this.DateTimePickerBirthday.TabIndex = 1;
-            this.DateTimePickerBirthday.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(259, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 24);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Birthday";
             // 
             // btnRefrech
             // 
@@ -452,11 +463,27 @@
             this.btnRefrech.ForeColor = System.Drawing.Color.Black;
             this.btnRefrech.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnRefrech.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnRefrech.Location = new System.Drawing.Point(660, 609);
+            this.btnRefrech.Location = new System.Drawing.Point(636, 246);
             this.btnRefrech.Name = "btnRefrech";
             this.btnRefrech.Size = new System.Drawing.Size(146, 45);
             this.btnRefrech.TabIndex = 17;
             this.btnRefrech.Text = "Refrech";
+            this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.guna2GroupBox1);
+            this.panel1.Controls.Add(this.btnRefrech);
+            this.panel1.Controls.Add(this.btnSearchUser);
+            this.panel1.Controls.Add(this.btnDeleteUser);
+            this.panel1.Controls.Add(this.btnAddUser);
+            this.panel1.Controls.Add(this.btnFixUser);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 363);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(893, 304);
+            this.panel1.TabIndex = 23;
             // 
             // FormUserManagement
             // 
@@ -464,13 +491,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 666);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flpContainerCustomer);
-            this.Controls.Add(this.guna2GroupBox1);
-            this.Controls.Add(this.btnDeleteUser);
-            this.Controls.Add(this.btnRefrech);
-            this.Controls.Add(this.btnSearchUser);
-            this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.btnFixUser);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -486,6 +508,7 @@
             this.pnlContainerUser.ResumeLayout(false);
             this.pnlContainerUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageUser)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -516,5 +539,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerBirthday;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnRefrech;
+        private System.Windows.Forms.Panel panel1;
     }
 }

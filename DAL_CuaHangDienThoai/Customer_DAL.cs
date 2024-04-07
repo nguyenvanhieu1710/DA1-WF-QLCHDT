@@ -14,10 +14,8 @@ namespace DAL_CuaHangDienThoai
         {
             try
             {
-                DatabaseAccess.OpenConnect();
                 List<Customer_DTO> list = new List<Customer_DTO>();
-                DatabaseAccess.ExecuteCommand("selectCustomer");
-                SqlDataReader sqlDataReader = DatabaseAccess.ExecuteReader();
+                SqlDataReader sqlDataReader = DatabaseAccess.ExecuteReader("selectCustomer");
                 while (sqlDataReader.Read())
                 {
                     Customer_DTO customer = new Customer_DTO()
@@ -37,40 +35,51 @@ namespace DAL_CuaHangDienThoai
             {
                 throw ex;
             }
-            finally { DatabaseAccess.CloseConnect(); }
-        }
-        public void AddCustomer(Customer_DTO customer_DTO)
-        {
-            try
-            {
-                DatabaseAccess.OpenConnect();
-                DatabaseAccess.ExecuteCommand($"insertCustomer '{customer_DTO.CustomerName}', " +
-                $"'{customer_DTO.Birthday}', '{customer_DTO.PhoneNumber}'," +
-                $"'{customer_DTO.ImageCustomer}'," +
-                $"'{customer_DTO.Gender}' ");
-            }
-            catch (Exception ex)
-            {
-                throw ex ;
-            }
-            finally { DatabaseAccess.CloseConnect(); }
+            finally { DatabaseAccess.CloseConnecGlobal(); }
         }
         public int addCustomer(Customer_DTO customer_DTO)
         {
             try
             {
-                DatabaseAccess.OpenConnect();
-                int result = DatabaseAccess.ExcuteNonQuery($"insertCustomer '{customer_DTO.CustomerName}', " +
-                $"'{customer_DTO.Birthday}', '{customer_DTO.PhoneNumber}'," +
-                $"'{customer_DTO.ImageCustomer}'," +
-                $"'{customer_DTO.Gender}' ");
+                int result = DatabaseAccess.ExcuteNonQuery($"insertCustomer N'{customer_DTO.CustomerName}', " +
+                $"'{customer_DTO.Birthday}', N'{customer_DTO.PhoneNumber}'," +
+                $"N'{customer_DTO.ImageCustomer}'," +
+                $"N'{customer_DTO.Gender}' ");
                 return result;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally { DatabaseAccess.CloseConnect(); }
+        }
+        public int fixCustomer(Customer_DTO customer_DTO)
+        {
+            try
+            {
+                int result = DatabaseAccess.ExcuteNonQuery($"updateCustomer '{customer_DTO.IdCustomer}', " +
+                    $"N'{customer_DTO.CustomerName}', " +
+                    $"'{customer_DTO.Birthday}', N'{customer_DTO.PhoneNumber}'," +
+                    $"N'{customer_DTO.ImageCustomer}'," +
+                    $"N'{customer_DTO.Gender}' ");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int deleteCustomer(Customer_DTO customer_DTO)
+        {
+            try
+            {
+                int result = DatabaseAccess.ExcuteNonQuery($"deleteAccountCustomer '{customer_DTO.IdCustomer}'");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
