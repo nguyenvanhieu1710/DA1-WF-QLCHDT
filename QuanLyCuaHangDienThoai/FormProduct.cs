@@ -31,12 +31,15 @@ namespace QuanLyCuaHangDienThoai
             panel.TabIndex = 49;
             Guna2PictureBox pictureBox = new Guna2PictureBox();
             pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox.ImageRotate = 0F;
             pictureBox.Location = new System.Drawing.Point(9, 13);
             pictureBox.Name = "picImageProduct";
             pictureBox.Size = new System.Drawing.Size(179, 169);
             pictureBox.TabIndex = 40;
             pictureBox.TabStop = false;
+            pictureBox.ImageLocation = product.ImageProduct;
+            pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             Label labelProductName = new Label();
             labelProductName.AutoSize = true;
             labelProductName.Location = new System.Drawing.Point(9, 185);
@@ -140,6 +143,7 @@ namespace QuanLyCuaHangDienThoai
         }
         private void Refrech()
         {
+            flpContainerProduct.Controls.Clear();
             List<Category_DTO> list = Category_BLL.CategoryList();
             foreach (Category_DTO category in list)
             {
@@ -151,9 +155,19 @@ namespace QuanLyCuaHangDienThoai
                 flpContainerProduct.Controls.Add(GenerateProduct(product));
             }
         }
+        private void turnOffHorizontalScrollbar()
+        {
+            // tắt thanh cuộn ngang
+            flpContainerCategory.AutoScroll = false;
+            flpContainerCategory.HorizontalScroll.Enabled = false;
+            flpContainerCategory.HorizontalScroll.Visible = false;
+            flpContainerCategory.HorizontalScroll.Maximum = 0;
+            flpContainerCategory.AutoScroll = true;
+        }
         private void FormProduct_Load(object sender, EventArgs e)
         {
             Refrech();
+            turnOffHorizontalScrollbar();
         }
         public event EventHandler openNewForm;
         private void picImageProduct_Click(object sender, EventArgs e)
@@ -190,7 +204,18 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            if (cbFilter.Text == "")
+            {
+                MessageBox.Show("Please choose combobox");
+                return;
+            }
 
+            List<Product_DTO> productFilter = product_BLL.filterProduct(cbFilter.Text);
+            flpContainerProduct.Controls.Clear();
+            foreach (Product_DTO Products in productFilter)
+            {
+                flpContainerProduct.Controls.Add(GenerateProduct(Products));
+            }
         }
     }
 }

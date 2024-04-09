@@ -31,22 +31,22 @@
             this.flpContainerCategory = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
             this.flpContainerProduct = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlContainerProduct = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblProductPrice = new System.Windows.Forms.Label();
-            this.lblProductName = new System.Windows.Forms.Label();
-            this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBuyNow = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchProduct = new Guna.UI2.WinForms.Guna2Button();
             this.txtProduct = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnBuyNow = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
+            this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblProductPrice = new System.Windows.Forms.Label();
+            this.pnlContainerProduct = new Guna.UI2.WinForms.Guna2Panel();
             this.flpContainerCategory.SuspendLayout();
             this.flpContainerProduct.SuspendLayout();
-            this.pnlContainerProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).BeginInit();
+            this.pnlContainerProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpContainerCategory
@@ -58,7 +58,7 @@
             this.flpContainerCategory.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpContainerCategory.Location = new System.Drawing.Point(0, 0);
             this.flpContainerCategory.Name = "flpContainerCategory";
-            this.flpContainerCategory.Size = new System.Drawing.Size(893, 76);
+            this.flpContainerCategory.Size = new System.Drawing.Size(893, 82);
             this.flpContainerCategory.TabIndex = 40;
             // 
             // btnCategory
@@ -90,99 +90,10 @@
             this.flpContainerProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpContainerProduct.Controls.Add(this.pnlContainerProduct);
             this.flpContainerProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpContainerProduct.Location = new System.Drawing.Point(0, 76);
+            this.flpContainerProduct.Location = new System.Drawing.Point(0, 82);
             this.flpContainerProduct.Name = "flpContainerProduct";
             this.flpContainerProduct.Size = new System.Drawing.Size(893, 521);
             this.flpContainerProduct.TabIndex = 45;
-            // 
-            // pnlContainerProduct
-            // 
-            this.pnlContainerProduct.Controls.Add(this.lblProductPrice);
-            this.pnlContainerProduct.Controls.Add(this.lblProductName);
-            this.pnlContainerProduct.Controls.Add(this.picImageProduct);
-            this.pnlContainerProduct.Controls.Add(this.btnAddToCart);
-            this.pnlContainerProduct.Controls.Add(this.btnBuyNow);
-            this.pnlContainerProduct.Location = new System.Drawing.Point(3, 3);
-            this.pnlContainerProduct.Name = "pnlContainerProduct";
-            this.pnlContainerProduct.Size = new System.Drawing.Size(201, 319);
-            this.pnlContainerProduct.TabIndex = 49;
-            // 
-            // lblProductPrice
-            // 
-            this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Location = new System.Drawing.Point(9, 219);
-            this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(121, 24);
-            this.lblProductPrice.TabIndex = 41;
-            this.lblProductPrice.Text = "30.000.000đ";
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(9, 185);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(179, 24);
-            this.lblProductName.TabIndex = 41;
-            this.lblProductName.Text = "Iphone 15 pro max";
-            // 
-            // picImageProduct
-            // 
-            this.picImageProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picImageProduct.ImageRotate = 0F;
-            this.picImageProduct.Location = new System.Drawing.Point(9, 13);
-            this.picImageProduct.Name = "picImageProduct";
-            this.picImageProduct.Size = new System.Drawing.Size(179, 169);
-            this.picImageProduct.TabIndex = 40;
-            this.picImageProduct.TabStop = false;
-            this.picImageProduct.Click += new System.EventHandler(this.picImageProduct_Click);
-            // 
-            // btnAddToCart
-            // 
-            this.btnAddToCart.AutoRoundedCorners = true;
-            this.btnAddToCart.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnAddToCart.BorderRadius = 21;
-            this.btnAddToCart.BorderThickness = 1;
-            this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddToCart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddToCart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddToCart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddToCart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddToCart.FillColor = System.Drawing.Color.White;
-            this.btnAddToCart.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnAddToCart.ForeColor = System.Drawing.Color.Black;
-            this.btnAddToCart.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnAddToCart.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAddToCart.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_cart_white;
-            this.btnAddToCart.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_cart_blue;
-            this.btnAddToCart.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAddToCart.Location = new System.Drawing.Point(9, 259);
-            this.btnAddToCart.Name = "btnAddToCart";
-            this.btnAddToCart.Size = new System.Drawing.Size(78, 45);
-            this.btnAddToCart.TabIndex = 36;
-            // 
-            // btnBuyNow
-            // 
-            this.btnBuyNow.AutoRoundedCorners = true;
-            this.btnBuyNow.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuyNow.BorderRadius = 21;
-            this.btnBuyNow.BorderThickness = 1;
-            this.btnBuyNow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuyNow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBuyNow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBuyNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBuyNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBuyNow.FillColor = System.Drawing.Color.White;
-            this.btnBuyNow.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnBuyNow.ForeColor = System.Drawing.Color.Black;
-            this.btnBuyNow.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuyNow.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnBuyNow.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_basket_white;
-            this.btnBuyNow.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_basket_blue;
-            this.btnBuyNow.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnBuyNow.Location = new System.Drawing.Point(110, 259);
-            this.btnBuyNow.Name = "btnBuyNow";
-            this.btnBuyNow.Size = new System.Drawing.Size(78, 45);
-            this.btnBuyNow.TabIndex = 36;
             // 
             // panel2
             // 
@@ -192,15 +103,16 @@
             this.panel2.Controls.Add(this.btnSearchProduct);
             this.panel2.Controls.Add(this.txtProduct);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 597);
+            this.panel2.Location = new System.Drawing.Point(0, 603);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(893, 70);
+            this.panel2.Size = new System.Drawing.Size(893, 69);
             this.panel2.TabIndex = 46;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // cbFilter
             // 
             this.cbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -208,9 +120,19 @@
             this.cbFilter.Font = new System.Drawing.Font("Tahoma", 12F);
             this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbFilter.ItemHeight = 30;
-            this.cbFilter.Location = new System.Drawing.Point(596, 16);
+            this.cbFilter.Items.AddRange(new object[] {
+            "1.000.000đ - 10.000.000đ",
+            "10.000.000đ - 20.000.000đ",
+            "20.000.000đ - 30.000.000đ",
+            "30.000.000đ - 40.000.000đ",
+            "40.000.000đ - 50.000.000đ",
+            "Apple",
+            "Oppo",
+            "Xiaomi",
+            "Samsung"});
+            this.cbFilter.Location = new System.Drawing.Point(462, 16);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(140, 36);
+            this.cbFilter.Size = new System.Drawing.Size(274, 36);
             this.cbFilter.TabIndex = 9;
             // 
             // btnFilter
@@ -287,6 +209,97 @@
             this.txtProduct.Size = new System.Drawing.Size(202, 40);
             this.txtProduct.TabIndex = 6;
             // 
+            // btnBuyNow
+            // 
+            this.btnBuyNow.AutoRoundedCorners = true;
+            this.btnBuyNow.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuyNow.BorderRadius = 21;
+            this.btnBuyNow.BorderThickness = 1;
+            this.btnBuyNow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuyNow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBuyNow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBuyNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBuyNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBuyNow.FillColor = System.Drawing.Color.White;
+            this.btnBuyNow.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnBuyNow.ForeColor = System.Drawing.Color.Black;
+            this.btnBuyNow.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuyNow.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnBuyNow.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_basket_white;
+            this.btnBuyNow.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_basket_blue;
+            this.btnBuyNow.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnBuyNow.Location = new System.Drawing.Point(110, 259);
+            this.btnBuyNow.Name = "btnBuyNow";
+            this.btnBuyNow.Size = new System.Drawing.Size(78, 45);
+            this.btnBuyNow.TabIndex = 36;
+            // 
+            // btnAddToCart
+            // 
+            this.btnAddToCart.AutoRoundedCorners = true;
+            this.btnAddToCart.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnAddToCart.BorderRadius = 21;
+            this.btnAddToCart.BorderThickness = 1;
+            this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddToCart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddToCart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddToCart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddToCart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddToCart.FillColor = System.Drawing.Color.White;
+            this.btnAddToCart.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnAddToCart.ForeColor = System.Drawing.Color.Black;
+            this.btnAddToCart.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnAddToCart.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_cart_white;
+            this.btnAddToCart.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_cart_blue;
+            this.btnAddToCart.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAddToCart.Location = new System.Drawing.Point(9, 259);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(78, 45);
+            this.btnAddToCart.TabIndex = 36;
+            // 
+            // picImageProduct
+            // 
+            this.picImageProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picImageProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picImageProduct.ImageRotate = 0F;
+            this.picImageProduct.Location = new System.Drawing.Point(9, 13);
+            this.picImageProduct.Name = "picImageProduct";
+            this.picImageProduct.Size = new System.Drawing.Size(179, 169);
+            this.picImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImageProduct.TabIndex = 40;
+            this.picImageProduct.TabStop = false;
+            this.picImageProduct.Click += new System.EventHandler(this.picImageProduct_Click);
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(9, 185);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(179, 24);
+            this.lblProductName.TabIndex = 41;
+            this.lblProductName.Text = "Iphone 15 pro max";
+            // 
+            // lblProductPrice
+            // 
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Location = new System.Drawing.Point(9, 219);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(121, 24);
+            this.lblProductPrice.TabIndex = 41;
+            this.lblProductPrice.Text = "30.000.000đ";
+            // 
+            // pnlContainerProduct
+            // 
+            this.pnlContainerProduct.Controls.Add(this.lblProductPrice);
+            this.pnlContainerProduct.Controls.Add(this.lblProductName);
+            this.pnlContainerProduct.Controls.Add(this.picImageProduct);
+            this.pnlContainerProduct.Controls.Add(this.btnAddToCart);
+            this.pnlContainerProduct.Controls.Add(this.btnBuyNow);
+            this.pnlContainerProduct.Location = new System.Drawing.Point(3, 3);
+            this.pnlContainerProduct.Name = "pnlContainerProduct";
+            this.pnlContainerProduct.Size = new System.Drawing.Size(201, 319);
+            this.pnlContainerProduct.TabIndex = 49;
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -305,10 +318,10 @@
             this.Load += new System.EventHandler(this.FormProduct_Load);
             this.flpContainerCategory.ResumeLayout(false);
             this.flpContainerProduct.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).EndInit();
             this.pnlContainerProduct.ResumeLayout(false);
             this.pnlContainerProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -316,17 +329,17 @@
         #endregion
         private System.Windows.Forms.FlowLayoutPanel flpContainerCategory;
         private System.Windows.Forms.FlowLayoutPanel flpContainerProduct;
-        private Guna.UI2.WinForms.Guna2Panel pnlContainerProduct;
-        private System.Windows.Forms.Label lblProductPrice;
-        private System.Windows.Forms.Label lblProductName;
-        private Guna.UI2.WinForms.Guna2PictureBox picImageProduct;
-        private Guna.UI2.WinForms.Guna2Button btnAddToCart;
-        private Guna.UI2.WinForms.Guna2Button btnBuyNow;
         private Guna.UI2.WinForms.Guna2Button btnCategory;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btnSearchProduct;
         private Guna.UI2.WinForms.Guna2TextBox txtProduct;
         private Guna.UI2.WinForms.Guna2Button btnFilter;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
+        private Guna.UI2.WinForms.Guna2Panel pnlContainerProduct;
+        private System.Windows.Forms.Label lblProductPrice;
+        private System.Windows.Forms.Label lblProductName;
+        private Guna.UI2.WinForms.Guna2PictureBox picImageProduct;
+        private Guna.UI2.WinForms.Guna2Button btnAddToCart;
+        private Guna.UI2.WinForms.Guna2Button btnBuyNow;
     }
 }

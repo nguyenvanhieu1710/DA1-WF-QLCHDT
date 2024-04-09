@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace DAL_CuaHangDienThoai
                         Price = int.Parse(sqlDataReader["Price"].ToString()),
                         TradeMark = sqlDataReader["TradeMark"].ToString(),
                         LaunchTime = DateTime.Parse(sqlDataReader["LaunchTime"].ToString()),
-                        Imageproduct = sqlDataReader["Imageproduct"].ToString(),
+                        ImageProduct = sqlDataReader["Imageproduct"].ToString(),
                         DayCreated = DateTime.Parse(sqlDataReader["DayCreated"].ToString()),
                         IdCategory = int.Parse(sqlDataReader["IdCategory"].ToString()),
                         ProductDetail = sqlDataReader["ProductDetail"].ToString()
@@ -41,6 +42,64 @@ namespace DAL_CuaHangDienThoai
                 throw ex;
             }
             finally { DatabaseAccess.CloseConnecGlobal(); }
+        }
+        public DataTable productList()
+        {
+            try
+            {
+                DataTable dataTable = DatabaseAccess.GetDataTable("selectproduct");
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int addProduct(Product_DTO Product_DTO)
+        {
+            try
+            {
+                int result = DatabaseAccess.ExcuteNonQuery($"insertProduct N'{Product_DTO.ProductName}', " +
+                $"'{Product_DTO.Quantity}', '{Product_DTO.Price}'," +
+                $"N'{Product_DTO.TradeMark}', '{Product_DTO.LaunchTime}', " +
+                $"N'{Product_DTO.ImageProduct}', '{Product_DTO.DayCreated}', " +
+                $"'{Product_DTO.IdCategory}', N'{Product_DTO.ProductDetail}' ");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int fixProduct(Product_DTO Product_DTO)
+        {
+            try
+            {
+                int result = DatabaseAccess.ExcuteNonQuery($"updateProduct '{Product_DTO.IdProduct}', " +
+                    $"N'{Product_DTO.ProductName}', " +
+                $"'{Product_DTO.Quantity}', '{Product_DTO.Price}'," +
+                $"N'{Product_DTO.TradeMark}', '{Product_DTO.LaunchTime}'," +
+                $"N'{Product_DTO.ImageProduct}', '{Product_DTO.DayCreated}'," +
+                $"'{Product_DTO.IdCategory}', N'{Product_DTO.ProductDetail}' ");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int deleteProduct(Product_DTO Product_DTO)
+        {
+            try
+            {
+                int result = DatabaseAccess.ExcuteNonQuery($"deleteProduct '{Product_DTO.IdProduct}'");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

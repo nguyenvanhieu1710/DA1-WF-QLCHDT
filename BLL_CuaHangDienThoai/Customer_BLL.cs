@@ -65,6 +65,10 @@ namespace BLL_CuaHangDienThoai
                 {
                     list.Add(item);
                 }
+                if (item.CustomerName.Contains(customer.CustomerName))
+                {
+                    list.Add(item);
+                }
             }
             return list;
         }

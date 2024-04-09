@@ -95,8 +95,14 @@ namespace QuanLyCuaHangDienThoai
         private void btnCategory_Click(object sender, EventArgs e)
         {
             lblTopic.Text = "Category Management";
-            picTopic.Image = Properties.Resources.icon_login_blue;
+            picTopic.Image = Properties.Resources.icon_mobile_phone_blue;
             content(new FormCategoryManagement());
+        }
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+            lblTopic.Text = "Cart";
+            picTopic.Image = Properties.Resources.icon_mobile_phone_blue;
+            content(new FormCart());
         }
     }
 }

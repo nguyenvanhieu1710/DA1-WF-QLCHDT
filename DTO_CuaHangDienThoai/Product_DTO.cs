@@ -14,7 +14,7 @@ namespace DTO_CuaHangDienThoai
         public decimal Price { get; set; } = 0;
         public string TradeMark { get; set; } = string.Empty;
         public DateTime LaunchTime { get; set; } = DateTime.Now;
-        public string Imageproduct { get; set; } = string.Empty;
+        public string ImageProduct { get; set; } = string.Empty;
         public DateTime DayCreated { get; set; } = DateTime.Now;
         public int IdCategory {  get; set; } = 0; 
         public string ProductDetail { get; set; } = string.Empty;

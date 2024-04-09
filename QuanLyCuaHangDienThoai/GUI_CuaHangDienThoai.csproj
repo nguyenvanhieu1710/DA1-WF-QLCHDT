@@ -177,6 +177,9 @@
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductDetail.resx">
+      <DependentUpon>FormProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProductManagement.resx">
       <DependentUpon>FormProductManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +336,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-basket-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-delete-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-dashboard-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-dashboard-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

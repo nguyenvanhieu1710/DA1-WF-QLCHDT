@@ -177,9 +177,18 @@ namespace QuanLyCuaHangDienThoai
         }
         private void ChooseImage(Customer_DTO customer_DTO)
         {
-            // lưu vô đối tượng DTO để cho vào cơ sở dữ liệu
-            customer_DTO.ImageCustomer = saveImage;
-            picCustomerImage.Image.Save($@"{saveImage}");
+            if (!Directory.Exists(saveImage))
+            {
+                // MessageBox.Show("Path is not exists or not valid");
+                saveImage = saveImage.Replace(@"\\", @"\");
+                picCustomerImage.Image.Save($@"{saveImage}");
+            }
+            else
+            {
+                // lưu vô đối tượng DTO để cho vào cơ sở dữ liệu
+                customer_DTO.ImageCustomer = saveImage;
+                picCustomerImage.Image.Save($@"{saveImage}");
+            }          
         }
         private void NoChooseImage(Customer_DTO customer_DTO)
         {
@@ -188,20 +197,28 @@ namespace QuanLyCuaHangDienThoai
             customer_DTO.ImageCustomer = picCustomerImage.ImageLocation;
             string OldPath = picCustomerImage.ImageLocation;
 
-            // Kiểm tra xem đường dẫn cũ tồn tại không
-            var directory = Path.GetDirectoryName(OldPath);
-            if (!Directory.Exists(directory)) // nếu đường dẫn không tồn tại
+            if (OldPath == "" || OldPath == null || OldPath == "No Image")
             {
-                if(OldPath == "" || OldPath == null || OldPath == "No Image")
-                {
-                    // nếu trong database là ảnh trống thì cứ để nguyên và thoát ra thôi
-                    return;
-                }
-                // Tạo đường dẫn nếu nó không tồn tại
-                Directory.CreateDirectory(directory);
-                picCustomerImage.Image.Save($@"{OldPath}");
+                // nếu trong database là ảnh trống thì cứ để nguyên và thoát ra thôi
+                return;
             }
-            // nếu đường dẫn đã tồn tại thì không cần save lại nữa
+            try
+            {
+                // Kiểm tra xem đường dẫn cũ tồn tại không
+                var directory = Path.GetDirectoryName(OldPath);
+                if (!Directory.Exists(directory)) // nếu đường dẫn không tồn tại
+                {
+                    MessageBox.Show("Path is not exists or not valid");
+                    // Tạo đường dẫn nếu nó không tồn tại
+                    Directory.CreateDirectory(directory);
+                    picCustomerImage.Image.Save($@"{OldPath}");
+                }
+                // nếu đường dẫn đã tồn tại thì không cần save lại nữa
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }          
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {

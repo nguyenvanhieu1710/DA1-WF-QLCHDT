@@ -16,7 +16,7 @@ namespace BLL_CuaHangDienThoai
         public static bool IsValidId(string id)
         {
             // chuỗi chỉ chứa các chữ số, không bắt đầu bằng số 0 và không vượt quá 10 chữ số (tức là không vượt quá giới hạn của kiểu int) -> true
-            Regex regex = new Regex(@"^[1-9][0-9]{0,9}$");
+            Regex regex = new Regex(@"^[0-9][0-9]{0,9}$");
             return regex.IsMatch(id);
         }
         /// <summary>

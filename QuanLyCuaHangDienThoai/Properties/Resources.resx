@@ -130,8 +130,8 @@
   <data name="icon-home-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-home-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-login-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-login-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-delete-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-delete-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye-close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,9 +145,6 @@
   <data name="icon-mobile-phone-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-mobile-phone-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-filter-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-filter-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon-register-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-register-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,6 +153,9 @@
   </data>
   <data name="icon-mobile-phone-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-mobile-phone-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye-open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye-open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -168,6 +168,12 @@
   </data>
   <data name="icon-load-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-load-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-dashboard-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-dashboard-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-basket-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-basket-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-basket-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-basket-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +193,9 @@
   <data name="icon-overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-overview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-email-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-email-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-register-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-register-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,8 +205,8 @@
   <data name="icon-overview-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-overview-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-login-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-login-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-cart-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-cart-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,10 +217,10 @@
   <data name="icon-list-gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-list-gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-email-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-email-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-filter-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-filter-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-basket-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-basket-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-dashboard-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-dashboard-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
