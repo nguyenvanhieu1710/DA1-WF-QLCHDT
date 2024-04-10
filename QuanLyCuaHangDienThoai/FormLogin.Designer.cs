@@ -28,18 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.picUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelFogetPassword = new System.Windows.Forms.LinkLabel();
             this.cbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
@@ -96,33 +92,7 @@
             this.btnLogin.Size = new System.Drawing.Size(204, 57);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
-            this.btnLogin.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 615);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 24);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Don\'t have an account?";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(465, 615);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(129, 24);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Register here";
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 15;
-            this.guna2Elipse1.TargetControl = this;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // guna2Button1
             // 
@@ -199,18 +169,19 @@
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.IconRightClick += new System.EventHandler(this.txtPassword_IconRightClick);
             // 
-            // linkLabel2
+            // linkLabelFogetPassword
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkLabel2.Location = new System.Drawing.Point(491, 396);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(150, 24);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Foget Password";
+            this.linkLabelFogetPassword.AutoSize = true;
+            this.linkLabelFogetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabelFogetPassword.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabelFogetPassword.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.linkLabelFogetPassword.Location = new System.Drawing.Point(491, 396);
+            this.linkLabelFogetPassword.Name = "linkLabelFogetPassword";
+            this.linkLabelFogetPassword.Size = new System.Drawing.Size(150, 24);
+            this.linkLabelFogetPassword.TabIndex = 2;
+            this.linkLabelFogetPassword.TabStop = true;
+            this.linkLabelFogetPassword.Text = "Foget Password";
+            this.linkLabelFogetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFogetPassword_LinkClicked);
             // 
             // cbRole
             // 
@@ -221,8 +192,8 @@
             this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbRole.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbRole.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cbRole.ItemHeight = 30;
             this.cbRole.Items.AddRange(new object[] {
             "Role",
@@ -243,9 +214,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 666);
             this.Controls.Add(this.cbRole);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.linkLabelFogetPassword);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.txtPassword);
@@ -272,11 +241,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabelFogetPassword;
         private Guna.UI2.WinForms.Guna2ComboBox cbRole;
     }
 }

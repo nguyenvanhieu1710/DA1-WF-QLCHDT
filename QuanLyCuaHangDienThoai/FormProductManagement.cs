@@ -143,6 +143,10 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;
@@ -182,6 +186,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnFix_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;
@@ -222,6 +230,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;

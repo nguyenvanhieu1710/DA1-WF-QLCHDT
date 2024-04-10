@@ -44,7 +44,11 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if(txtUserName.Text == "")
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+            if (txtUserName.Text == "")
             {
                 MessageBox.Show("Please enter User Name");
                 return;
@@ -95,6 +99,10 @@ namespace QuanLyCuaHangDienThoai
         int code;
         private void btnSendCode_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (txtEmail.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter Email");

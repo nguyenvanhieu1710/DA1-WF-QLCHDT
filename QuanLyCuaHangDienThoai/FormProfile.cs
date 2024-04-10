@@ -20,13 +20,22 @@ namespace QuanLyCuaHangDienThoai
             InitializeComponent();
         }
         Customer_BLL customer_BLL = new Customer_BLL();
-        private void FormProfile_Load(object sender, EventArgs e)
+        private void Refrech()
         {
 
+        }
+        private void LoadData()
+        {
+
+        }
+        private void FormProfile_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            Refrech();
             txtUserName.Text = "";
             txtPhoneNumber.Text = "";
             picImageCustomer.Image = null;
@@ -141,6 +150,10 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;

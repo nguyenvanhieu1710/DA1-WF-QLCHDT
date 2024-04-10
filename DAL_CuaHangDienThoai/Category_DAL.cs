@@ -28,7 +28,7 @@ namespace DAL_CuaHangDienThoai
                     };
                     list.Add(Category);
                 }
-                return list;
+                return list;                
             }
             catch (Exception ex)
             {

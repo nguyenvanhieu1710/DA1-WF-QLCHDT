@@ -148,6 +148,9 @@
   <data name="icon-register-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-register-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-voucher-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-voucher-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-login-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-login-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,6 +190,9 @@
   <data name="icon-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-log-out-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-log-out-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-info-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-info-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,6 +211,9 @@
   <data name="icon-overview-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-overview-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-voucher-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-voucher-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-login-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-login-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,10 +226,13 @@
   <data name="icon-list-gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-list-gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-dashboard-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-dashboard-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-filter-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-filter-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-dashboard-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-dashboard-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-log-out-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-log-out-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

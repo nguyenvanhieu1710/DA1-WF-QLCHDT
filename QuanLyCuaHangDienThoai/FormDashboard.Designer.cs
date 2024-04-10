@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangDienThoai
 {
-    partial class Dashboard
+    partial class FormDashboard
     {
         /// <summary>
         /// Required designer variable.

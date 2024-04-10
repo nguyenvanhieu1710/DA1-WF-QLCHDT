@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_CuaHangDienThoai;
+using DTO_CuaHangDienThoai;
 
 namespace QuanLyCuaHangDienThoai
 {
@@ -33,26 +34,50 @@ namespace QuanLyCuaHangDienThoai
                 txtPassword.PasswordChar = '\0';
             }
         }
-
+        private void deleteControl()
+        {
+            foreach (Control c in this.Controls)
+            {
+                this.Controls.Remove(c);
+            }
+            // C#
+            this.Controls.Remove(panel2);
+            this.Controls.Remove(txtUserName);
+            this.Controls.Remove(linkLabelFogetPassword);
+        }
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
             
         }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        // người dùng định nghĩa 1 con trỏ hàm 
+        public delegate void OpenNewForm(Account_DTO account);
+        public OpenNewForm openNewForm;
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             Account_BLL account_BLL = new Account_BLL();
-            
-            if(account_BLL.CheckAccount(txtUserName.Text, txtPassword.Text, cbRole.Text))
+            Account_DTO accountDTO = new Account_DTO() 
+            { AccoutName = txtUserName.Text, Password = txtPassword.Text, Role = cbRole.Text };
+
+            if (account_BLL.CheckAccount(accountDTO))
             {
                 FormLoading formLoading = new FormLoading();
                 formLoading.ShowDialog();
+                openNewForm(accountDTO);
             }
             else
             {
                 MessageBox.Show("User Name & Password & Role is incorrect","Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
+        }
+
+        private void linkLabelFogetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            deleteControl();
         }
     }
 }

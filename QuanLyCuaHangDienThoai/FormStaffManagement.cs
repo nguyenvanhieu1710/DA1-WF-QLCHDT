@@ -82,6 +82,10 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;
@@ -277,6 +281,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnFixStaff_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;
@@ -317,6 +325,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;

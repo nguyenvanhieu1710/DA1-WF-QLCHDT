@@ -13,12 +13,12 @@ namespace BLL_CuaHangDienThoai
     public class Account_BLL
     {
         Account_DAL account_DAL = new Account_DAL();
-        public bool CheckAccount(string UserName, string Password, string Role)
+        public bool CheckAccount(Account_DTO account_DTO)
         {
             List<Account_DTO> accountList = account_DAL.AccoutList();
             foreach (Account_DTO account in accountList)
             {
-                if(account.AccoutName == UserName && account.Password == Password && account.Role == Role)
+                if(account.AccoutName == account_DTO.AccoutName && account.Password == account_DTO.Password && account.Role == account_DTO.Role)
                 { 
                     return true;
                 } 

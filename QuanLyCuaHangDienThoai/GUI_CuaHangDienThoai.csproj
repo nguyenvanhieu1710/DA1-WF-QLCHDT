@@ -52,11 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBill.cs">
       <SubType>Form</SubType>
@@ -154,10 +154,16 @@
     <Compile Include="FormVoucher.Designer.cs">
       <DependentUpon>FormVoucher.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVoucherManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVoucherManagement.Designer.cs">
+      <DependentUpon>FormVoucherManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBill.resx">
       <DependentUpon>FormBill.cs</DependentUpon>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVoucher.resx">
       <DependentUpon>FormVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVoucherManagement.resx">
+      <DependentUpon>FormVoucherManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -345,6 +354,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-dashboard-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-voucher-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-voucher-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-log-out-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-log-out-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

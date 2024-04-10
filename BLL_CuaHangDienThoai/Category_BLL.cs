@@ -59,6 +59,11 @@ namespace BLL_CuaHangDienThoai
                 {
                     list.Add(item);
                 }
+                // tương đối
+                if (item.CategoryName.Contains(Category.CategoryName))
+                {
+                    list.Add(item);
+                }
             }
             return list;
         }

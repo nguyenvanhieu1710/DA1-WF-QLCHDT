@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangDienThoai
 {
-    public partial class Dashboard : Form
+    public partial class FormDashboard : Form
     {
-        public Dashboard()
+        public FormDashboard()
         {
             InitializeComponent();
         }

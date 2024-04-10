@@ -37,6 +37,7 @@ namespace DAL_CuaHangDienThoai
             {
                 throw ex;            
             }
+            finally { DatabaseAccess.CloseConnecGlobal(); }
         }
         public void insertAccountCustomer_DAL(string Account, string Password, string Email)
         {

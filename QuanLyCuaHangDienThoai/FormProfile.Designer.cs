@@ -30,6 +30,7 @@
         {
             this.btnChooseImage = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.DateTimePickerBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,9 +41,15 @@
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.picImageCustomer = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.DateTimePickerBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.pnlFogetPassword = new System.Windows.Forms.Panel();
+            this.btnSendCode = new Guna.UI2.WinForms.Guna2Button();
+            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtVerificationCode = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageCustomer)).BeginInit();
+            this.pnlFogetPassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnChooseImage
@@ -85,6 +92,23 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(572, 398);
             this.guna2GroupBox1.TabIndex = 22;
             this.guna2GroupBox1.Text = "User infomation";
+            // 
+            // DateTimePickerBirthday
+            // 
+            this.DateTimePickerBirthday.BorderColor = System.Drawing.Color.Transparent;
+            this.DateTimePickerBirthday.Checked = true;
+            this.DateTimePickerBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DateTimePickerBirthday.FillColor = System.Drawing.Color.White;
+            this.DateTimePickerBirthday.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DateTimePickerBirthday.ForeColor = System.Drawing.Color.Gray;
+            this.DateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateTimePickerBirthday.Location = new System.Drawing.Point(248, 200);
+            this.DateTimePickerBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerBirthday.Name = "DateTimePickerBirthday";
+            this.DateTimePickerBirthday.Size = new System.Drawing.Size(248, 36);
+            this.DateTimePickerBirthday.TabIndex = 24;
+            this.DateTimePickerBirthday.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
             // 
             // label1
             // 
@@ -254,22 +278,136 @@
             this.picImageCustomer.TabStop = false;
             this.picImageCustomer.UseTransparentBackground = true;
             // 
-            // DateTimePickerBirthday
+            // pnlFogetPassword
             // 
-            this.DateTimePickerBirthday.BorderColor = System.Drawing.Color.Transparent;
-            this.DateTimePickerBirthday.Checked = true;
-            this.DateTimePickerBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DateTimePickerBirthday.FillColor = System.Drawing.Color.White;
-            this.DateTimePickerBirthday.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DateTimePickerBirthday.ForeColor = System.Drawing.Color.Gray;
-            this.DateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePickerBirthday.Location = new System.Drawing.Point(248, 200);
-            this.DateTimePickerBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateTimePickerBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateTimePickerBirthday.Name = "DateTimePickerBirthday";
-            this.DateTimePickerBirthday.Size = new System.Drawing.Size(248, 36);
-            this.DateTimePickerBirthday.TabIndex = 24;
-            this.DateTimePickerBirthday.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
+            this.pnlFogetPassword.Controls.Add(this.btnSendCode);
+            this.pnlFogetPassword.Controls.Add(this.txtPassword);
+            this.pnlFogetPassword.Controls.Add(this.txtVerificationCode);
+            this.pnlFogetPassword.Controls.Add(this.txtEmail);
+            this.pnlFogetPassword.Controls.Add(this.guna2TextBox1);
+            this.pnlFogetPassword.Location = new System.Drawing.Point(26, 289);
+            this.pnlFogetPassword.Name = "pnlFogetPassword";
+            this.pnlFogetPassword.Size = new System.Drawing.Size(670, 344);
+            this.pnlFogetPassword.TabIndex = 23;
+            // 
+            // btnSendCode
+            // 
+            this.btnSendCode.AutoRoundedCorners = true;
+            this.btnSendCode.BorderRadius = 26;
+            this.btnSendCode.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendCode.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSendCode.ForeColor = System.Drawing.Color.White;
+            this.btnSendCode.Location = new System.Drawing.Point(440, 201);
+            this.btnSendCode.Name = "btnSendCode";
+            this.btnSendCode.Size = new System.Drawing.Size(155, 55);
+            this.btnSendCode.TabIndex = 13;
+            this.btnSendCode.Text = "Send Code";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtPassword.BorderThickness = 2;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.DefaultText = "";
+            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.IconLeft = global::QuanLyCuaHangDienThoai.Properties.Resources.Password;
+            this.txtPassword.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.txtPassword.IconRight = global::QuanLyCuaHangDienThoai.Properties.Resources.eye_close;
+            this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.txtPassword.IconRightSize = new System.Drawing.Size(35, 35);
+            this.txtPassword.Location = new System.Drawing.Point(34, 121);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.PlaceholderText = "Password";
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.Size = new System.Drawing.Size(561, 68);
+            this.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtPassword.TabIndex = 10;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // txtVerificationCode
+            // 
+            this.txtVerificationCode.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtVerificationCode.BorderThickness = 2;
+            this.txtVerificationCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtVerificationCode.DefaultText = "";
+            this.txtVerificationCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtVerificationCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtVerificationCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVerificationCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVerificationCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVerificationCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtVerificationCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVerificationCode.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.txtVerificationCode.Location = new System.Drawing.Point(386, 273);
+            this.txtVerificationCode.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtVerificationCode.Name = "txtVerificationCode";
+            this.txtVerificationCode.PasswordChar = '\0';
+            this.txtVerificationCode.PlaceholderText = "Verification Code";
+            this.txtVerificationCode.SelectedText = "";
+            this.txtVerificationCode.Size = new System.Drawing.Size(209, 45);
+            this.txtVerificationCode.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtVerificationCode.TabIndex = 12;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtEmail.BorderThickness = 2;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.IconLeft = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_email_blue;
+            this.txtEmail.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.txtEmail.Location = new System.Drawing.Point(34, 196);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(406, 60);
+            this.txtEmail.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtEmail.TabIndex = 11;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2TextBox1.BorderThickness = 2;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.IconLeft = global::QuanLyCuaHangDienThoai.Properties.Resources.User;
+            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.guna2TextBox1.Location = new System.Drawing.Point(34, 35);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "User name";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(561, 70);
+            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2TextBox1.TabIndex = 9;
             // 
             // FormProfile
             // 
@@ -277,6 +415,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 654);
+            this.Controls.Add(this.pnlFogetPassword);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
@@ -291,6 +430,7 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageCustomer)).EndInit();
+            this.pnlFogetPassword.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,5 +450,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerBirthday;
+        private System.Windows.Forms.Panel pnlFogetPassword;
+        private Guna.UI2.WinForms.Guna2Button btnSendCode;
+        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
+        private Guna.UI2.WinForms.Guna2TextBox txtVerificationCode;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

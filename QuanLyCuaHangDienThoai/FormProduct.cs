@@ -24,13 +24,15 @@ namespace QuanLyCuaHangDienThoai
         private Panel GenerateProduct(Product_DTO product)
         {
             Panel panel = new Panel();
-            
+
+            panel.BorderStyle = BorderStyle.Fixed3D;
             panel.Location = new System.Drawing.Point(3, 3);
             panel.Name = "pnlContainerProduct";
             panel.Size = new System.Drawing.Size(201, 319);
             panel.TabIndex = 49;
+
             Guna2PictureBox pictureBox = new Guna2PictureBox();
-            pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            // pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox.ImageRotate = 0F;
             pictureBox.Location = new System.Drawing.Point(9, 13);
@@ -40,6 +42,7 @@ namespace QuanLyCuaHangDienThoai
             pictureBox.TabStop = false;
             pictureBox.ImageLocation = product.ImageProduct;
             pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+
             Label labelProductName = new Label();
             labelProductName.AutoSize = true;
             labelProductName.Location = new System.Drawing.Point(9, 185);
@@ -47,6 +50,7 @@ namespace QuanLyCuaHangDienThoai
             labelProductName.Size = new System.Drawing.Size(179, 24);
             labelProductName.TabIndex = 41;
             labelProductName.Text = product.ProductName;
+
             Label labelProductPrice = new Label();
             labelProductPrice.AutoSize = true;
             labelProductPrice.Location = new System.Drawing.Point(9, 219);
@@ -54,6 +58,7 @@ namespace QuanLyCuaHangDienThoai
             labelProductPrice.Size = new System.Drawing.Size(121, 24);
             labelProductPrice.TabIndex = 41;
             labelProductPrice.Text = product.Price.ToString();
+
             Guna2Button buttonAddToCart = new Guna2Button();
             buttonAddToCart.AutoRoundedCorners = true;
             buttonAddToCart.BorderColor = System.Drawing.Color.DodgerBlue;
@@ -76,6 +81,11 @@ namespace QuanLyCuaHangDienThoai
             buttonAddToCart.Name = "btnAddToCart";
             buttonAddToCart.Size = new System.Drawing.Size(78, 45);
             buttonAddToCart.TabIndex = 36;
+            buttonAddToCart.Click += (s, e) =>
+            {
+                MessageBox.Show("Feature is updating");
+            };
+
             Guna2Button buttonBuyNow = new Guna2Button();
             buttonBuyNow.AutoRoundedCorners = true;
             buttonBuyNow.BorderColor = System.Drawing.Color.DodgerBlue;

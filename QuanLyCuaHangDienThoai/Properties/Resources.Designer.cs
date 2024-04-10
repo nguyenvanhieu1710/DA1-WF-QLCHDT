@@ -263,6 +263,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_log_out_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-log-out-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_log_out_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-log-out-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_login_blue {
             get {
                 object obj = ResourceManager.GetObject("icon-login-blue", resourceCulture);
@@ -376,6 +396,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap icon_user_white {
             get {
                 object obj = ResourceManager.GetObject("icon-user-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_voucher_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-voucher-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_voucher_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-voucher-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

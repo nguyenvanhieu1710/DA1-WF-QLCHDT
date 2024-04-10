@@ -8,13 +8,13 @@ namespace DTO_CuaHangDienThoai
 {
     public class Voucher_DTO
     {
-        public int idVoucher;
+        public int IdVoucher {get;set;} = 0;
         public string VoucherName { get; set; } = string.Empty;
         public int FixedPrice { get; set; } = 0;
         public int Minimumprice { get; set; } = 0;
         public int Quantity { get; set; } = 0;
         public DateTime StartDay { get; set; } = DateTime.Now;
         public DateTime EndDate { get; set; } = DateTime.Now.AddDays(1);
-        public int idCategory { get; set; } = 0;
+        public int IdCategory { get; set; } = 0;
     }
 }

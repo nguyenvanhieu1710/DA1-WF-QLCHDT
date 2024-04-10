@@ -23,8 +23,6 @@ namespace QuanLyCuaHangDienThoai
             {
                 timer1.Stop();
                 this.Hide();
-                FormHome formHome = new FormHome();
-                formHome.ShowDialog();
             }
             else
             {

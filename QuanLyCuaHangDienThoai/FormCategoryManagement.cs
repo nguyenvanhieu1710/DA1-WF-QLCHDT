@@ -65,6 +65,10 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;
@@ -95,6 +99,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnFixCategory_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;
@@ -124,6 +132,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
             if (!CheckRegex())
             {
                 return;

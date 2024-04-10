@@ -42,6 +42,7 @@
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.BorderRadius = 10;
             this.picLogo.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_mobile_phone_blue;
             this.picLogo.ImageRotate = 0F;
             this.picLogo.Location = new System.Drawing.Point(24, 3);
