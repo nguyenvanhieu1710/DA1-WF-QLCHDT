@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL_CuaHangDienThoai;
 using DTO_CuaHangDienThoai;
 
 namespace QuanLyCuaHangDienThoai
@@ -147,7 +148,10 @@ namespace QuanLyCuaHangDienThoai
         {
             if(MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
+                LoadControlWithCustomer();
+                Account_BLL account_BLL = new Account_BLL();
+                account_BLL.UpdateStatusOffline();
+                MessageBox.Show("Log out success", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             }
         }
         private void btnProductManagement_Click(object sender, EventArgs e)
@@ -201,6 +205,18 @@ namespace QuanLyCuaHangDienThoai
             lblTopic.Text = "Help";
             picTopic.Image = Properties.Resources.icon_info_blue;
             content(new FormMessage());
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+            Account_BLL account_BLL = new Account_BLL();
+            account_BLL.UpdateStatusOffline();
+            MessageBox.Show("Log out success", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            Close();
         }
     }
 }

@@ -13,6 +13,11 @@ namespace BLL_CuaHangDienThoai
     public class Account_BLL
     {
         Account_DAL account_DAL = new Account_DAL();
+        public List<Account_DTO> accountList()
+        {
+            List<Account_DTO> accountList = account_DAL.AccoutList();
+            return accountList;
+        }
         public bool CheckAccount(Account_DTO account_DTO)
         {
             List<Account_DTO> accountList = account_DAL.AccoutList();
@@ -67,6 +72,52 @@ namespace BLL_CuaHangDienThoai
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        public int updatePassword(string customerName, string newPassword)
+        {          
+            List<Account_DTO> accountList = account_DAL.AccoutList();
+            foreach (Account_DTO account in accountList)
+            {
+                if (account.AccoutName == customerName)
+                {
+                    int result = account_DAL.updatePassword(account, newPassword);
+                    return result;
+                }
+            }
+            return 0;
+        }
+        public void updateStatusOnline(Account_DTO account_DTO)
+        {
+            List<Account_DTO> accounts = accountList();
+            foreach (Account_DTO account in accounts)
+            {
+                if (account.AccoutName == account_DTO.AccoutName)
+                {
+                    account_DAL.updateStatusOnline(account);
+                }
+            }
+        }
+        public void updateStatusOffline(Account_DTO account_DTO)
+        {
+            List<Account_DTO> accounts = accountList();
+            foreach (Account_DTO account in accounts)
+            {
+                if (account.AccoutName == account_DTO.AccoutName)
+                {
+                    account_DAL.updateStatusOffline(account);
+                }
+            }
+        }
+        public void UpdateStatusOffline()
+        {
+            List<Account_DTO> accounts = accountList();
+            foreach (Account_DTO account in accounts)
+            {
+                if (account.Status == "Online")
+                {
+                    account_DAL.updateStatusOffline(account);
+                }
             }
         }
     }

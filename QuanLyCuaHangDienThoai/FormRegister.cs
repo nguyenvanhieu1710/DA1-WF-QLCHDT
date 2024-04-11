@@ -42,31 +42,40 @@ namespace QuanLyCuaHangDienThoai
 
         }
 
+        private bool CheckRegex()
+        {
+            if (txtUserName.Text == "")
+            {
+                MessageBox.Show("Please enter User Name");
+                return false;
+            }
+            if (txtPassword.Text == "")
+            {
+                MessageBox.Show("Please enter Password");
+                return false;
+            }
+            if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter Email");
+                return false;
+            }
+            if (txtVerificationCode.Text == "")
+            {
+                MessageBox.Show("Please enter Verification Code");
+                return false;
+            }
+            return true;
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }
-            if (txtUserName.Text == "")
+            if (!CheckRegex())
             {
-                MessageBox.Show("Please enter User Name");
-                return;
-            }
-            if(txtPassword.Text == "")
-            {
-                MessageBox.Show("Please enter Password");
-                return;
-            }
-            if(txtEmail.Text == "")
-            {
-                MessageBox.Show("Please enter Email");
-                return;
-            }
-            if(txtVerificationCode.Text == "")
-            {
-                MessageBox.Show("Please enter Verification Code");
-                return;
+                return ;
             }
             Account_BLL account_BLL = new Account_BLL();
             if (account_BLL.CheckExited(txtUserName.Text))
@@ -74,26 +83,21 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("User Name exited");
                 return;
             }
+            if (txtVerificationCode.Text != code.ToString())
+            {
+                MessageBox.Show("Verification Code is incorrect");
+                return;                
+            }
+            account_BLL.insertAccountCustomer_BLL(txtUserName.Text, txtPassword.Text, txtEmail.Text);
+            if (account_BLL.CheckExited(txtUserName.Text))
+            {
+                MessageBox.Show("Register Finish");
+                return;
+            }
             else
             {
-                if(txtVerificationCode.Text == code.ToString())
-                {
-                    account_BLL.insertAccountCustomer_BLL(txtUserName.Text, txtPassword.Text, txtEmail.Text);
-                    if (account_BLL.CheckExited(txtUserName.Text))
-                    {
-                        MessageBox.Show("Register Finish");
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Register Fail");
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Verification Code is incorrect");
-                }
+                MessageBox.Show("Register Fail");
+                return;
             }
         }
         int code;

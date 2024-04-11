@@ -8,7 +8,7 @@ namespace DTO_CuaHangDienThoai
 {
     public class Account_DTO
     {
-        // private int IdAccount;
+        public int IdAccount { get; set; } = 0;
         public string AccoutName { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Role {  get; set; } = string.Empty ;
