@@ -30,7 +30,7 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.cboGender = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.GroupBoxUser = new Guna.UI2.WinForms.Guna2GroupBox();
             this.picCustomerImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.DateTimePickerBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.flpContainerCustomer = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRefrech = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2GroupBox1.SuspendLayout();
+            this.GroupBoxUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerImage)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,24 +85,24 @@
             this.cboGender.StartIndex = 0;
             this.cboGender.TabIndex = 14;
             // 
-            // guna2GroupBox1
+            // GroupBoxUser
             // 
-            this.guna2GroupBox1.Controls.Add(this.picCustomerImage);
-            this.guna2GroupBox1.Controls.Add(this.DateTimePickerBirthday);
-            this.guna2GroupBox1.Controls.Add(this.label1);
-            this.guna2GroupBox1.Controls.Add(this.label4);
-            this.guna2GroupBox1.Controls.Add(this.btnChooseImage);
-            this.guna2GroupBox1.Controls.Add(this.cboGender);
-            this.guna2GroupBox1.Controls.Add(this.txtIdUser);
-            this.guna2GroupBox1.Controls.Add(this.txtPhoneNumber);
-            this.guna2GroupBox1.Controls.Add(this.txtUserName);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 6);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(869, 234);
-            this.guna2GroupBox1.TabIndex = 21;
-            this.guna2GroupBox1.Text = "User infomation";
+            this.GroupBoxUser.Controls.Add(this.picCustomerImage);
+            this.GroupBoxUser.Controls.Add(this.DateTimePickerBirthday);
+            this.GroupBoxUser.Controls.Add(this.label1);
+            this.GroupBoxUser.Controls.Add(this.label4);
+            this.GroupBoxUser.Controls.Add(this.btnChooseImage);
+            this.GroupBoxUser.Controls.Add(this.cboGender);
+            this.GroupBoxUser.Controls.Add(this.txtIdUser);
+            this.GroupBoxUser.Controls.Add(this.txtPhoneNumber);
+            this.GroupBoxUser.Controls.Add(this.txtUserName);
+            this.GroupBoxUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GroupBoxUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.GroupBoxUser.Location = new System.Drawing.Point(12, 6);
+            this.GroupBoxUser.Name = "GroupBoxUser";
+            this.GroupBoxUser.Size = new System.Drawing.Size(869, 234);
+            this.GroupBoxUser.TabIndex = 21;
+            this.GroupBoxUser.Text = "User infomation";
             // 
             // picCustomerImage
             // 
@@ -426,7 +426,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.guna2GroupBox1);
+            this.panel1.Controls.Add(this.GroupBoxUser);
             this.panel1.Controls.Add(this.btnRefrech);
             this.panel1.Controls.Add(this.btnSearchUser);
             this.panel1.Controls.Add(this.btnDeleteUser);
@@ -452,8 +452,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormUserManagement";
             this.Load += new System.EventHandler(this.FormUserManagement_Load);
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
+            this.GroupBoxUser.ResumeLayout(false);
+            this.GroupBoxUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomerImage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -467,7 +467,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox picCustomerImage;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox cboGender;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox GroupBoxUser;
         private Guna.UI2.WinForms.Guna2Button btnChooseImage;
         private Guna.UI2.WinForms.Guna2TextBox txtIdUser;
         private Guna.UI2.WinForms.Guna2TextBox txtPhoneNumber;

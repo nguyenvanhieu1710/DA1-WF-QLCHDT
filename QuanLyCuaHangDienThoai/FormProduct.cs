@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_CuaHangDienThoai;
 using DTO_CuaHangDienThoai;
+using static QuanLyCuaHangDienThoai.FormProduct;
 
 namespace QuanLyCuaHangDienThoai
 {
@@ -21,6 +22,13 @@ namespace QuanLyCuaHangDienThoai
         }
         Product_BLL product_BLL = new Product_BLL();
         Category_BLL Category_BLL = new Category_BLL();
+        // người dùng định nghĩa 1 con trỏ hàm 
+        // public event EventHandler openNewForm;
+        // người dùng định nghĩa 1 con trỏ hàm 
+        public delegate void MoveInFormProductDetail(Product_DTO product_DTO);
+        public MoveInFormProductDetail moveInFormProductDetail;
+        public delegate void MoveInFormCart(Product_DTO product_DTO);
+        public MoveInFormCart moveInFormCart;
         private Panel GenerateProduct(Product_DTO product)
         {
             Panel panel = new Panel();
@@ -42,6 +50,13 @@ namespace QuanLyCuaHangDienThoai
             pictureBox.TabStop = false;
             pictureBox.ImageLocation = product.ImageProduct;
             pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox.Click += (s, e) =>
+            {
+                // MessageBox.Show("Feature is updating");
+                // Product_DTO product_DTO = product;
+                moveInFormProductDetail(product);
+                // openNewForm(this, new EventArgs());
+            };
 
             Label labelProductName = new Label();
             labelProductName.AutoSize = true;
@@ -57,7 +72,7 @@ namespace QuanLyCuaHangDienThoai
             labelProductPrice.Name = "lblProductPrice";
             labelProductPrice.Size = new System.Drawing.Size(121, 24);
             labelProductPrice.TabIndex = 41;
-            labelProductPrice.Text = product.Price.ToString();
+            labelProductPrice.Text = product.Price.ToString("N0") +"đ";
 
             Guna2Button buttonAddToCart = new Guna2Button();
             buttonAddToCart.AutoRoundedCorners = true;
@@ -84,6 +99,7 @@ namespace QuanLyCuaHangDienThoai
             buttonAddToCart.Click += (s, e) =>
             {
                 MessageBox.Show("Feature is updating");
+                addToCart(product);
             };
 
             Guna2Button buttonBuyNow = new Guna2Button();
@@ -108,6 +124,10 @@ namespace QuanLyCuaHangDienThoai
             buttonBuyNow.Name = "btnBuyNow";
             buttonBuyNow.Size = new System.Drawing.Size(78, 45);
             buttonBuyNow.TabIndex = 36;
+            buttonBuyNow.Click += (s, e) =>
+            {
+                MessageBox.Show("Feature is updating");
+            };
 
             panel.Controls.Add(labelProductName);
             panel.Controls.Add(labelProductPrice);
@@ -142,6 +162,33 @@ namespace QuanLyCuaHangDienThoai
             };
             return button;
         }
+        private void addToCart(Product_DTO product_DTO)
+        {
+            // kiểm tra login và lấy ra tài khoản đang online
+            Account_BLL account_BLL = new Account_BLL();
+            (int quantityAccountOnline, Account_DTO accountOnline) = account_BLL.checkAndGetAccountOnline();
+
+            if (quantityAccountOnline <= 0)
+            {
+                MessageBox.Show("Not logged in yet", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Cart_BLL cart_BLL = new Cart_BLL();
+            // vì id account và id customer là như nhau lên thêm cái nào cũng thế
+            int result = 1;
+            if(result == cart_BLL.addCart(product_DTO, accountOnline))
+            {
+                MessageBox.Show("Successfully added to cart", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Add to cart failed", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            // chuyển form
+            // moveInFormCart(product_DTO);
+        }
         private void searchCategory(Category_DTO category_DTO)
         {
             List<Product_DTO> productList_search = product_BLL.searchProductByIdCategory(category_DTO.IdCategory);
@@ -174,15 +221,30 @@ namespace QuanLyCuaHangDienThoai
             flpContainerCategory.HorizontalScroll.Maximum = 0;
             flpContainerCategory.AutoScroll = true;
         }
+        private void turnOffHorizontalScrollbar(FlowLayoutPanel flowLayoutPanel)
+        {
+            // tắt thanh cuộn ngang
+            flowLayoutPanel.AutoScroll = false;
+            flowLayoutPanel.HorizontalScroll.Enabled = false;
+            flowLayoutPanel.HorizontalScroll.Visible = false;
+            flowLayoutPanel.HorizontalScroll.Maximum = 0;
+
+            // tắt thanh cuộn dọc
+            flowLayoutPanel.VerticalScroll.Enabled = false;
+            flowLayoutPanel.VerticalScroll.Visible = false;
+            flowLayoutPanel.VerticalScroll.Maximum = 0;
+
+            flowLayoutPanel.AutoScroll = true;
+        }
         private void FormProduct_Load(object sender, EventArgs e)
         {
             Refrech();
             turnOffHorizontalScrollbar();
         }
-        public event EventHandler openNewForm;
+
         private void picImageProduct_Click(object sender, EventArgs e)
         {
-            openNewForm(this, new EventArgs());
+
         }
 
         private void btnCategory_Click(object sender, EventArgs e)

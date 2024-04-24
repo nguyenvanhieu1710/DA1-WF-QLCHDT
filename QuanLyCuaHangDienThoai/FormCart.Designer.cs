@@ -29,34 +29,33 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlProduct = new System.Windows.Forms.Panel();
             this.chkChooseProduct = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtQuantityProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnPlus = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinus = new Guna.UI2.WinForms.Guna2Button();
             this.lblProductName = new System.Windows.Forms.Label();
             this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearchProduct = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblIdCustomer = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkChooseAll = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.flpContainerProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.flpContainerProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,21 +68,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Your Cart";
             // 
-            // panel1
+            // pnlProduct
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.chkChooseProduct);
-            this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.guna2TextBox1);
-            this.panel1.Controls.Add(this.btnPlus);
-            this.panel1.Controls.Add(this.btnMinus);
-            this.panel1.Controls.Add(this.lblProductName);
-            this.panel1.Controls.Add(this.picImageProduct);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(886, 104);
-            this.panel1.TabIndex = 2;
+            this.pnlProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlProduct.Controls.Add(this.chkChooseProduct);
+            this.pnlProduct.Controls.Add(this.btnDeleteProduct);
+            this.pnlProduct.Controls.Add(this.lblPrice);
+            this.pnlProduct.Controls.Add(this.txtQuantityProduct);
+            this.pnlProduct.Controls.Add(this.btnPlus);
+            this.pnlProduct.Controls.Add(this.btnMinus);
+            this.pnlProduct.Controls.Add(this.lblProductName);
+            this.pnlProduct.Controls.Add(this.picImageProduct);
+            this.pnlProduct.Location = new System.Drawing.Point(3, 3);
+            this.pnlProduct.Name = "pnlProduct";
+            this.pnlProduct.Size = new System.Drawing.Size(883, 104);
+            this.pnlProduct.TabIndex = 2;
             // 
             // chkChooseProduct
             // 
@@ -102,51 +101,52 @@
             this.chkChooseProduct.UncheckedState.BorderThickness = 0;
             this.chkChooseProduct.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // guna2Button1
+            // btnDeleteProduct
             // 
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_delete_blue;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2Button1.Location = new System.Drawing.Point(794, 27);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(61, 49);
-            this.guna2Button1.TabIndex = 7;
+            this.btnDeleteProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteProduct.FillColor = System.Drawing.Color.Transparent;
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDeleteProduct.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteProduct.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_delete_blue;
+            this.btnDeleteProduct.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(794, 27);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(61, 49);
+            this.btnDeleteProduct.TabIndex = 7;
             // 
-            // label3
+            // lblPrice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(672, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Price";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(638, 40);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(53, 24);
+            this.lblPrice.TabIndex = 4;
+            this.lblPrice.Text = "Price";
             // 
-            // guna2TextBox1
+            // txtQuantityProduct
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(495, 31);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(39, 45);
-            this.guna2TextBox1.TabIndex = 3;
+            this.txtQuantityProduct.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantityProduct.DefaultText = "";
+            this.txtQuantityProduct.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantityProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQuantityProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantityProduct.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantityProduct.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQuantityProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantityProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQuantityProduct.Location = new System.Drawing.Point(495, 31);
+            this.txtQuantityProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtQuantityProduct.Name = "txtQuantityProduct";
+            this.txtQuantityProduct.PasswordChar = '\0';
+            this.txtQuantityProduct.PlaceholderText = "";
+            this.txtQuantityProduct.SelectedText = "";
+            this.txtQuantityProduct.Size = new System.Drawing.Size(39, 45);
+            this.txtQuantityProduct.TabIndex = 3;
+            this.txtQuantityProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPlus
             // 
@@ -192,11 +192,11 @@
             // 
             // picImageProduct
             // 
-            this.picImageProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picImageProduct.ImageRotate = 0F;
             this.picImageProduct.Location = new System.Drawing.Point(69, 12);
             this.picImageProduct.Name = "picImageProduct";
             this.picImageProduct.Size = new System.Drawing.Size(75, 75);
+            this.picImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImageProduct.TabIndex = 0;
             this.picImageProduct.TabStop = false;
             // 
@@ -216,33 +216,34 @@
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(701, 19);
+            this.guna2Button4.Location = new System.Drawing.Point(691, 17);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(180, 45);
             this.guna2Button4.TabIndex = 1;
             this.guna2Button4.Text = "Pay";
             // 
-            // guna2Button5
+            // btnSearchProduct
             // 
-            this.guna2Button5.AutoRoundedCorners = true;
-            this.guna2Button5.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button5.BorderRadius = 21;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.White;
-            this.guna2Button5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Location = new System.Drawing.Point(500, 14);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button5.TabIndex = 5;
-            this.guna2Button5.Text = "Search";
+            this.btnSearchProduct.AutoRoundedCorners = true;
+            this.btnSearchProduct.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchProduct.BorderRadius = 21;
+            this.btnSearchProduct.BorderThickness = 1;
+            this.btnSearchProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearchProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearchProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearchProduct.FillColor = System.Drawing.Color.White;
+            this.btnSearchProduct.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSearchProduct.ForeColor = System.Drawing.Color.Black;
+            this.btnSearchProduct.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearchProduct.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProduct.Location = new System.Drawing.Point(691, 9);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(180, 45);
+            this.btnSearchProduct.TabIndex = 5;
+            this.btnSearchProduct.Text = "Search";
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // panel2
             // 
@@ -278,15 +279,13 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.lblIdCustomer);
-            this.panel3.Controls.Add(this.guna2PictureBox1);
             this.panel3.Controls.Add(this.txtProduct);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.guna2Button5);
+            this.panel3.Controls.Add(this.btnSearchProduct);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(893, 85);
+            this.panel3.Size = new System.Drawing.Size(893, 69);
             this.panel3.TabIndex = 8;
             // 
             // txtProduct
@@ -305,7 +304,7 @@
             this.txtProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProduct.IconLeft = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_search;
             this.txtProduct.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtProduct.Location = new System.Drawing.Point(291, 19);
+            this.txtProduct.Location = new System.Drawing.Point(482, 14);
             this.txtProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.PasswordChar = '\0';
@@ -318,61 +317,51 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.guna2CheckBox1);
-            this.panel4.Controls.Add(this.flowLayoutPanel1);
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.flpContainerProduct);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 85);
+            this.panel4.Location = new System.Drawing.Point(0, 69);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(893, 493);
+            this.panel4.Size = new System.Drawing.Size(893, 509);
             this.panel4.TabIndex = 9;
             // 
-            // guna2CheckBox1
+            // panel1
             // 
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CheckBox1.Location = new System.Drawing.Point(16, 4);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(124, 28);
-            this.guna2CheckBox1.TabIndex = 7;
-            this.guna2CheckBox1.Text = "Choose all";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.panel1.Controls.Add(this.chkChooseAll);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(889, 37);
+            this.panel1.TabIndex = 8;
             // 
-            // flowLayoutPanel1
+            // chkChooseAll
             // 
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 35);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(889, 454);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.chkChooseAll.AutoSize = true;
+            this.chkChooseAll.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkChooseAll.CheckedState.BorderRadius = 0;
+            this.chkChooseAll.CheckedState.BorderThickness = 0;
+            this.chkChooseAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkChooseAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkChooseAll.Location = new System.Drawing.Point(10, 3);
+            this.chkChooseAll.Name = "chkChooseAll";
+            this.chkChooseAll.Size = new System.Drawing.Size(124, 28);
+            this.chkChooseAll.TabIndex = 7;
+            this.chkChooseAll.Text = "Choose all";
+            this.chkChooseAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkChooseAll.UncheckedState.BorderRadius = 0;
+            this.chkChooseAll.UncheckedState.BorderThickness = 0;
+            this.chkChooseAll.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkChooseAll.CheckedChanged += new System.EventHandler(this.chkChooseAll_CheckedChanged);
             // 
-            // guna2PictureBox1
+            // flpContainerProduct
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.User;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(815, 10);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(71, 56);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 8;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // lblIdCustomer
-            // 
-            this.lblIdCustomer.AutoSize = true;
-            this.lblIdCustomer.Location = new System.Drawing.Point(687, 30);
-            this.lblIdCustomer.Name = "lblIdCustomer";
-            this.lblIdCustomer.Size = new System.Drawing.Size(122, 24);
-            this.lblIdCustomer.TabIndex = 9;
-            this.lblIdCustomer.Text = "ID Customer";
+            this.flpContainerProduct.AutoScroll = true;
+            this.flpContainerProduct.Controls.Add(this.pnlProduct);
+            this.flpContainerProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flpContainerProduct.Location = new System.Drawing.Point(0, 37);
+            this.flpContainerProduct.Name = "flpContainerProduct";
+            this.flpContainerProduct.Size = new System.Drawing.Size(889, 468);
+            this.flpContainerProduct.TabIndex = 3;
             // 
             // FormCart
             // 
@@ -388,17 +377,18 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCart";
             this.Text = "FormCart";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormCart_Load);
+            this.pnlProduct.ResumeLayout(false);
+            this.pnlProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.flpContainerProduct.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -406,26 +396,25 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Panel pnlProduct;
+        private Guna.UI2.WinForms.Guna2TextBox txtQuantityProduct;
         private Guna.UI2.WinForms.Guna2Button btnPlus;
         private Guna.UI2.WinForms.Guna2Button btnMinus;
         private System.Windows.Forms.Label lblProductName;
         private Guna.UI2.WinForms.Guna2PictureBox picImageProduct;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPrice;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button btnSearchProduct;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private System.Windows.Forms.FlowLayoutPanel flpContainerProduct;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteProduct;
+        private Guna.UI2.WinForms.Guna2CheckBox chkChooseAll;
         private Guna.UI2.WinForms.Guna2CheckBox chkChooseProduct;
         private Guna.UI2.WinForms.Guna2TextBox txtProduct;
-        private System.Windows.Forms.Label lblIdCustomer;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

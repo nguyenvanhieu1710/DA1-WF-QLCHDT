@@ -18,13 +18,31 @@ namespace QuanLyCuaHangDienThoai
         {
             InitializeComponent();
         }
-
+        private void LoadProduct()
+        {
+            FormProduct formProduct = new FormProduct();
+            // formProduct.openNewForm += FormProduct_openNewForm;
+            // truy cập vào biến openNewForm
+            // và khởi tạo đối tượng dựa trên class của em nó
+            formProduct.moveInFormProductDetail = new FormProduct.MoveInFormProductDetail(moveInFormProductDetail);
+            // formProduct.moveInFormCart = new FormProduct.MoveInFormCart(moveInFormCart);
+            content(formProduct);
+        }
+        private void moveInFormProductDetail(Product_DTO product_DTO)
+        {
+            FormProductDetail productDetail = new FormProductDetail();
+            productDetail.getProduct(product_DTO);
+            content(productDetail);
+        }
+        private void moveInFormCart(Product_DTO product_DTO)
+        {
+            FormCart cart = new FormCart();
+            cart.getProduct(product_DTO);
+            content(cart);
+        }
         private void FormHome_Load(object sender, EventArgs e)
         {
-            //guna2ShadowForm1.SetShadowForm(this);
-            FormProduct formProduct = new FormProduct();
-            formProduct.openNewForm += FormProduct_openNewForm;
-            content(formProduct);
+            LoadProduct();
             LoadControlWithCustomer();
         }
         private void LoadControlWithCustomer()
@@ -108,13 +126,16 @@ namespace QuanLyCuaHangDienThoai
         {
             lblTopic.Text = "Home";
             picTopic.Image = Properties.Resources.icon_home_blue;
-            FormProduct formProduct = new FormProduct();
-            formProduct.openNewForm += FormProduct_openNewForm;
-            content(formProduct);
+            //FormProduct formProduct = new FormProduct();
+            //// formProduct.openNewForm += FormProduct_openNewForm;
+            //content(formProduct);
+            LoadProduct();
         }
         private void FormProduct_openNewForm(object sender, EventArgs e)
         {
-            content(new FormProfile());
+            //FormProductDetail formProductDetail = new FormProductDetail();
+            //formProductDetail.getProduct();
+            //content(new FormProductDetail());
         }
         private void btnStaffManagement_Click(object sender, EventArgs e)
         {
@@ -152,6 +173,7 @@ namespace QuanLyCuaHangDienThoai
                 Account_BLL account_BLL = new Account_BLL();
                 account_BLL.UpdateStatusOffline();
                 MessageBox.Show("Log out success", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                pnlContent.Controls.Clear();
             }
         }
         private void btnProductManagement_Click(object sender, EventArgs e)
@@ -215,7 +237,7 @@ namespace QuanLyCuaHangDienThoai
             }
             Account_BLL account_BLL = new Account_BLL();
             account_BLL.UpdateStatusOffline();
-            MessageBox.Show("Log out success", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            // MessageBox.Show("Log out success", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             Close();
         }
     }

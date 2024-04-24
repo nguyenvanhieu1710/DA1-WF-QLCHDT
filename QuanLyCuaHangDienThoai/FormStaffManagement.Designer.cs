@@ -33,10 +33,12 @@
             this.lblQuantityStaff = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddStaff = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteStaff = new Guna.UI2.WinForms.Guna2Button();
             this.flpContainerStaff = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.GroupBoxStaff = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.picStaffImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.DateTimePickerBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,12 +50,10 @@
             this.txtStaffName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRefrech = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.picStaffImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
-            this.guna2GroupBox1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.GroupBoxStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffImage)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFixStaff
@@ -145,6 +145,31 @@
             this.cbFilter.Size = new System.Drawing.Size(140, 36);
             this.cbFilter.TabIndex = 7;
             // 
+            // btnFilter
+            // 
+            this.btnFilter.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnFilter.BorderThickness = 1;
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFilter.FillColor = System.Drawing.Color.White;
+            this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFilter.ForeColor = System.Drawing.Color.Black;
+            this.btnFilter.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnFilter.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter_white;
+            this.btnFilter.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter;
+            this.btnFilter.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnFilter.ImageOffset = new System.Drawing.Point(3, 0);
+            this.btnFilter.Location = new System.Drawing.Point(753, 3);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(137, 49);
+            this.btnFilter.TabIndex = 5;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // btnAddStaff
             // 
             this.btnAddStaff.AutoRoundedCorners = true;
@@ -203,25 +228,38 @@
             this.flpContainerStaff.Size = new System.Drawing.Size(893, 308);
             this.flpContainerStaff.TabIndex = 23;
             // 
-            // guna2GroupBox1
+            // GroupBoxStaff
             // 
-            this.guna2GroupBox1.Controls.Add(this.picStaffImage);
-            this.guna2GroupBox1.Controls.Add(this.DateTimePickerBirthday);
-            this.guna2GroupBox1.Controls.Add(this.label1);
-            this.guna2GroupBox1.Controls.Add(this.label4);
-            this.guna2GroupBox1.Controls.Add(this.btnChooseImage);
-            this.guna2GroupBox1.Controls.Add(this.cboGender);
-            this.guna2GroupBox1.Controls.Add(this.txtIdStaff);
-            this.guna2GroupBox1.Controls.Add(this.txtPhoneNumber);
-            this.guna2GroupBox1.Controls.Add(this.txtAddress);
-            this.guna2GroupBox1.Controls.Add(this.txtStaffName);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 6);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(869, 231);
-            this.guna2GroupBox1.TabIndex = 24;
-            this.guna2GroupBox1.Text = "Staff infomation";
+            this.GroupBoxStaff.Controls.Add(this.picStaffImage);
+            this.GroupBoxStaff.Controls.Add(this.DateTimePickerBirthday);
+            this.GroupBoxStaff.Controls.Add(this.label1);
+            this.GroupBoxStaff.Controls.Add(this.label4);
+            this.GroupBoxStaff.Controls.Add(this.btnChooseImage);
+            this.GroupBoxStaff.Controls.Add(this.cboGender);
+            this.GroupBoxStaff.Controls.Add(this.txtIdStaff);
+            this.GroupBoxStaff.Controls.Add(this.txtPhoneNumber);
+            this.GroupBoxStaff.Controls.Add(this.txtAddress);
+            this.GroupBoxStaff.Controls.Add(this.txtStaffName);
+            this.GroupBoxStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GroupBoxStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.GroupBoxStaff.Location = new System.Drawing.Point(12, 6);
+            this.GroupBoxStaff.Name = "GroupBoxStaff";
+            this.GroupBoxStaff.Size = new System.Drawing.Size(869, 231);
+            this.GroupBoxStaff.TabIndex = 24;
+            this.GroupBoxStaff.Text = "Staff infomation";
+            // 
+            // picStaffImage
+            // 
+            this.picStaffImage.BackColor = System.Drawing.Color.Transparent;
+            this.picStaffImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picStaffImage.ImageRotate = 0F;
+            this.picStaffImage.Location = new System.Drawing.Point(480, 126);
+            this.picStaffImage.Name = "picStaffImage";
+            this.picStaffImage.Size = new System.Drawing.Size(104, 95);
+            this.picStaffImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStaffImage.TabIndex = 17;
+            this.picStaffImage.TabStop = false;
+            this.picStaffImage.UseTransparentBackground = true;
             // 
             // DateTimePickerBirthday
             // 
@@ -411,7 +449,7 @@
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.DimGray;
             this.guna2Panel1.BorderThickness = 2;
-            this.guna2Panel1.Controls.Add(this.guna2GroupBox1);
+            this.guna2Panel1.Controls.Add(this.GroupBoxStaff);
             this.guna2Panel1.Controls.Add(this.btnAddStaff);
             this.guna2Panel1.Controls.Add(this.btnFixStaff);
             this.guna2Panel1.Controls.Add(this.btnRefrech);
@@ -422,44 +460,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(893, 303);
             this.guna2Panel1.TabIndex = 18;
-            // 
-            // picStaffImage
-            // 
-            this.picStaffImage.BackColor = System.Drawing.Color.Transparent;
-            this.picStaffImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picStaffImage.ImageRotate = 0F;
-            this.picStaffImage.Location = new System.Drawing.Point(480, 126);
-            this.picStaffImage.Name = "picStaffImage";
-            this.picStaffImage.Size = new System.Drawing.Size(104, 95);
-            this.picStaffImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStaffImage.TabIndex = 17;
-            this.picStaffImage.TabStop = false;
-            this.picStaffImage.UseTransparentBackground = true;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnFilter.BorderThickness = 1;
-            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFilter.FillColor = System.Drawing.Color.White;
-            this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFilter.ForeColor = System.Drawing.Color.Black;
-            this.btnFilter.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnFilter.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter_white;
-            this.btnFilter.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_filter;
-            this.btnFilter.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnFilter.ImageOffset = new System.Drawing.Point(3, 0);
-            this.btnFilter.Location = new System.Drawing.Point(753, 3);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(137, 49);
-            this.btnFilter.TabIndex = 5;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // FormStaffManagement
             // 
@@ -479,10 +479,10 @@
             this.Load += new System.EventHandler(this.FormStaffManagement_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
+            this.GroupBoxStaff.ResumeLayout(false);
+            this.GroupBoxStaff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStaffImage)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -497,7 +497,7 @@
         private Guna.UI2.WinForms.Guna2Button btnFilter;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
         private System.Windows.Forms.FlowLayoutPanel flpContainerStaff;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox GroupBoxStaff;
         private Guna.UI2.WinForms.Guna2PictureBox picStaffImage;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerBirthday;
         private System.Windows.Forms.Label label1;

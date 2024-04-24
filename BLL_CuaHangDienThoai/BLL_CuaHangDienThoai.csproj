@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Account_BLL.cs" />
     <Compile Include="AddStaff.cs" />
+    <Compile Include="Cart_BLL.cs" />
     <Compile Include="Category_BLL.cs" />
     <Compile Include="ConvertData.cs" />
     <Compile Include="Customer_BLL.cs" />

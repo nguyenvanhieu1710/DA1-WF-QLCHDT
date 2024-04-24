@@ -20,13 +20,34 @@ namespace QuanLyCuaHangDienThoai
             InitializeComponent();
         }
         Customer_BLL customer_BLL = new Customer_BLL();
+        Account_BLL account_BLL = new Account_BLL();
         private void Refrech()
         {
 
         }
         private void LoadData()
         {
-
+            List<Account_DTO> accountList = account_BLL.accountList();
+            List<Customer_DTO> customerList = customer_BLL.customerList();
+            int idOnline = 0;
+            foreach (Account_DTO account in accountList)
+            {
+                if(account.Status == "Online")
+                {
+                    idOnline = account.IdAccount;
+                }
+            }
+            foreach (Customer_DTO customer in customerList)
+            {
+                if(customer.IdCustomer == idOnline)
+                {
+                    picImageCustomer.ImageLocation = customer.ImageCustomer;
+                    txtUserName.Text = customer.CustomerName;
+                    cboGender.Text = customer.Gender;
+                    DateTimePickerBirthday.Text = customer.Birthday.ToString();
+                    txtPhoneNumber.Text = customer.PhoneNumber;
+                }
+            }
         }
         private void FormProfile_Load(object sender, EventArgs e)
         {

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account_DAL.cs" />
+    <Compile Include="Cart_DAL.cs" />
     <Compile Include="Category_DAL.cs" />
     <Compile Include="Customer_DAL.cs" />
     <Compile Include="DatabaseAccess.cs" />

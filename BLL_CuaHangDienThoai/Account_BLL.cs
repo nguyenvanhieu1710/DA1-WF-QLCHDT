@@ -42,6 +42,21 @@ namespace BLL_CuaHangDienThoai
             }
             return false;
         }
+        public (int, Account_DTO) checkAndGetAccountOnline()
+        {
+            List<Account_DTO> accountList = account_DAL.AccoutList();
+            int quantityAccountOnline = 0;
+            Account_DTO accountOnline = null;
+            foreach (Account_DTO account in accountList)
+            {
+                if (account.Status == "Online")
+                {
+                    quantityAccountOnline++;
+                    accountOnline = account;
+                }
+            }
+            return (quantityAccountOnline, accountOnline);
+        }
         public void insertAccountCustomer_BLL(string UserName, string Password, string Email)
         {
             Account_DAL account_DAL = new Account_DAL();

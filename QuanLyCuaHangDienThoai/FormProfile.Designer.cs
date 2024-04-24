@@ -266,7 +266,7 @@
             this.picImageCustomer.Location = new System.Drawing.Point(26, 21);
             this.picImageCustomer.Name = "picImageCustomer";
             this.picImageCustomer.Size = new System.Drawing.Size(249, 197);
-            this.picImageCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImageCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImageCustomer.TabIndex = 0;
             this.picImageCustomer.TabStop = false;
             this.picImageCustomer.UseTransparentBackground = true;
