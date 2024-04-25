@@ -38,11 +38,11 @@
             this.btnMinus = new Guna.UI2.WinForms.Guna2Button();
             this.lblProductName = new System.Windows.Forms.Label();
             this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPay = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchProduct = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalMoney = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -200,27 +200,28 @@
             this.picImageProduct.TabIndex = 0;
             this.picImageProduct.TabStop = false;
             // 
-            // guna2Button4
+            // btnPay
             // 
-            this.guna2Button4.AutoRoundedCorners = true;
-            this.guna2Button4.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button4.BorderRadius = 21;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(691, 17);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button4.TabIndex = 1;
-            this.guna2Button4.Text = "Pay";
+            this.btnPay.AutoRoundedCorners = true;
+            this.btnPay.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnPay.BorderRadius = 21;
+            this.btnPay.BorderThickness = 1;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPay.FillColor = System.Drawing.Color.White;
+            this.btnPay.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnPay.ForeColor = System.Drawing.Color.Black;
+            this.btnPay.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnPay.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnPay.Location = new System.Drawing.Point(691, 17);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(180, 45);
+            this.btnPay.TabIndex = 1;
+            this.btnPay.Text = "Pay";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnSearchProduct
             // 
@@ -249,8 +250,8 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.guna2Button4);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btnPay);
+            this.panel2.Controls.Add(this.lblTotalMoney);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 578);
             this.panel2.Name = "panel2";
@@ -266,15 +267,15 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Tạm tính";
             // 
-            // label4
+            // lblTotalMoney
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(12, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 24);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tổng tiền";
+            this.lblTotalMoney.AutoSize = true;
+            this.lblTotalMoney.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblTotalMoney.Location = new System.Drawing.Point(12, 40);
+            this.lblTotalMoney.Name = "lblTotalMoney";
+            this.lblTotalMoney.Size = new System.Drawing.Size(95, 24);
+            this.lblTotalMoney.TabIndex = 2;
+            this.lblTotalMoney.Text = "Tổng tiền";
             // 
             // panel3
             // 
@@ -403,11 +404,11 @@
         private System.Windows.Forms.Label lblProductName;
         private Guna.UI2.WinForms.Guna2PictureBox picImageProduct;
         private System.Windows.Forms.Label lblPrice;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2Button btnSearchProduct;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotalMoney;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.FlowLayoutPanel flpContainerProduct;

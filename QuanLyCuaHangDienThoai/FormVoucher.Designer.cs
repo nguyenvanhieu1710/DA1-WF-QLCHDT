@@ -36,14 +36,11 @@
             this.picImageVoucher = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flpContainerVoucher = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblIdCustomer = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContainerVoucher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageVoucher)).BeginInit();
             this.flpContainerVoucher.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContainerVoucher
@@ -132,34 +129,11 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblIdCustomer);
-            this.panel1.Controls.Add(this.guna2PictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(893, 74);
+            this.panel1.Size = new System.Drawing.Size(893, 71);
             this.panel1.TabIndex = 2;
-            // 
-            // lblIdCustomer
-            // 
-            this.lblIdCustomer.AutoSize = true;
-            this.lblIdCustomer.Location = new System.Drawing.Point(686, 29);
-            this.lblIdCustomer.Name = "lblIdCustomer";
-            this.lblIdCustomer.Size = new System.Drawing.Size(122, 24);
-            this.lblIdCustomer.TabIndex = 11;
-            this.lblIdCustomer.Text = "ID Customer";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.User;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(814, 9);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(71, 56);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 10;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -167,7 +141,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 41);
+            this.label1.Size = new System.Drawing.Size(212, 40);
             this.label1.TabIndex = 12;
             this.label1.Text = "Your Voucher";
             // 
@@ -192,7 +166,6 @@
             this.flpContainerVoucher.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,8 +179,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox picImageVoucher;
         private System.Windows.Forms.FlowLayoutPanel flpContainerVoucher;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblIdCustomer;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
     }
 }

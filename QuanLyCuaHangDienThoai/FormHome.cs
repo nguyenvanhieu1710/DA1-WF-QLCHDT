@@ -25,20 +25,34 @@ namespace QuanLyCuaHangDienThoai
             // truy cập vào biến openNewForm
             // và khởi tạo đối tượng dựa trên class của em nó
             formProduct.moveInFormProductDetail = new FormProduct.MoveInFormProductDetail(moveInFormProductDetail);
-            // formProduct.moveInFormCart = new FormProduct.MoveInFormCart(moveInFormCart);
+            formProduct.moveInFormCart = new FormProduct.MoveInFormCart(moveInFormCart);
             content(formProduct);
         }
         private void moveInFormProductDetail(Product_DTO product_DTO)
         {
             FormProductDetail productDetail = new FormProductDetail();
             productDetail.getProduct(product_DTO);
+            productDetail.moveInFormCart = new FormProductDetail.MoveInFormCart(moveInFormCart);
             content(productDetail);
         }
-        private void moveInFormCart(Product_DTO product_DTO)
+        private void moveInFormCart()
         {
             FormCart cart = new FormCart();
-            cart.getProduct(product_DTO);
+            //cart.getProduct(product_DTO);
             content(cart);
+        }
+        private void moveInFormPay(Product_DTO product_DTO)
+        {
+            FormPay formPay = new FormPay();
+            formPay.getProduct(product_DTO);
+            content(formPay);
+        }
+        private void moveProductToFormPay(List<Product_DTO> listProductSelected)
+        {
+            FormPay formPay = new FormPay();
+            formPay.getlistProductSelected(listProductSelected);
+            // formPay.getProduct(product_DTO);
+            content(formPay);
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
@@ -196,9 +210,12 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnCart_Click(object sender, EventArgs e)
         {
+            FormCart formCart = new FormCart();
+            //formCart.moveInFormPay = new FormCart.MoveInFormPay(moveInFormPay);
+            formCart.moveProductToFormPay = new FormCart.MoveProductToFormPay(moveProductToFormPay);
             lblTopic.Text = "Cart";
             picTopic.Image = Properties.Resources.icon_mobile_phone_blue;
-            content(new FormCart());
+            content(formCart);
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {

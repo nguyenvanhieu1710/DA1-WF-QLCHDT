@@ -47,12 +47,13 @@ namespace BLL_CuaHangDienThoai
             }
             return list;
         }
-        public bool CheckExit(Cart_DTO Cart_DTO)
+        public bool CheckExit(Product_DTO product_DTO, Account_DTO account_DTO)
         {
             List<Cart_DTO> list = CartList();
             foreach (Cart_DTO item in list)
             {
-                if (Cart_DTO.IdProduct == item.IdProduct && Cart_DTO.IdCustomer == item.IdCustomer)
+                // vì id account và id customer là như nhau lên thêm cái nào cũng thế
+                if (product_DTO.IdProduct == item.IdProduct && account_DTO.IdAccount == item.IdCustomer)
                 {
                     return true;
                 }
@@ -64,15 +65,38 @@ namespace BLL_CuaHangDienThoai
             int result = Cart_DAL.addCart(product_DTO, account_DTO);
             return result;
         }
-        //public int fixCart(Cart_DTO Cart)
-        //{
-        //    int result = Cart_DAL.fixCart(Cart);
-        //    return result;
-        //}
         public int deleteCart(Product_DTO product_DTO, Account_DTO account_DTO)
         {
             int result = Cart_DAL.deleteCart(product_DTO, account_DTO);
             return result;
         }
+        public List<Product_DTO> searchProductInCart(Product_DTO product_DTO)
+        {
+            // kiểm tra login và lấy ra tài khoản đang online
+            Account_BLL account_BLL = new Account_BLL();
+            (int quantityAccountOnline, Account_DTO accountOnline) = account_BLL.checkAndGetAccountOnline();
+            List<Product_DTO> productOfCustomer = getProductOfCustomer(accountOnline);
+
+            List<Product_DTO> list = new List<Product_DTO>();
+            foreach (Product_DTO product in productOfCustomer)
+            {
+                if (product.ProductName.Contains(product_DTO.ProductName))
+                {
+                    list.Add(product);
+                }
+            }
+            return list;
+        }
+        //List<Product_DTO> listProductSelected = new List<Product_DTO>();
+        //public List<Product_DTO> addListProductSelected(Product_DTO product_DTO)
+        //{
+        //    listProductSelected.Add(product_DTO);
+        //    return listProductSelected;
+        //}
+        //public List<Product_DTO> deleteListProductSelected(Product_DTO product_DTO)
+        //{
+        //    listProductSelected.Remove(product_DTO);
+        //    return listProductSelected;
+        //}
     }
 }

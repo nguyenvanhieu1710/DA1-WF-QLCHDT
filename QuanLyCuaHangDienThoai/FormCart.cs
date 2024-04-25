@@ -66,9 +66,11 @@ namespace QuanLyCuaHangDienThoai
         }
         private void FormCart_Load(object sender, EventArgs e)
         {
+            flpContainerProduct.Controls.Clear();
             turnOffHorizontalScrollbar(flpContainerProduct);
-            checkAccount();
+            checkAccount();          
         }
+        int totalMoney;
         private Panel GenerateProduct(Product_DTO product_DTO)
         {
             // 
@@ -125,6 +127,7 @@ namespace QuanLyCuaHangDienThoai
             // 
             // lblPrice
             // 
+            decimal priceFixed = product_DTO.Price;
             Label lblPrice = new Label();
             lblPrice.AutoSize = true;
             lblPrice.Location = new System.Drawing.Point(638, 40);
@@ -157,12 +160,22 @@ namespace QuanLyCuaHangDienThoai
             txtQuantityProduct.Text = "1";
             txtQuantityProduct.Leave += (s, e) =>
             {
+                int quantity;
+                bool isNumber = Int32.TryParse(txtQuantityProduct.Text, out quantity);
+
+                if (!isNumber)
+                {
+                    MessageBox.Show("Quantity is not valid", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtQuantityProduct.Text = "1";
+                }
                 if (checkQuantityMax(product_DTO, txtQuantityProduct.Text))
                 {
                     txtQuantityProduct.Text = product_DTO.Quantity.ToString();
-                    txtQuantityProduct.Leave += null;
+                    lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
+                    //txtQuantityProduct.Leave += null;
                     return;
                 }
+                lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
             };
             // 
             // btnPlus
@@ -201,6 +214,8 @@ namespace QuanLyCuaHangDienThoai
                     btnPlus.Click += null;
                     return;
                 }
+
+                lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
             };
             // 
             // btnMinus
@@ -234,6 +249,7 @@ namespace QuanLyCuaHangDienThoai
                 {
                     txtQuantityProduct.Text = "1";
                 }
+                lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
             };
             // 
             // lblProductName
@@ -258,6 +274,30 @@ namespace QuanLyCuaHangDienThoai
             picImageProduct.TabStop = false;
             picImageProduct.ImageLocation = product_DTO.ImageProduct;
 
+            chkChooseProduct.CheckedChanged += (s, e) =>
+            {
+                Product_DTO product = new Product_DTO();
+                product.IdProduct = product_DTO.IdProduct;
+                product.ProductName = product_DTO.ProductName;
+                product.Quantity = int.Parse(txtQuantityProduct.Text);
+                product.Price = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                if (chkChooseProduct.Checked == true)
+                {
+                    // vì lblPrice ở dạng 1,000,000đ
+                    totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                    lblTotalMoney.Text = totalMoney.ToString("N0") +"đ";
+                    listProductSelected.Add(product);
+                    //= cart_BLL.addListProductSelected(product);
+                }
+                else
+                {
+                    totalMoney = 0;
+                    lblTotalMoney.Text = "0đ";
+                    listProductSelected.Remove(product);
+                    //= cart_BLL.deleteListProductSelected(product);
+                }
+            };
+
             pnlProduct.Controls.Add(chkChooseProduct);
             pnlProduct.Controls.Add(btnDeleteProduct);
             pnlProduct.Controls.Add(lblPrice);
@@ -268,6 +308,7 @@ namespace QuanLyCuaHangDienThoai
             pnlProduct.Controls.Add(picImageProduct);
             return pnlProduct;
         }
+        
         private bool checkRegex(string quantityProduct)
         {
             if(quantityProduct.Trim() == "")
@@ -345,18 +386,38 @@ namespace QuanLyCuaHangDienThoai
         {
             if (txtProduct.Text.Trim() == "")
             {
-                MessageBox.Show("please enter product name");
+                MessageBox.Show("Please enter product name");
                 return;
             }
 
-            //Product_DTO Product = new Product_DTO();
-            //Product.ProductName = txtProduct.Text.Trim();
-            //List<Product_DTO> ProductList_search = product_BLL.searchProduct(Product);
-            //flpContainerProduct.Controls.Clear();
-            //foreach (Product_DTO Products in ProductList_search)
-            //{
-            //    flpContainerProduct.Controls.Add(GenerateProduct(Products));
-            //}
+            Product_DTO Product = new Product_DTO();
+            Product.ProductName = txtProduct.Text.Trim();
+            List<Product_DTO> listProductInCartSearch = cart_BLL.searchProductInCart(Product);
+            flpContainerProduct.Controls.Clear();
+            foreach (Product_DTO Products in listProductInCartSearch)
+            {
+                flpContainerProduct.Controls.Add(GenerateProduct(Products));
+            }
+        }
+
+        public delegate void MoveInFormPay(Product_DTO product_DTO);
+        public MoveInFormPay moveInFormPay;
+        List<Product_DTO> listProductSelected = new List<Product_DTO>();
+        public delegate void MoveProductToFormPay(List<Product_DTO> list);
+        public MoveProductToFormPay moveProductToFormPay;
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (chkChooseAll.Checked == true)
+            {
+                // mang toàn bộ sản phẩm đi
+                moveProductToFormPay(listProductSelected);
+            }
+            else
+            {
+                // xem có những thằng nào được mang đi
+                moveProductToFormPay(listProductSelected);
+            }
+            //moveInFormPay(product_DTO);
         }
     }
 }

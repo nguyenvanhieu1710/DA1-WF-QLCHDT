@@ -27,7 +27,7 @@ namespace QuanLyCuaHangDienThoai
         // người dùng định nghĩa 1 con trỏ hàm 
         public delegate void MoveInFormProductDetail(Product_DTO product_DTO);
         public MoveInFormProductDetail moveInFormProductDetail;
-        public delegate void MoveInFormCart(Product_DTO product_DTO);
+        public delegate void MoveInFormCart();
         public MoveInFormCart moveInFormCart;
         private Panel GenerateProduct(Product_DTO product)
         {
@@ -98,7 +98,7 @@ namespace QuanLyCuaHangDienThoai
             buttonAddToCart.TabIndex = 36;
             buttonAddToCart.Click += (s, e) =>
             {
-                MessageBox.Show("Feature is updating");
+                // MessageBox.Show("Feature is updating");
                 addToCart(product);
             };
 
@@ -126,7 +126,10 @@ namespace QuanLyCuaHangDienThoai
             buttonBuyNow.TabIndex = 36;
             buttonBuyNow.Click += (s, e) =>
             {
-                MessageBox.Show("Feature is updating");
+                // MessageBox.Show("Feature is updating");
+                addToCart(product);
+                // chuyển form
+                moveInFormCart();
             };
 
             panel.Controls.Add(labelProductName);
@@ -175,6 +178,11 @@ namespace QuanLyCuaHangDienThoai
             }
 
             Cart_BLL cart_BLL = new Cart_BLL();
+            if (cart_BLL.CheckExit(product_DTO, accountOnline))
+            {
+                MessageBox.Show("Products already in the cart", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return ;
+            }
             // vì id account và id customer là như nhau lên thêm cái nào cũng thế
             int result = 1;
             if(result == cart_BLL.addCart(product_DTO, accountOnline))
@@ -186,8 +194,6 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Add to cart failed", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            // chuyển form
-            // moveInFormCart(product_DTO);
         }
         private void searchCategory(Category_DTO category_DTO)
         {
