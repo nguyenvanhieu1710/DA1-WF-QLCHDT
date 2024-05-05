@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.flpContainerProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlProduct = new System.Windows.Forms.Panel();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtDeliveryAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbVoucher = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -41,16 +46,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnlProduct = new System.Windows.Forms.Panel();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblProductName = new System.Windows.Forms.Label();
-            this.picImageProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             this.flpContainerProduct.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -64,6 +64,15 @@
             this.guna2Panel3.Size = new System.Drawing.Size(893, 666);
             this.guna2Panel3.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 498);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Delivery address:";
+            // 
             // flpContainerProduct
             // 
             this.flpContainerProduct.AutoScroll = true;
@@ -73,6 +82,46 @@
             this.flpContainerProduct.Name = "flpContainerProduct";
             this.flpContainerProduct.Size = new System.Drawing.Size(893, 467);
             this.flpContainerProduct.TabIndex = 3;
+            // 
+            // pnlProduct
+            // 
+            this.pnlProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlProduct.Controls.Add(this.lblPrice);
+            this.pnlProduct.Controls.Add(this.lblProductName);
+            this.pnlProduct.Controls.Add(this.picImageProduct);
+            this.pnlProduct.Location = new System.Drawing.Point(3, 3);
+            this.pnlProduct.Name = "pnlProduct";
+            this.pnlProduct.Size = new System.Drawing.Size(883, 104);
+            this.pnlProduct.TabIndex = 3;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(676, 33);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(53, 24);
+            this.lblPrice.TabIndex = 4;
+            this.lblPrice.Text = "Price";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(150, 33);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(135, 24);
+            this.lblProductName.TabIndex = 1;
+            this.lblProductName.Text = "Product Name";
+            // 
+            // picImageProduct
+            // 
+            this.picImageProduct.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.avatar;
+            this.picImageProduct.ImageRotate = 0F;
+            this.picImageProduct.Location = new System.Drawing.Point(69, 12);
+            this.picImageProduct.Name = "picImageProduct";
+            this.picImageProduct.Size = new System.Drawing.Size(75, 75);
+            this.picImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImageProduct.TabIndex = 0;
+            this.picImageProduct.TabStop = false;
             // 
             // txtDeliveryAddress
             // 
@@ -125,6 +174,7 @@
             this.cbVoucher.Name = "cbVoucher";
             this.cbVoucher.Size = new System.Drawing.Size(225, 36);
             this.cbVoucher.TabIndex = 41;
+            this.cbVoucher.Click += new System.EventHandler(this.cbVoucher_Click);
             // 
             // label1
             // 
@@ -212,55 +262,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Total amount:";
             // 
-            // pnlProduct
-            // 
-            this.pnlProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlProduct.Controls.Add(this.lblPrice);
-            this.pnlProduct.Controls.Add(this.lblProductName);
-            this.pnlProduct.Controls.Add(this.picImageProduct);
-            this.pnlProduct.Location = new System.Drawing.Point(3, 3);
-            this.pnlProduct.Name = "pnlProduct";
-            this.pnlProduct.Size = new System.Drawing.Size(883, 104);
-            this.pnlProduct.TabIndex = 3;
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(676, 33);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 24);
-            this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "Price";
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(150, 33);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(135, 24);
-            this.lblProductName.TabIndex = 1;
-            this.lblProductName.Text = "Product Name";
-            // 
-            // picImageProduct
-            // 
-            this.picImageProduct.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.avatar;
-            this.picImageProduct.ImageRotate = 0F;
-            this.picImageProduct.Location = new System.Drawing.Point(69, 12);
-            this.picImageProduct.Name = "picImageProduct";
-            this.picImageProduct.Size = new System.Drawing.Size(75, 75);
-            this.picImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImageProduct.TabIndex = 0;
-            this.picImageProduct.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 498);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Delivery address:";
-            // 
             // FormPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -278,11 +279,11 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.flpContainerProduct.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageProduct)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

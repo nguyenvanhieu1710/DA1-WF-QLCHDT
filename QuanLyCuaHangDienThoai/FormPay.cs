@@ -24,10 +24,6 @@ namespace QuanLyCuaHangDienThoai
         public MoveInFormHome moveInFormHome;
 
         List<Product_DTO> listProductSelected = new List<Product_DTO>();
-        public void getProduct(Product_DTO product_DTO)
-        {
-
-        }
         public void getlistProductSelected(List<Product_DTO> list)
         {
             listProductSelected = list;
@@ -41,19 +37,15 @@ namespace QuanLyCuaHangDienThoai
                 //MessageBox.Show(product.ProductName);
                 flpContainerProduct.Controls.Add(GenerateProduct(product));
             }
-            getVoucher();
             lblPaymentRequired.Text = (int.Parse(lblTotalAmount.Text.Replace(",", "").Replace("đ", "").Trim()) 
                 - int.Parse(lblDiscountVoucher.Text.Replace(",", "").Replace("đ", "").Trim())).ToString("N0") +"đ";
             turnOffHorizontalScrollbar(flpContainerProduct);
+
         }
-        private void getVoucher()
+        private void loadVoucherName()
         {
-            Voucher_BLL Voucher_BLL = new Voucher_BLL();
-            List<Voucher_DTO> voucher_DTO = Voucher_BLL.VoucherList();
-            foreach (Voucher_DTO vouchers in voucher_DTO)
-            {
-                cbVoucher.Items.Add("Voucher Name: "+vouchers.VoucherName + " - " + vouchers.IdVoucher);
-            }
+            cbVoucher.Items.Add("Voucher Name: " + voucher_DTO.VoucherName);
+            cbVoucher.Text = "Voucher Name: " + voucher_DTO.VoucherName;
         }
         int totalMoney;
         private Panel GenerateProduct(Product_DTO product_DTO)
@@ -136,6 +128,8 @@ namespace QuanLyCuaHangDienThoai
             Account_BLL account_BLL = new Account_BLL();
             (int quantityAccountOnline, Account_DTO accountOnline) = account_BLL.checkAndGetAccountOnline();
 
+            // lấy đại ra id của staff bất kì để thêm bản ghi vô thôi cho đỡ lỗi khóa ngoại
+            // chứ thật ra về sau thằng staff nào chỉnh sửa đơn hàng này thì lại cập nhật lại mà
             Staff_BLL staff_BLL = new Staff_BLL();
             List<int> idStaffList = staff_BLL.getIdStaff();
 
@@ -164,19 +158,6 @@ namespace QuanLyCuaHangDienThoai
             OrderTable_DTO lastOrder = orderList[orderList.Count - 1];
             IdOrder = lastOrder.IdOrderTable;
 
-            // lấy ra id voucher
-            string voucherText = cbVoucher.Text;
-            // nếu không chọn voucher thì cho đại cái voucher nào trong hệ thống cũng được
-            if (cbVoucher.Text == "")
-            {
-                Voucher_BLL voucher_BLL = new Voucher_BLL();
-                List<int> idVoucherList = voucher_BLL.getIdVoucher();
-                voucherText = "- " + idVoucherList[0].ToString();  
-            }
-            
-            string[] parts = voucherText.Split('-');
-            string id = parts[parts.Length - 1].Trim();
-
             foreach (Product_DTO product in listProductSelected)
             {
                 OrderDetail_DTO orderDetail_DTO = new OrderDetail_DTO();
@@ -185,7 +166,7 @@ namespace QuanLyCuaHangDienThoai
                 orderDetail_DTO.QuantityProduct = product.Quantity;
                 orderDetail_DTO.Price = product.Price;
                 orderDetail_DTO.DiscountAmount = int.Parse(lblDiscountVoucher.Text.Replace(",", "").Replace("đ", "").Trim());
-                orderDetail_DTO.IdVoucher = int.Parse(id); // lấy id voucher sau
+                orderDetail_DTO.IdVoucher = voucher_DTO.IdVoucher; // lấy id voucher từ bên form voucher
 
                 if (result != order_BLL.addOrderDetail(orderDetail_DTO))
                 {
@@ -215,6 +196,16 @@ namespace QuanLyCuaHangDienThoai
             }
             // chuyển đến form home
             moveInFormHome();
+        }
+        Voucher_DTO voucher_DTO = new Voucher_DTO();
+        private void cbVoucher_Click(object sender, EventArgs e)
+        {
+            FormVoucher formVoucher = new FormVoucher();     
+            formVoucher.ShowDialog();
+            // phải cho nó show xong -> chọn xong -> lấy được voucher
+            voucher_DTO = formVoucher.returnvoucherselected();
+            // MessageBox.Show("Id voucher: " + voucher_DTO.IdVoucher.ToString()+", "+voucher_DTO.VoucherName);
+            loadVoucherName();
         }
     }
 }

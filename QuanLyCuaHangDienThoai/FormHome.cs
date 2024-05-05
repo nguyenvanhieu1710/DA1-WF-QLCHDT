@@ -44,7 +44,6 @@ namespace QuanLyCuaHangDienThoai
         private void moveInFormPay(Product_DTO product_DTO)
         {
             FormPay formPay = new FormPay();
-            formPay.getProduct(product_DTO);
             content(formPay);
         }
         private void moveProductToFormPay(List<Product_DTO> listProductSelected)
@@ -54,6 +53,7 @@ namespace QuanLyCuaHangDienThoai
             // dùng tạm product như form home
             formPay.moveInFormHome = new FormPay.MoveInFormHome(LoadProduct);
             // formPay.getProduct(product_DTO);
+            lblTopic.Text = "Pay";
             content(formPay);
         }
         private void FormHome_Load(object sender, EventArgs e)

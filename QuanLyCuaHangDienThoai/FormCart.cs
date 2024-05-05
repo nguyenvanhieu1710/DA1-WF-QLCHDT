@@ -126,16 +126,18 @@ namespace QuanLyCuaHangDienThoai
                 {
                     return;
                 }
+                // xóa trong database
                 deleteProduct(product_DTO);
-                checkAccount();
+                checkAccount(); // load lại các product
                 chkChooseAll.Checked = false;
                 lblTotalMoney.Text = "0đ";
-                listProductSelected.Clear();
+                listProductSelected.Clear();// xóa list
             };
             // 
             // lblPrice
             // 
             decimal priceFixed = product_DTO.Price;
+            decimal newPice = 0;
             Label lblPrice = new Label();
             lblPrice.AutoSize = true;
             lblPrice.Location = new System.Drawing.Point(638, 40);
@@ -211,9 +213,12 @@ namespace QuanLyCuaHangDienThoai
                     }
 
                 }
-                //handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice);
                 // cập nhật lại số lượng sau khi thay đổi
                 selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
+                // cập nhật lại giá mới
+                newPice = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                // xử lý list và số lượng mới và tiền mới mà khách chọn
+                handleDataMoveInFormPay(chkChooseProduct, product_DTO, selectedQuantity, newPice);
             };
             // 
             // btnPlus
@@ -276,9 +281,12 @@ namespace QuanLyCuaHangDienThoai
                     }
                    
                 }
-                //handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice);
                 // cập nhật lại số lượng sau khi thay đổi
                 selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
+                // cập nhật lại giá mới
+                newPice = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                // xử lý list và số lượng mới và tiền mới mà khách chọn
+                handleDataMoveInFormPay(chkChooseProduct, product_DTO, selectedQuantity, newPice);
             };
             // 
             // btnMinus
@@ -332,9 +340,12 @@ namespace QuanLyCuaHangDienThoai
                     totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
                     lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
                 }
-                //handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice);
                 // cập nhật lại số lượng sau khi thay đổi
                 selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
+                // cập nhật lại giá mới
+                newPice = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                // xử lý list và số lượng mới và tiền mới mà khách chọn
+                handleDataMoveInFormPay(chkChooseProduct, product_DTO, selectedQuantity, newPice);
             };
             // 
             // lblProductName
@@ -479,7 +490,7 @@ namespace QuanLyCuaHangDienThoai
             productSelected.ProductName = product_DTO.ProductName;
             // cập nhật lại số lượng mà khách hàng mua(sau khi thay đổi)
             productSelected.Quantity = selectedQuantity;
-            productSelected.Price = product_DTO.Price;
+            productSelected.Price = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
             productSelected.TradeMark = product_DTO.TradeMark;
             productSelected.LaunchTime = product_DTO.LaunchTime;
             productSelected.ImageProduct = product_DTO.ImageProduct;
@@ -505,10 +516,16 @@ namespace QuanLyCuaHangDienThoai
                 totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
                 lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
                 // kiểm tra xem product này đã được chọn hay chưa
-                if (!listProductSelected.Contains(productSelected))
+                int index = listProductSelected.FindIndex(p => p.IdProduct == productSelected.IdProduct);
+                if (index == -1)
                 {
-                    //MessageBox.Show("quantity đưa đi: " + productSelected.Quantity.ToString());
+                    // Đối tượng không tồn tại trong danh sách, thêm nó vào
                     listProductSelected.Add(productSelected);
+                }
+                else if(index != -1)
+                {
+                    // Đối tượng tồn tại trong danh sách
+                    listProductSelected.RemoveAt(index);
                 }
             }
             else
@@ -526,10 +543,64 @@ namespace QuanLyCuaHangDienThoai
                     lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
                 }
                 // kiểm tra xem product này đã được chọn hay chưa
-                if (listProductSelected.Contains(productSelected))
+                int index = listProductSelected.FindIndex(p => p.IdProduct == productSelected.IdProduct);
+                if (index == -1)
                 {
-                    //MessageBox.Show("quantity đưa đi: "+product_DTO.Quantity.ToString());
-                    listProductSelected.Remove(productSelected);
+                    // Đối tượng không tồn tại trong danh sách, thêm nó vào
+                    listProductSelected.Add(productSelected);
+                }
+                else if (index != -1)
+                {
+                    // Đối tượng tồn tại trong danh sách
+                    listProductSelected.RemoveAt(index);
+                }
+            }
+        }
+        private void handleDataMoveInFormPay(CheckBox chkChooseProduct, Product_DTO product_DTO, int selectedQuantity, decimal newPrice)
+        {
+            Product_DTO productSelected = new Product_DTO();
+            productSelected.IdProduct = product_DTO.IdProduct;
+            productSelected.ProductName = product_DTO.ProductName;
+            // cập nhật lại số lượng mà khách hàng mua(sau khi thay đổi)
+            productSelected.Quantity = selectedQuantity;
+            productSelected.Price = newPrice;
+            productSelected.TradeMark = product_DTO.TradeMark;
+            productSelected.LaunchTime = product_DTO.LaunchTime;
+            productSelected.ImageProduct = product_DTO.ImageProduct;
+            productSelected.DayCreated = product_DTO.DayCreated;
+            productSelected.IdCategory = product_DTO.IdCategory;
+            productSelected.ProductDetail = product_DTO.ProductDetail;
+
+            if (chkChooseProduct.Checked == true)
+            {
+                // khi check
+                // kiểm tra xem product này đã được chọn hay chưa
+                int index = listProductSelected.FindIndex(p => p.IdProduct == productSelected.IdProduct);
+                if (index == -1)
+                {
+                    // Đối tượng không tồn tại trong danh sách, thêm nó vào
+                    listProductSelected.Add(productSelected);
+                }
+                else if (index != -1)
+                {
+                    // Đối tượng tồn tại trong danh sách
+                    listProductSelected.RemoveAt(index);
+                }
+            }
+            else
+            {
+                // khi không check 
+                // kiểm tra xem product này đã được chọn hay chưa
+                int index = listProductSelected.FindIndex(p => p.IdProduct == productSelected.IdProduct);
+                if (index == -1)
+                {
+                    // Đối tượng không tồn tại trong danh sách, thêm nó vào
+                    listProductSelected.Add(productSelected);
+                }
+                else if (index != -1)
+                {
+                    // Đối tượng tồn tại trong danh sách
+                    listProductSelected.RemoveAt(index);
                 }
             }
         }
@@ -584,8 +655,8 @@ namespace QuanLyCuaHangDienThoai
             }
         }
 
-        public delegate void MoveInFormPay(Product_DTO product_DTO);
-        public MoveInFormPay moveInFormPay;
+        //public delegate void MoveInFormPay(Product_DTO product_DTO);
+        //public MoveInFormPay moveInFormPay;
         List<Product_DTO> listProductSelected = new List<Product_DTO>();
         public delegate void MoveProductToFormPay(List<Product_DTO> list);
         public MoveProductToFormPay moveProductToFormPay;
@@ -598,12 +669,17 @@ namespace QuanLyCuaHangDienThoai
             }
             if (chkChooseAll.Checked == true)
             {
-                // mang toàn bộ sản phẩm đi
+                // chuyển form và chuyển dữ liệu đi
                 moveProductToFormPay(listProductSelected);
             }
             else
             {
-                // xem có những thằng nào được mang đi
+                // check lại data
+                //foreach(Product_DTO Products in listProductSelected)
+                //{
+                //    MessageBox.Show(Products.ProductName + ": "+Products.Quantity.ToString() + ", "+Products.Price);
+                //}
+                // chuyển form và chuyển dữ liệu đi
                 moveProductToFormPay(listProductSelected);
             }
             //moveInFormPay(product_DTO);
