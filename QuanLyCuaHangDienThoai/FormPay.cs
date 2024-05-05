@@ -37,15 +37,26 @@ namespace QuanLyCuaHangDienThoai
                 //MessageBox.Show(product.ProductName);
                 flpContainerProduct.Controls.Add(GenerateProduct(product));
             }
-            lblPaymentRequired.Text = (int.Parse(lblTotalAmount.Text.Replace(",", "").Replace("đ", "").Trim()) 
-                - int.Parse(lblDiscountVoucher.Text.Replace(",", "").Replace("đ", "").Trim())).ToString("N0") +"đ";
+            getDiscountVoucher();
+            loadPaymentRequired();
             turnOffHorizontalScrollbar(flpContainerProduct);
-
         }
         private void loadVoucherName()
         {
             cbVoucher.Items.Add("Voucher Name: " + voucher_DTO.VoucherName);
             cbVoucher.Text = "Voucher Name: " + voucher_DTO.VoucherName;
+        }
+        private void loadPaymentRequired()
+        {
+            lblPaymentRequired.Text = (int.Parse(lblTotalAmount.Text.Replace(",", "").Replace("đ", "").Trim())
+                - int.Parse(lblDiscountVoucher.Text.Replace(",", "").Replace("đ", "").Trim())).ToString("N0") + "đ";
+        }
+        private void getDiscountVoucher()
+        {
+            if(cbVoucher.Text != "")
+            {
+                lblDiscountVoucher.Text = voucher_DTO.FixedPrice.ToString("N0") + "đ"; ;
+            }
         }
         int totalMoney;
         private Panel GenerateProduct(Product_DTO product_DTO)
@@ -124,6 +135,11 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Delivery Address is blank", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            // load lại tiền mã giảm giá
+            getDiscountVoucher();
+            // load lại tiền cần thanh toán
+            loadPaymentRequired();
+
             // kiểm tra login và lấy ra tài khoản đang online
             Account_BLL account_BLL = new Account_BLL();
             (int quantityAccountOnline, Account_DTO accountOnline) = account_BLL.checkAndGetAccountOnline();
@@ -205,7 +221,12 @@ namespace QuanLyCuaHangDienThoai
             // phải cho nó show xong -> chọn xong -> lấy được voucher
             voucher_DTO = formVoucher.returnvoucherselected();
             // MessageBox.Show("Id voucher: " + voucher_DTO.IdVoucher.ToString()+", "+voucher_DTO.VoucherName);
+            // load lại tên voucher
             loadVoucherName();
+            // load lại tiền mã giảm giá
+            getDiscountVoucher();
+            // load lại tiền cần thanh toán
+            loadPaymentRequired();
         }
     }
 }
