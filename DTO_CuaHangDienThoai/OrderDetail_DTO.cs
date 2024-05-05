@@ -8,12 +8,12 @@ namespace DTO_CuaHangDienThoai
 {
     public class OrderDetail_DTO
     {
-        public int idOrderDetail { get; set; } = 0;
-        public int idOrder { get; set; } = 0;
-        public int idProduct { get; set; } = 0;
+        public int IdOrderDetail { get; set; } = 0;
+        public int IdOrder { get; set; } = 0;
+        public int IdProduct { get; set; } = 0;
         public int QuantityProduct { get; set; } = 0;
         public decimal Price {  get; set; } = 0;
         public int DiscountAmount { get; set; } = 0;
-        public int idVoucher { get; set; } = 0;
+        public int IdVoucher { get; set; } = 0;
     }
 }

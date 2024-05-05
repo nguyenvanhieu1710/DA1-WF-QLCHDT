@@ -51,6 +51,8 @@ namespace QuanLyCuaHangDienThoai
         {
             FormPay formPay = new FormPay();
             formPay.getlistProductSelected(listProductSelected);
+            // dùng tạm product như form home
+            formPay.moveInFormHome = new FormPay.MoveInFormHome(LoadProduct);
             // formPay.getProduct(product_DTO);
             content(formPay);
         }
@@ -65,8 +67,8 @@ namespace QuanLyCuaHangDienThoai
             btnLogin.Visible = true;
             btnRegister.Visible = true;
             btnProfile.Visible = true;
-            btnVoucher.Visible = true;
             btnCart.Visible = true;
+            btnOrder.Visible = true;
 
             btnProductManagement.Visible = false;
             btnCategoryManagement.Visible = false;
@@ -74,6 +76,9 @@ namespace QuanLyCuaHangDienThoai
             btnStaffManagement.Visible = false;
             btnDashboard.Visible = false;
             btnVoucherManagement.Visible = false;
+            btnVoucher.Visible = false;
+            btnReport.Visible = false;
+            btnBill.Visible = false;
         }
         private void Navigation(Account_DTO account_DTO)
         {
@@ -88,10 +93,13 @@ namespace QuanLyCuaHangDienThoai
                 btnLogin.Visible = false;
                 btnRegister.Visible = false;
                 btnProfile.Visible = false;
-                btnVoucher.Visible = false;
                 btnCart.Visible = false;
                 btnDashboard.Visible = false;
                 btnVoucherManagement.Visible = false;
+                btnOrder.Visible = false;
+                btnVoucher.Visible = false;
+                btnReport.Visible = false;
+                btnBill.Visible = false;
             }
             if(account_DTO.Role == "Staff")
             {
@@ -99,6 +107,9 @@ namespace QuanLyCuaHangDienThoai
                 btnCategoryManagement.Visible = true;
                 btnDashboard.Visible = true;
                 btnVoucherManagement.Visible = true;
+                btnOrder.Visible = true;
+                btnReport.Visible = true;
+                btnBill.Visible = true;
 
                 btnHome.Visible = false;
                 btnUserManagement.Visible = false;
@@ -106,8 +117,8 @@ namespace QuanLyCuaHangDienThoai
                 btnLogin.Visible = false;
                 btnRegister.Visible = false;
                 btnCart.Visible = false;
-                btnVoucher.Visible = false;
                 btnProfile.Visible = false;
+                btnVoucher.Visible = false;
             }
             if (account_DTO.Role == "Customer")
             {
@@ -120,11 +131,13 @@ namespace QuanLyCuaHangDienThoai
             {
                 pnlContent.Controls.Clear();
             }
+            // Ép kiểu đối tượng _form thành một Form
             Form fm = _form as Form;
+            // cho phép fm được thêm vào pnlContent
             fm.TopLevel = false;
-            fm.FormBorderStyle = FormBorderStyle.None;
-            fm.Dock = DockStyle.Fill;
+            // add form in control
             pnlContent.Controls.Add(fm);
+            // Thuộc tính Tag thường được sử dụng để lưu trữ dữ liệu liên quan đến đối tượng
             pnlContent.Tag = fm;
             fm.Show();
         }
@@ -223,12 +236,7 @@ namespace QuanLyCuaHangDienThoai
             picTopic.Image = Properties.Resources.icon_dashboard_blue;
             content(new FormDashboard());
         }
-        private void btnVoucher_Click(object sender, EventArgs e)
-        {
-            lblTopic.Text = "Voucher";
-            picTopic.Image = Properties.Resources.icon_voucher_blue;
-            content(new FormVoucher());
-        }
+
         private void btnVoucherManagement_Click(object sender, EventArgs e)
         {
             lblTopic.Text = "Voucher Management";
@@ -256,6 +264,33 @@ namespace QuanLyCuaHangDienThoai
             account_BLL.UpdateStatusOffline();
             // MessageBox.Show("Log out success", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             Close();
+        }
+        private void moveInFormOrderDetail(OrderTable_DTO orderTable_DTO)
+        {
+            FormOrderDetailcs formOrderDetailcs = new FormOrderDetailcs();
+            formOrderDetailcs.getOrder(orderTable_DTO);
+            lblTopic.Text = "Order Detail";
+            picTopic.Image = Properties.Resources.icon_order_blue;
+            content(formOrderDetailcs);
+        }
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            FormOrder order = new FormOrder();
+            order.moveInFormOrderDetail = new FormOrder.MoveInFormOrderDetail(moveInFormOrderDetail);
+            lblTopic.Text = "Order";
+            picTopic.Image = Properties.Resources.icon_order_blue;
+            content(order);
+        }
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            lblTopic.Text = "Report";
+            picTopic.Image = Properties.Resources.icon_report_blue;
+            content(new FormReport());
+        }private void btnBill_Click(object sender, EventArgs e)
+        {
+            lblTopic.Text = "Bill";
+            picTopic.Image = Properties.Resources.icon_bill_blue;
+            content(new FormBill());
         }
     }
 }

@@ -28,129 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.flpContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlCustomer = new System.Windows.Forms.Panel();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.btnChoose = new Guna.UI2.WinForms.Guna2Button();
+            this.picImageCustomer = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.flpContainer.SuspendLayout();
+            this.pnlCustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageCustomer)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2Button1
+            // flpContainer
             // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button1.BorderRadius = 21;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(358, 597);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 15;
-            this.guna2Button1.Text = "In hóa đơn";
+            this.flpContainer.AutoScroll = true;
+            this.flpContainer.Controls.Add(this.pnlCustomer);
+            this.flpContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpContainer.Location = new System.Drawing.Point(0, 0);
+            this.flpContainer.Name = "flpContainer";
+            this.flpContainer.Size = new System.Drawing.Size(893, 654);
+            this.flpContainer.TabIndex = 16;
             // 
-            // label1
+            // pnlCustomer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(236, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 40);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Cửa hàng bán diện thoại";
+            this.pnlCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCustomer.Controls.Add(this.lblCustomerName);
+            this.pnlCustomer.Controls.Add(this.btnChoose);
+            this.pnlCustomer.Controls.Add(this.picImageCustomer);
+            this.pnlCustomer.Location = new System.Drawing.Point(3, 3);
+            this.pnlCustomer.Name = "pnlCustomer";
+            this.pnlCustomer.Size = new System.Drawing.Size(883, 103);
+            this.pnlCustomer.TabIndex = 4;
             // 
-            // picLogo
+            // lblCustomerName
             // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_mobile_phone_blue;
-            this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(111, 12);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(70, 66);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 17;
-            this.picLogo.TabStop = false;
-            this.picLogo.UseTransparentBackground = true;
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Location = new System.Drawing.Point(150, 32);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(153, 24);
+            this.lblCustomerName.TabIndex = 4;
+            this.lblCustomerName.Text = "Customer Name";
             // 
-            // label2
+            // btnChoose
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(275, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Địa chỉ: Mỹ Hào-Hưng Yên";
+            this.btnChoose.AutoRoundedCorners = true;
+            this.btnChoose.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnChoose.BorderRadius = 21;
+            this.btnChoose.BorderThickness = 1;
+            this.btnChoose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChoose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChoose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChoose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChoose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChoose.FillColor = System.Drawing.Color.White;
+            this.btnChoose.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnChoose.ForeColor = System.Drawing.Color.Black;
+            this.btnChoose.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnChoose.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnChoose.Location = new System.Drawing.Point(649, 32);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(180, 45);
+            this.btnChoose.TabIndex = 8;
+            this.btnChoose.Text = "Choose";
             // 
-            // label3
+            // picImageCustomer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(275, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 24);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Hotline: 0984605263";
-            // 
-            // guna2GroupBox1
-            // 
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(139, 171);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(606, 200);
-            this.guna2GroupBox1.TabIndex = 19;
-            this.guna2GroupBox1.Text = "Danh sách sản phẩm";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(474, 408);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 24);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Tổng tiền: ";
+            this.picImageCustomer.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_order_blue;
+            this.picImageCustomer.ImageRotate = 0F;
+            this.picImageCustomer.Location = new System.Drawing.Point(69, 12);
+            this.picImageCustomer.Name = "picImageCustomer";
+            this.picImageCustomer.Size = new System.Drawing.Size(75, 75);
+            this.picImageCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImageCustomer.TabIndex = 0;
+            this.picImageCustomer.TabStop = false;
             // 
             // FormBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 654);
-            this.Controls.Add(this.guna2GroupBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.picLogo);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.flpContainer);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBill";
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.Load += new System.EventHandler(this.FormBill_Load);
+            this.flpContainer.ResumeLayout(false);
+            this.pnlCustomer.ResumeLayout(false);
+            this.pnlCustomer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageCustomer)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2PictureBox picLogo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel flpContainer;
+        private System.Windows.Forms.Panel pnlCustomer;
+        private System.Windows.Forms.Label lblCustomerName;
+        private Guna.UI2.WinForms.Guna2Button btnChoose;
+        private Guna.UI2.WinForms.Guna2PictureBox picImageCustomer;
     }
 }

@@ -47,6 +47,8 @@
     <Compile Include="Category_BLL.cs" />
     <Compile Include="ConvertData.cs" />
     <Compile Include="Customer_BLL.cs" />
+    <Compile Include="Dashboard_BLL.cs" />
+    <Compile Include="OrderTable_BLL.cs" />
     <Compile Include="Product_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexData.cs" />

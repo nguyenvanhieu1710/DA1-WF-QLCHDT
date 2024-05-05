@@ -67,5 +67,15 @@ namespace BLL_CuaHangDienThoai
             }
             return list;
         }
+        public List<int> getIdVoucher()
+        {
+            List<Voucher_DTO> Vouchers = VoucherList();
+            List<int> list = new List<int>();
+            foreach (Voucher_DTO item in Vouchers)
+            {
+                list.Add(item.IdVoucher);
+            }
+            return list;
+        }
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -121,8 +122,15 @@ namespace QuanLyCuaHangDienThoai
             btnDeleteProduct.TabIndex = 7;
             btnDeleteProduct.Click += (s, e) =>
             {
+                if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                }
                 deleteProduct(product_DTO);
                 checkAccount();
+                chkChooseAll.Checked = false;
+                lblTotalMoney.Text = "0đ";
+                listProductSelected.Clear();
             };
             // 
             // lblPrice
@@ -138,6 +146,7 @@ namespace QuanLyCuaHangDienThoai
             // 
             // txtQuantityProduct
             // 
+            int selectedQuantity;
             Guna2TextBox txtQuantityProduct = new Guna2TextBox();
             txtQuantityProduct.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtQuantityProduct.DefaultText = "";
@@ -158,7 +167,7 @@ namespace QuanLyCuaHangDienThoai
             txtQuantityProduct.TabIndex = 3;
             txtQuantityProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtQuantityProduct.Text = "1";
-            txtQuantityProduct.Leave += (s, e) =>
+            txtQuantityProduct.TextChanged += (s, e) =>
             {
                 int quantity;
                 bool isNumber = Int32.TryParse(txtQuantityProduct.Text, out quantity);
@@ -168,14 +177,43 @@ namespace QuanLyCuaHangDienThoai
                     MessageBox.Show("Quantity is not valid", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtQuantityProduct.Text = "1";
                 }
+                string oldPrice = "0";
+                // oldPrice coi là số tiền trước khi chỉnh sửa lại số lượng
+                oldPrice = lblPrice.Text.Replace(",", "").Replace("đ", "").Trim();
+
                 if (checkQuantityMax(product_DTO, txtQuantityProduct.Text))
                 {
+                    // số lượng tối đa
                     txtQuantityProduct.Text = product_DTO.Quantity.ToString();
+
                     lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
                     //txtQuantityProduct.Leave += null;
                     return;
                 }
+
+                // lblPrice.Text bên dưới coi là giá tiền mới sau khi chỉnh sửa số lượng
                 lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
+
+                // sau khi click và chạy đến đây thì tổng tiền hiện tại vẫn chưa thay đổi nhé
+                string currentPrice = lblTotalMoney.Text;
+
+                if (chkChooseProduct.Checked == true)
+                {
+                    if (lblPrice.Text.Replace(",", "").Replace("đ", "").Trim() != oldPrice)
+                    {
+                        // khi mà sản phẩm không check thì không ảnh hưởng gì đến tổng tiền
+                        // nhưng khi đã check rồi mà chỉnh sửa số lượng thì sẽ ảnh hưởng đến tổng tiền
+                        // trừ đi tiền cũ để dùng tiền mới sau khi thay đổi số lượng
+                        totalMoney -= int.Parse(oldPrice);
+                        // tổng tiền lại cộng với giá mới vào(sử dụng tiền mới)
+                        totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                        lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
+                    }
+
+                }
+                //handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice);
+                // cập nhật lại số lượng sau khi thay đổi
+                selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
             };
             // 
             // btnPlus
@@ -198,7 +236,7 @@ namespace QuanLyCuaHangDienThoai
             {
                 if (!checkRegex(txtQuantityProduct.Text))
                 {
-                    btnPlus.Click += null;
+                    //btnPlus.Click += null;
                     return;
                 }
                 int quantity = int.Parse(txtQuantityProduct.Text.ToString());
@@ -210,12 +248,37 @@ namespace QuanLyCuaHangDienThoai
                 }
                 if (checkQuantityMax(product_DTO, txtQuantityProduct.Text))
                 {
+                    // nếu max
                     txtQuantityProduct.Text = product_DTO.Quantity.ToString();
-                    btnPlus.Click += null;
+                    //btnPlus.Click += null;
                     return;
                 }
-
+                string oldPrice = "0";
+                // oldPrice coi là số tiền trước khi chỉnh sửa lại số lượng
+                oldPrice = lblPrice.Text.Replace(",", "").Replace("đ", "").Trim();
+                // lblPrice.Text bên dưới coi là giá tiền mới sau khi chỉnh sửa số lượng
                 lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
+
+                // sau khi click và chạy đến đây thì tổng tiền hiện tại vẫn chưa thay đổi nhé
+                string currentPrice = lblTotalMoney.Text;
+
+                if (chkChooseProduct.Checked == true)
+                {
+                    if (lblPrice.Text.Replace(",", "").Replace("đ", "").Trim() != oldPrice)
+                    {
+                        // khi mà sản phẩm không check thì không ảnh hưởng gì đến tổng tiền
+                        // nhưng khi đã check rồi mà chỉnh sửa số lượng thì sẽ ảnh hưởng đến tổng tiền
+                        // trừ đi tiền cũ để dùng tiền mới sau khi thay đổi số lượng
+                        totalMoney -= int.Parse(oldPrice);
+                        // tổng tiền lại cộng với giá mới vào(sử dụng tiền mới)
+                        totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                        lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
+                    }
+                   
+                }
+                //handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice);
+                // cập nhật lại số lượng sau khi thay đổi
+                selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
             };
             // 
             // btnMinus
@@ -236,7 +299,7 @@ namespace QuanLyCuaHangDienThoai
             btnMinus.TabIndex = 2;
             btnMinus.Text = "-";
             btnMinus.Click += (s, e) =>
-            {
+            {               
                 if (!checkRegex(txtQuantityProduct.Text))
                 {
                     btnMinus.Click += null;
@@ -249,7 +312,29 @@ namespace QuanLyCuaHangDienThoai
                 {
                     txtQuantityProduct.Text = "1";
                 }
+
+                string oldPrice = "0";
+                // oldPrice coi là số tiền trước khi chỉnh sửa lại số lượng
+                oldPrice = lblPrice.Text.Replace(",", "").Replace("đ", "").Trim();
+                // lblPrice.Text bên dưới coi là giá tiền mới sau khi chỉnh sửa số lượng
                 lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
+
+                // sau khi click và chạy đến đây thì tổng tiền hiện tại vẫn chưa thay đổi nhé
+                string currentTotalPrice = lblTotalMoney.Text;
+
+                if(chkChooseProduct.Checked == true)
+                {
+                    // khi mà sản phẩm không check thì không ảnh hưởng gì đến tổng tiền
+                    // nhưng khi đã check rồi mà chỉnh sửa số lượng thì sẽ ảnh hưởng đến tổng tiền
+                    // trừ đi tiền cũ để dùng tiền mới sau khi thay đổi số lượng
+                    totalMoney -= int.Parse(oldPrice.ToString());
+                    // sử dụng tiền mới
+                    totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                    lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
+                }
+                //handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice);
+                // cập nhật lại số lượng sau khi thay đổi
+                selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
             };
             // 
             // lblProductName
@@ -276,26 +361,19 @@ namespace QuanLyCuaHangDienThoai
 
             chkChooseProduct.CheckedChanged += (s, e) =>
             {
-                Product_DTO product = new Product_DTO();
-                product.IdProduct = product_DTO.IdProduct;
-                product.ProductName = product_DTO.ProductName;
-                product.Quantity = int.Parse(txtQuantityProduct.Text);
-                product.Price = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
-                if (chkChooseProduct.Checked == true)
-                {
-                    // vì lblPrice ở dạng 1,000,000đ
-                    totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
-                    lblTotalMoney.Text = totalMoney.ToString("N0") +"đ";
-                    listProductSelected.Add(product);
-                    //= cart_BLL.addListProductSelected(product);
-                }
-                else
-                {
-                    totalMoney = 0;
-                    lblTotalMoney.Text = "0đ";
-                    listProductSelected.Remove(product);
-                    //= cart_BLL.deleteListProductSelected(product);
-                }
+                string oldPrice = "0";
+                // oldPrice coi là số tiền trước khi chỉnh sửa lại số lượng
+                oldPrice = lblPrice.Text.Replace(",", "").Replace("đ", "").Trim();
+                // lblPrice.Text bên dưới coi là giá tiền mới sau khi chỉnh sửa số lượng
+                lblPrice.Text = (decimal.Parse(txtQuantityProduct.Text) * priceFixed).ToString("N0") + "đ";
+
+
+                // cập nhật lại số lượng sau khi thay đổi
+                selectedQuantity = int.Parse(txtQuantityProduct.Text.Trim());
+
+                handleCheckbox();
+                handleMoney(chkChooseProduct, lblPrice, product_DTO, oldPrice, selectedQuantity);
+                //product_DTO.Price = decimal.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
             };
 
             pnlProduct.Controls.Add(chkChooseProduct);
@@ -336,7 +414,7 @@ namespace QuanLyCuaHangDienThoai
         }
         private void chkChooseAll_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkChooseAll.Checked == true)
+            if (chkChooseAll.Checked == true)
             {
                 foreach (Control control in flpContainerProduct.Controls)
                 {
@@ -361,7 +439,113 @@ namespace QuanLyCuaHangDienThoai
                         }
                     }
                 }
+                // cập nhật lại giá tiền
+                totalMoney = 0;
+                lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
             }
+        }
+        private void handleCheckbox()
+        {
+            // xử lý checkbox all
+            int quantityCheckbox = 0;
+            int quantityCheckboxTrue = 0;
+            foreach (CheckBox control in flpContainerProduct.Controls.Find("chkChooseProduct", true))
+            {
+                quantityCheckbox++;
+                // nếu checkbox bật 
+                if (control.Checked == true)
+                {
+                    quantityCheckboxTrue++;
+                }
+            }
+            if (quantityCheckbox == quantityCheckboxTrue)
+            {
+                // toàn bộ checkbox đều được check -> bật checkAll
+                chkChooseAll.Checked = true;
+            }
+            if(quantityCheckboxTrue == 0)
+            {
+                chkChooseAll.Checked = false;
+                // cập nhật lại giá tiền
+                totalMoney = 0;
+                lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
+            }
+            //MessageBox.Show("quantity checkbox: " + quantityCheckbox.ToString());
+        }
+        private void handleMoney(CheckBox chkChooseProduct, Label lblPrice, Product_DTO product_DTO, string oldPrice, int selectedQuantity)
+        {
+            Product_DTO productSelected = new Product_DTO();
+            productSelected.IdProduct = product_DTO.IdProduct;
+            productSelected.ProductName = product_DTO.ProductName;
+            // cập nhật lại số lượng mà khách hàng mua(sau khi thay đổi)
+            productSelected.Quantity = selectedQuantity;
+            productSelected.Price = product_DTO.Price;
+            productSelected.TradeMark = product_DTO.TradeMark;
+            productSelected.LaunchTime = product_DTO.LaunchTime;
+            productSelected.ImageProduct = product_DTO.ImageProduct;
+            productSelected.DayCreated = product_DTO.DayCreated;
+            productSelected.IdCategory = product_DTO.IdCategory;
+            productSelected.ProductDetail = product_DTO.ProductDetail;
+            
+            // xử lý total money
+            if (chkChooseProduct.Checked == true)
+            {
+                if(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim() != oldPrice)
+                {
+                    // khi mà sản phẩm không check thì không ảnh hưởng gì đến tổng tiền
+                    // nhưng khi đã check rồi mà chỉnh sửa số lượng thì sẽ ảnh hưởng đến tổng tiền
+                    // trừ đi tiền cũ để dùng tiền mới sau khi thay đổi số lượng
+                    totalMoney -= int.Parse(oldPrice);
+                }
+                else
+                {
+
+                }             
+                // vì lblPrice ở dạng 1,000,000đ
+                totalMoney += int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
+                // kiểm tra xem product này đã được chọn hay chưa
+                if (!listProductSelected.Contains(productSelected))
+                {
+                    //MessageBox.Show("quantity đưa đi: " + productSelected.Quantity.ToString());
+                    listProductSelected.Add(productSelected);
+                }
+            }
+            else
+            {
+                // khi không check 
+                // phải kiểm tra trước là do trước đấy hay cập nhật tổng tiền về 0
+                if (totalMoney < 0 || totalMoney == 0)
+                {
+                    totalMoney = 0;
+                    lblTotalMoney.Text = "0đ";
+                }
+                else
+                {
+                    totalMoney -= int.Parse(lblPrice.Text.Replace(",", "").Replace("đ", "").Trim());
+                    lblTotalMoney.Text = totalMoney.ToString("N0") + "đ";
+                }
+                // kiểm tra xem product này đã được chọn hay chưa
+                if (listProductSelected.Contains(productSelected))
+                {
+                    //MessageBox.Show("quantity đưa đi: "+product_DTO.Quantity.ToString());
+                    listProductSelected.Remove(productSelected);
+                }
+            }
+        }
+        private void refreshMoney()
+        {
+            int totalPrice = 0;
+            foreach (CheckBox control in flpContainerProduct.Controls.Find("chkChooseProduct", true))
+            {
+                if(control.Checked == true)
+                {
+                    Label price = control.Parent.Controls.Find("lblPrice", true)[0] as Label;
+                    totalPrice +=  int.Parse(price.Text.Replace(",", "").Replace("đ", ""));
+                    
+                }
+            }
+            lblTotalMoney.Text = totalPrice.ToString();
         }
         private void deleteProduct(Product_DTO product_DTO)
         {
@@ -407,6 +591,11 @@ namespace QuanLyCuaHangDienThoai
         public MoveProductToFormPay moveProductToFormPay;
         private void btnPay_Click(object sender, EventArgs e)
         {
+            if(lblTotalMoney.Text == "0đ" || lblTotalMoney.Text == "Tổng tiền")
+            {
+                MessageBox.Show("Please choose product", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (chkChooseAll.Checked == true)
             {
                 // mang toàn bộ sản phẩm đi

@@ -165,7 +165,7 @@
             this.btnFilter.ImageOffset = new System.Drawing.Point(3, 0);
             this.btnFilter.Location = new System.Drawing.Point(753, 3);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(137, 49);
+            this.btnFilter.Size = new System.Drawing.Size(133, 45);
             this.btnFilter.TabIndex = 5;
             this.btnFilter.Text = "Filter";
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);

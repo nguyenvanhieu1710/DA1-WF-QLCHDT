@@ -56,6 +56,24 @@ namespace BLL_CuaHangDienThoai
             int result = Product_DAL.fixProduct(Product);
             return result;
         }
+        // cập nhập lại số lượng sau khi mua sản phẩm
+        public int updateProductAfterBuy(Product_DTO Product)
+        {
+            int result = 0;
+            List<Product_DTO> productList = ProductList();
+            foreach (Product_DTO item in productList)
+            {
+                // tìm ra sản phẩm cần update sau khi mua
+                if(Product.IdProduct == item.IdProduct)
+                {
+                    // lấy số lượng sản phẩm đã được trừ đi 
+                    Product.Quantity = item.Quantity - Product.Quantity;
+                    // rồi lưu lại trong database
+                    result = Product_DAL.fixProduct(Product);
+                }
+            }
+            return result;
+        }
         public int deleteProduct(Product_DTO Product)
         {
             int result = Product_DAL.deleteProduct(Product);

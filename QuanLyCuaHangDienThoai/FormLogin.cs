@@ -55,11 +55,20 @@ namespace QuanLyCuaHangDienThoai
         public OpenNewForm openNewForm;
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // check xem còn ai online hay không
+            Account_BLL account_BLL = new Account_BLL();
+            (int quantityAccountOnline, Account_DTO accountOnline) = account_BLL.checkAndGetAccountOnline();
+            if (quantityAccountOnline > 0)
+            {
+                // vẫn còn tài khoản đang online
+                account_BLL.UpdateStatusOffline();
+            }
+
             if (MessageBox.Show("Are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }
-            Account_BLL account_BLL = new Account_BLL();
+
             Account_DTO accountDTO = new Account_DTO() 
             { AccoutName = txtUserName.Text, Password = txtPassword.Text, Role = cbRole.Text };
 

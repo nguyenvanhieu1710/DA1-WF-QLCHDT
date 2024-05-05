@@ -93,6 +93,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_address_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-address-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_basket_blue {
             get {
                 object obj = ResourceManager.GetObject("icon-basket-blue", resourceCulture);
@@ -106,6 +116,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap icon_basket_white {
             get {
                 object obj = ResourceManager.GetObject("icon-basket-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_bill_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-bill-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_bill_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-bill-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +333,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_message_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-message-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_message_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-message-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_mobile_phone_blue {
             get {
                 object obj = ResourceManager.GetObject("icon-mobile-phone-blue", resourceCulture);
@@ -316,6 +366,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap icon_mobile_phone_white {
             get {
                 object obj = ResourceManager.GetObject("icon-mobile-phone-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_order_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-order-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_order_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-order-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,6 +433,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_report_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-report-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_report_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-report-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_save_blue {
             get {
                 object obj = ResourceManager.GetObject("icon-save-blue", resourceCulture);
@@ -386,6 +476,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap icon_search {
             get {
                 object obj = ResourceManager.GetObject("icon-search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_star_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon-star-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_star_white {
+            get {
+                object obj = ResourceManager.GetObject("icon-star-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

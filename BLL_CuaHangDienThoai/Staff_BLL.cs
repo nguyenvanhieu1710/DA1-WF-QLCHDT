@@ -81,5 +81,15 @@ namespace BLL_CuaHangDienThoai
             }
             return list;
         }
+        public List<int> getIdStaff()
+        {
+            List<Staff_DTO> StaffList = staffList();
+            List<int> list = new List<int>();
+            foreach (Staff_DTO item in StaffList)
+            {
+                list.Add(item.IdStaff);
+            }
+            return list;
+        }
     }
 }
