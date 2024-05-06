@@ -27,7 +27,7 @@ namespace QuanLyCuaHangDienThoai
             dateTimePicker_endedDate.Value = DateTime.Now;
             btnLast7Days.Select();
             InitializeDataset();
-
+            LoadDataOnChart();
         }
 
         public struct RevenueByDate
@@ -316,10 +316,10 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnLast7Days_Click(object sender, EventArgs e)
         {
-            ActivatedButton(sender, null);
             dateTimePicker_startedDate.Value = DateTime.Today.AddDays(-7);
             dateTimePicker_endedDate.Value = DateTime.Now;
             LoadDataOnChart();
+            ActivatedButton(sender, null);
         }
 
         private void btnToday_Click(object sender, EventArgs e)

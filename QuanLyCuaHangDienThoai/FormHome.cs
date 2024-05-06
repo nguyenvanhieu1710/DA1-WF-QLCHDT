@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_CuaHangDienThoai;
 using DTO_CuaHangDienThoai;
+using Guna.UI2.WinForms;
 
 namespace QuanLyCuaHangDienThoai
 {
@@ -58,6 +59,9 @@ namespace QuanLyCuaHangDienThoai
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
+            //btnHome.ForeColor = System.Drawing.Color.White;
+            //btnHome.FillColor = System.Drawing.Color.DodgerBlue;
+            //btnHome.Image = btnHome.HoverState.Image;
             LoadProduct();
             LoadControlWithCustomer();
         }
@@ -141,9 +145,40 @@ namespace QuanLyCuaHangDienThoai
             pnlContent.Tag = fm;
             fm.Show();
         }
+        private void turnOnButton(object sender)
+        {
+            // tắt hết button khác
+            foreach (Control control in flpNavigation.Controls)
+            {
+                if (control is Guna2Button)
+                {
+                    Guna2Button btn = control as Guna2Button;
+                    btn.ForeColor = System.Drawing.Color.Black;
+                    btn.FillColor = System.Drawing.Color.White;
+                    // Khôi phục hình ảnh ban đầu từ thuộc tính Tag
+                    if (btn.Tag != null)
+                    {
+                        btn.Image = (Image)btn.Tag;
+                    }
+                    btn.Invalidate();// vẽ lại
+                }
+            }
 
+            // bật nút được nhấn
+            Guna2Button button = sender as Guna2Button;
+            // Lưu hình ảnh ban đầu vào thuộc tính Tag
+            if (button.Tag == null)
+            {
+                button.Tag = button.Image;
+            }
+            button.ForeColor = System.Drawing.Color.White;
+            button.FillColor = System.Drawing.Color.DodgerBlue;
+            button.Image = button.HoverState.Image;
+            button.Invalidate();// vẽ lại          
+        }
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "User Management";
             picTopic.Image = Properties.Resources.User;
             content(new FormUserManagement());
@@ -151,6 +186,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Home";
             picTopic.Image = Properties.Resources.icon_home_blue;
             //FormProduct formProduct = new FormProduct();
@@ -166,6 +202,7 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnStaffManagement_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Staff Management";
             picTopic.Image = Properties.Resources.User;
             content(new FormStaffManagement());
@@ -173,6 +210,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             FormDangNhap formDangNhap = new FormDangNhap();
             // truy cập vào biến openNewForm
             // và khởi tạo đối tượng dựa trên class của em nó
@@ -188,6 +226,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Register";
             picTopic.Image = Properties.Resources.icon_register_blue;
             content(new FormDangKy());
@@ -205,24 +244,28 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnProductManagement_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Product Management";
             picTopic.Image = Properties.Resources.icon_mobile_phone_blue;
             content(new FormProductManagement());
         }
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Profile";
             picTopic.Image = Properties.Resources.User;
             content(new FormProfile());
         }
         private void btnCategory_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Category Management";
             picTopic.Image = Properties.Resources.icon_mobile_phone_blue;
             content(new FormCategoryManagement());
         }
         private void btnCart_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             FormCart formCart = new FormCart();
             //formCart.moveInFormPay = new FormCart.MoveInFormPay(moveInFormPay);
             formCart.moveProductToFormPay = new FormCart.MoveProductToFormPay(moveProductToFormPay);
@@ -232,6 +275,7 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Dashboard";
             picTopic.Image = Properties.Resources.icon_dashboard_blue;
             content(new FormDashboard());
@@ -239,12 +283,14 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnVoucherManagement_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Voucher Management";
             picTopic.Image = Properties.Resources.icon_voucher_blue;
             content(new FormVoucherManagement());
         }
         private void btnHelp_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             if (MessageBox.Show("Function is updating. Do you still want to continue watching?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
@@ -275,6 +321,7 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             FormOrder order = new FormOrder();
             order.moveInFormOrderDetail = new FormOrder.MoveInFormOrderDetail(moveInFormOrderDetail);
             lblTopic.Text = "Order";
@@ -283,11 +330,13 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btnReport_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Report";
             picTopic.Image = Properties.Resources.icon_report_blue;
             content(new FormReport());
         }private void btnBill_Click(object sender, EventArgs e)
         {
+            turnOnButton(sender);
             lblTopic.Text = "Bill";
             picTopic.Image = Properties.Resources.icon_bill_blue;
             content(new FormBill());
