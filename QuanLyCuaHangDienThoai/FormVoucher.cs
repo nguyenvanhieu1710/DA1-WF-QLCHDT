@@ -26,7 +26,10 @@ namespace QuanLyCuaHangDienThoai
             List<Voucher_DTO> voucherList = Voucher_BLL.VoucherList();
             foreach (Voucher_DTO voucher in voucherList)
             {
-                flpContainerVoucher.Controls.Add(GenerateVoucher(voucher));
+                if(voucher.Quantity > 0)
+                {
+                    flpContainerVoucher.Controls.Add(GenerateVoucher(voucher));
+                }
             }
         }
         private void btnClose_Click(object sender, EventArgs e)

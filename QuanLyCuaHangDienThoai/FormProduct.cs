@@ -215,7 +215,10 @@ namespace QuanLyCuaHangDienThoai
             List<Product_DTO> products = product_BLL.ProductList();
             foreach (Product_DTO product in products)
             {
-                flpContainerProduct.Controls.Add(GenerateProduct(product));
+                if(product.Quantity > 0)
+                {
+                    flpContainerProduct.Controls.Add(GenerateProduct(product));
+                }
             }
         }
         private void turnOffHorizontalScrollbar()
@@ -227,7 +230,7 @@ namespace QuanLyCuaHangDienThoai
             flpContainerCategory.HorizontalScroll.Maximum = 0;
             flpContainerCategory.AutoScroll = true;
         }
-        private void turnOffHorizontalScrollbar(FlowLayoutPanel flowLayoutPanel)
+        private void turnOffScrollBar(FlowLayoutPanel flowLayoutPanel)
         {
             // tắt thanh cuộn ngang
             flowLayoutPanel.AutoScroll = false;

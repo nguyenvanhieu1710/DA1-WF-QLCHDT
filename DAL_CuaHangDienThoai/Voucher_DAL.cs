@@ -73,7 +73,6 @@ namespace DAL_CuaHangDienThoai
             try
             {
                 int result = DatabaseAccess.ExcuteNonQuery($"updateVoucher '{Voucher_DTO.IdVoucher}', " +
-                    $"N'{Voucher_DTO.VoucherName}', " +
                 $"N'{Voucher_DTO.VoucherName}', N'{Voucher_DTO.FixedPrice}'," +
                 $"N'{Voucher_DTO.Minimumprice}', '{Voucher_DTO.Quantity}', " +
                 $"'{Voucher_DTO.StartDay}', '{Voucher_DTO.EndDate}', " +

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVoucher = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblQuantityVoucher = new System.Windows.Forms.Label();
@@ -42,17 +42,17 @@
             this.btnAddVoucher = new Guna.UI2.WinForms.Guna2Button();
             this.btnFixVoucher = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cbIdCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DateTimePickerEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DateTimePickerStartDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtIdVoucher = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMinimumPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFixedPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtVoucherName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
-            this.DateTimePickerStartDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.DateTimePickerEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbIdCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVoucher)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,39 +61,39 @@
             // 
             // dgvVoucher
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgvVoucher.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvVoucher.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVoucher.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVoucher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVoucher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVoucher.ColumnHeadersHeight = 26;
             this.dgvVoucher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVoucher.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVoucher.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVoucher.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVoucher.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvVoucher.Location = new System.Drawing.Point(0, 41);
             this.dgvVoucher.Name = "dgvVoucher";
             this.dgvVoucher.RowHeadersVisible = false;
             this.dgvVoucher.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvVoucher.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvVoucher.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVoucher.RowTemplate.Height = 24;
             this.dgvVoucher.Size = new System.Drawing.Size(893, 362);
             this.dgvVoucher.TabIndex = 4;
@@ -118,6 +118,7 @@
             this.dgvVoucher.ThemeStyle.RowsStyle.Height = 24;
             this.dgvVoucher.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvVoucher.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvVoucher.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVoucher_CellClick);
             // 
             // panel1
             // 
@@ -295,6 +296,88 @@
             this.guna2GroupBox1.TabIndex = 22;
             this.guna2GroupBox1.Text = "Voucher infomation";
             // 
+            // cbIdCategory
+            // 
+            this.cbIdCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbIdCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbIdCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIdCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbIdCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbIdCategory.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbIdCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbIdCategory.ItemHeight = 30;
+            this.cbIdCategory.Location = new System.Drawing.Point(563, 149);
+            this.cbIdCategory.Name = "cbIdCategory";
+            this.cbIdCategory.Size = new System.Drawing.Size(276, 36);
+            this.cbIdCategory.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(648, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 24);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "ID Category";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(359, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 24);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "End Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(79, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Start Day";
+            // 
+            // DateTimePickerEndDate
+            // 
+            this.DateTimePickerEndDate.BorderColor = System.Drawing.Color.Transparent;
+            this.DateTimePickerEndDate.Checked = true;
+            this.DateTimePickerEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DateTimePickerEndDate.FillColor = System.Drawing.Color.White;
+            this.DateTimePickerEndDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DateTimePickerEndDate.ForeColor = System.Drawing.Color.Gray;
+            this.DateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateTimePickerEndDate.Location = new System.Drawing.Point(290, 149);
+            this.DateTimePickerEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerEndDate.Name = "DateTimePickerEndDate";
+            this.DateTimePickerEndDate.Size = new System.Drawing.Size(248, 36);
+            this.DateTimePickerEndDate.TabIndex = 16;
+            this.DateTimePickerEndDate.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
+            // 
+            // DateTimePickerStartDay
+            // 
+            this.DateTimePickerStartDay.BorderColor = System.Drawing.Color.Transparent;
+            this.DateTimePickerStartDay.Checked = true;
+            this.DateTimePickerStartDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DateTimePickerStartDay.FillColor = System.Drawing.Color.White;
+            this.DateTimePickerStartDay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DateTimePickerStartDay.ForeColor = System.Drawing.Color.Gray;
+            this.DateTimePickerStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateTimePickerStartDay.Location = new System.Drawing.Point(24, 149);
+            this.DateTimePickerStartDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerStartDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerStartDay.Name = "DateTimePickerStartDay";
+            this.DateTimePickerStartDay.Size = new System.Drawing.Size(248, 36);
+            this.DateTimePickerStartDay.TabIndex = 15;
+            this.DateTimePickerStartDay.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
+            // 
             // txtIdVoucher
             // 
             this.txtIdVoucher.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -314,6 +397,26 @@
             this.txtIdVoucher.SelectedText = "";
             this.txtIdVoucher.Size = new System.Drawing.Size(139, 58);
             this.txtIdVoucher.TabIndex = 13;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantity.DefaultText = "";
+            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQuantity.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQuantity.Location = new System.Drawing.Point(737, 59);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PasswordChar = '\0';
+            this.txtQuantity.PlaceholderText = "Quantity";
+            this.txtQuantity.SelectedText = "";
+            this.txtQuantity.Size = new System.Drawing.Size(102, 58);
+            this.txtQuantity.TabIndex = 13;
             // 
             // txtMinimumPrice
             // 
@@ -374,108 +477,6 @@
             this.txtVoucherName.SelectedText = "";
             this.txtVoucherName.Size = new System.Drawing.Size(230, 58);
             this.txtVoucherName.TabIndex = 13;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQuantity.DefaultText = "";
-            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQuantity.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQuantity.Location = new System.Drawing.Point(737, 59);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.PasswordChar = '\0';
-            this.txtQuantity.PlaceholderText = "Quantity";
-            this.txtQuantity.SelectedText = "";
-            this.txtQuantity.Size = new System.Drawing.Size(102, 58);
-            this.txtQuantity.TabIndex = 13;
-            // 
-            // DateTimePickerStartDay
-            // 
-            this.DateTimePickerStartDay.BorderColor = System.Drawing.Color.Transparent;
-            this.DateTimePickerStartDay.Checked = true;
-            this.DateTimePickerStartDay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DateTimePickerStartDay.FillColor = System.Drawing.Color.White;
-            this.DateTimePickerStartDay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DateTimePickerStartDay.ForeColor = System.Drawing.Color.Gray;
-            this.DateTimePickerStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePickerStartDay.Location = new System.Drawing.Point(24, 149);
-            this.DateTimePickerStartDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateTimePickerStartDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateTimePickerStartDay.Name = "DateTimePickerStartDay";
-            this.DateTimePickerStartDay.Size = new System.Drawing.Size(248, 36);
-            this.DateTimePickerStartDay.TabIndex = 15;
-            this.DateTimePickerStartDay.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
-            // 
-            // DateTimePickerEndDate
-            // 
-            this.DateTimePickerEndDate.BorderColor = System.Drawing.Color.Transparent;
-            this.DateTimePickerEndDate.Checked = true;
-            this.DateTimePickerEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DateTimePickerEndDate.FillColor = System.Drawing.Color.White;
-            this.DateTimePickerEndDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DateTimePickerEndDate.ForeColor = System.Drawing.Color.Gray;
-            this.DateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePickerEndDate.Location = new System.Drawing.Point(290, 149);
-            this.DateTimePickerEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateTimePickerEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateTimePickerEndDate.Name = "DateTimePickerEndDate";
-            this.DateTimePickerEndDate.Size = new System.Drawing.Size(248, 36);
-            this.DateTimePickerEndDate.TabIndex = 16;
-            this.DateTimePickerEndDate.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(79, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Start Day";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(359, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "End Date";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(648, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 24);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "ID Category";
-            // 
-            // cbIdCategory
-            // 
-            this.cbIdCategory.BackColor = System.Drawing.Color.Transparent;
-            this.cbIdCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbIdCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbIdCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbIdCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbIdCategory.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbIdCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbIdCategory.ItemHeight = 30;
-            this.cbIdCategory.Location = new System.Drawing.Point(563, 149);
-            this.cbIdCategory.Name = "cbIdCategory";
-            this.cbIdCategory.Size = new System.Drawing.Size(276, 36);
-            this.cbIdCategory.TabIndex = 20;
             // 
             // FormVoucherManagement
             // 

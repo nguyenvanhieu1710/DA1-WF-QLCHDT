@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker_startedDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_endedDate = new System.Windows.Forms.DateTimePicker();
             this.btnCustomDate = new Guna.UI2.WinForms.Guna2Button();
@@ -66,6 +66,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label_startedDate = new System.Windows.Forms.Label();
             this.label_endedDate = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_grossRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_bestSellingProduct)).BeginInit();
@@ -74,6 +77,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_underStock)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker_startedDate
@@ -108,9 +114,9 @@
             this.btnCustomDate.ForeColor = System.Drawing.Color.Black;
             this.btnCustomDate.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnCustomDate.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnCustomDate.Location = new System.Drawing.Point(515, 63);
+            this.btnCustomDate.Location = new System.Drawing.Point(441, 12);
             this.btnCustomDate.Name = "btnCustomDate";
-            this.btnCustomDate.Size = new System.Drawing.Size(180, 45);
+            this.btnCustomDate.Size = new System.Drawing.Size(112, 45);
             this.btnCustomDate.TabIndex = 6;
             this.btnCustomDate.Text = "Custom";
             this.btnCustomDate.Click += new System.EventHandler(this.btnCustomDate_Click);
@@ -131,9 +137,9 @@
             this.btnLast30Days.ForeColor = System.Drawing.Color.Black;
             this.btnLast30Days.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnLast30Days.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLast30Days.Location = new System.Drawing.Point(701, 12);
+            this.btnLast30Days.Location = new System.Drawing.Point(672, 63);
             this.btnLast30Days.Name = "btnLast30Days";
-            this.btnLast30Days.Size = new System.Drawing.Size(180, 45);
+            this.btnLast30Days.Size = new System.Drawing.Size(147, 45);
             this.btnLast30Days.TabIndex = 6;
             this.btnLast30Days.Text = "Last 30 Days";
             this.btnLast30Days.Click += new System.EventHandler(this.btnLast30Days_Click);
@@ -154,9 +160,9 @@
             this.btnLast7Days.ForeColor = System.Drawing.Color.Black;
             this.btnLast7Days.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnLast7Days.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLast7Days.Location = new System.Drawing.Point(515, 12);
+            this.btnLast7Days.Location = new System.Drawing.Point(677, 12);
             this.btnLast7Days.Name = "btnLast7Days";
-            this.btnLast7Days.Size = new System.Drawing.Size(180, 45);
+            this.btnLast7Days.Size = new System.Drawing.Size(142, 45);
             this.btnLast7Days.TabIndex = 6;
             this.btnLast7Days.Text = "Last 7 Days";
             this.btnLast7Days.Click += new System.EventHandler(this.btnLast7Days_Click);
@@ -177,15 +183,16 @@
             this.btnToday.ForeColor = System.Drawing.Color.Black;
             this.btnToday.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnToday.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnToday.Location = new System.Drawing.Point(701, 63);
+            this.btnToday.Location = new System.Drawing.Point(559, 12);
             this.btnToday.Name = "btnToday";
-            this.btnToday.Size = new System.Drawing.Size(180, 45);
+            this.btnToday.Size = new System.Drawing.Size(112, 45);
             this.btnToday.TabIndex = 6;
             this.btnToday.Text = "Today";
             this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.guna2PictureBox3);
             this.panel1.Controls.Add(this.label_orders);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 118);
@@ -196,7 +203,7 @@
             // label_orders
             // 
             this.label_orders.AutoSize = true;
-            this.label_orders.Location = new System.Drawing.Point(16, 34);
+            this.label_orders.Location = new System.Drawing.Point(58, 34);
             this.label_orders.Name = "label_orders";
             this.label_orders.Size = new System.Drawing.Size(76, 24);
             this.label_orders.TabIndex = 0;
@@ -213,56 +220,58 @@
             // 
             // chart_grossRevenue
             // 
-            chartArea7.Name = "Gross Revenue";
-            this.chart_grossRevenue.ChartAreas.Add(chartArea7);
+            chartArea1.Name = "Gross Revenue";
+            this.chart_grossRevenue.ChartAreas.Add(chartArea1);
             this.chart_grossRevenue.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend7.Name = "Legend1";
-            this.chart_grossRevenue.Legends.Add(legend7);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Name = "Legend1";
+            this.chart_grossRevenue.Legends.Add(legend1);
             this.chart_grossRevenue.Location = new System.Drawing.Point(12, 194);
             this.chart_grossRevenue.Name = "chart_grossRevenue";
-            series7.ChartArea = "Gross Revenue";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chart_grossRevenue.Series.Add(series7);
+            series1.ChartArea = "Gross Revenue";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart_grossRevenue.Series.Add(series1);
             this.chart_grossRevenue.Size = new System.Drawing.Size(544, 300);
             this.chart_grossRevenue.TabIndex = 8;
             this.chart_grossRevenue.Text = "Gross Revenue";
-            title7.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title7.Name = "Title1";
-            title7.Text = "Gross Revenue";
-            this.chart_grossRevenue.Titles.Add(title7);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title1.Name = "Title1";
+            title1.Text = "Gross Revenue";
+            this.chart_grossRevenue.Titles.Add(title1);
             // 
             // chart_bestSellingProduct
             // 
-            chartArea8.Name = "Gross Revenue";
-            this.chart_bestSellingProduct.ChartAreas.Add(chartArea8);
+            chartArea2.Name = "Gross Revenue";
+            this.chart_bestSellingProduct.ChartAreas.Add(chartArea2);
             this.chart_bestSellingProduct.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend8.Name = "Legend1";
-            this.chart_bestSellingProduct.Legends.Add(legend8);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.chart_bestSellingProduct.Legends.Add(legend2);
             this.chart_bestSellingProduct.Location = new System.Drawing.Point(573, 194);
             this.chart_bestSellingProduct.Name = "chart_bestSellingProduct";
-            series8.ChartArea = "Gross Revenue";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series8.IsValueShownAsLabel = true;
-            series8.LabelForeColor = System.Drawing.Color.White;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart_bestSellingProduct.Series.Add(series8);
+            series2.ChartArea = "Gross Revenue";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart_bestSellingProduct.Series.Add(series2);
             this.chart_bestSellingProduct.Size = new System.Drawing.Size(298, 460);
             this.chart_bestSellingProduct.TabIndex = 8;
             this.chart_bestSellingProduct.Text = "Gross Revenue";
-            title8.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title8.Name = "Title1";
-            title8.Text = "Top 5 Products";
-            this.chart_bestSellingProduct.Titles.Add(title8);
+            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title2.Name = "Title1";
+            title2.Text = "Top 5 Products";
+            this.chart_bestSellingProduct.Titles.Add(title2);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.guna2PictureBox2);
+            this.panel2.Controls.Add(this.guna2PictureBox1);
             this.panel2.Controls.Add(this.label_products);
             this.panel2.Controls.Add(this.label_customers);
             this.panel2.Controls.Add(this.label7);
@@ -275,7 +284,7 @@
             // label_products
             // 
             this.label_products.AutoSize = true;
-            this.label_products.Location = new System.Drawing.Point(38, 101);
+            this.label_products.Location = new System.Drawing.Point(58, 99);
             this.label_products.Name = "label_products";
             this.label_products.Size = new System.Drawing.Size(76, 24);
             this.label_products.TabIndex = 0;
@@ -284,7 +293,7 @@
             // label_customers
             // 
             this.label_customers.AutoSize = true;
-            this.label_customers.Location = new System.Drawing.Point(40, 43);
+            this.label_customers.Location = new System.Drawing.Point(58, 38);
             this.label_customers.Name = "label_customers";
             this.label_customers.Size = new System.Drawing.Size(76, 24);
             this.label_customers.TabIndex = 0;
@@ -293,7 +302,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 77);
+            this.label7.Location = new System.Drawing.Point(8, 65);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(176, 24);
             this.label7.TabIndex = 0;
@@ -302,7 +311,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 14);
+            this.label8.Location = new System.Drawing.Point(8, 1);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(194, 24);
             this.label8.TabIndex = 0;
@@ -319,27 +328,27 @@
             // 
             // dataGridView_underStock
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dataGridView_underStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView_underStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_underStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_underStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_underStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_underStock.ColumnHeadersHeight = 20;
             this.dataGridView_underStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_underStock.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_underStock.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_underStock.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView_underStock.Location = new System.Drawing.Point(3, 28);
             this.dataGridView_underStock.Name = "dataGridView_underStock";
@@ -451,6 +460,39 @@
             this.label_endedDate.TabIndex = 10;
             this.label_endedDate.Text = "label10";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.User;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(20, 30);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_mobile_phone_blue;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(20, 91);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 1;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_order_blue;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(20, 26);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 2;
+            this.guna2PictureBox3.TabStop = false;
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -491,6 +533,9 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,5 +570,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_startedDate;
         private System.Windows.Forms.Label label_endedDate;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

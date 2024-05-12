@@ -209,5 +209,18 @@ namespace QuanLyCuaHangDienThoai
             txtQuantity.Text = "";
             cbIdCategory.Text = "";
         }
+
+        private void dgvVoucher_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgvVoucher.Rows[e.RowIndex];
+            txtIdVoucher.Text = row.Cells[0].Value.ToString();
+            txtVoucherName.Text = row.Cells[1].Value.ToString();
+            txtFixedPrice.Text = row.Cells[2].Value.ToString();
+            txtMinimumPrice.Text = row.Cells[3].Value.ToString();
+            txtQuantity.Text = row.Cells[4].Value.ToString();
+            DateTimePickerStartDay.Text = row.Cells[5].Value.ToString();
+            DateTimePickerEndDate.Text = row.Cells[6].Value.ToString();
+            cbIdCategory.Text = row.Cells[7].Value.ToString();
+        }
     }
 }

@@ -179,7 +179,13 @@ namespace QuanLyCuaHangDienThoai
             {
                 return;
             }
+
+            // kiểm tra login và lấy ra tài khoản đang online
+            Account_BLL account_BLL = new Account_BLL();
+            (int quantityAccountOnline, Account_DTO accountOnline) = account_BLL.checkAndGetAccountOnline();
+
             Customer_DTO customer_DTO = AssignDataDTO();
+            customer_DTO.IdCustomer = accountOnline.IdAccount;
 
             if (!customer_BLL.CheckExit(customer_DTO))
             {
