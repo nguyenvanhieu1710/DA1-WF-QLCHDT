@@ -111,5 +111,17 @@ namespace DAL_CuaHangDienThoai
                 throw ex;
             }
         }
+        public int deleteOrder(OrderTable_DTO OrderTable_DTO)
+        {
+            try
+            {
+                int result = DatabaseAccess.ExcuteNonQuery($"deleteOrderTable '{OrderTable_DTO.IdOrderTable}'");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -33,7 +33,6 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.flpNavigation = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBill = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnVoucher = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
@@ -60,6 +59,7 @@
             this.ControlBoxMinimum = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pnlContent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnBillManagement = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.flpNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
@@ -112,8 +112,8 @@
             // flpNavigation
             // 
             this.flpNavigation.BackColor = System.Drawing.Color.White;
+            this.flpNavigation.Controls.Add(this.btnBillManagement);
             this.flpNavigation.Controls.Add(this.btnBill);
-            this.flpNavigation.Controls.Add(this.btnReport);
             this.flpNavigation.Controls.Add(this.btnVoucher);
             this.flpNavigation.Controls.Add(this.btnHome);
             this.flpNavigation.Controls.Add(this.btnLogin);
@@ -151,37 +151,12 @@
             this.btnBill.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBill.ImageOffset = new System.Drawing.Point(4, 0);
             this.btnBill.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnBill.Location = new System.Drawing.Point(3, 3);
+            this.btnBill.Location = new System.Drawing.Point(3, 49);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(206, 40);
             this.btnBill.TabIndex = 4;
             this.btnBill.Text = "Export Bill";
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
-            // 
-            // btnReport
-            // 
-            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReport.FillColor = System.Drawing.Color.White;
-            this.btnReport.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnReport.ForeColor = System.Drawing.Color.Black;
-            this.btnReport.HoverState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnReport.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnReport.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnReport.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_report_white;
-            this.btnReport.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_report_blue;
-            this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReport.ImageOffset = new System.Drawing.Point(4, 0);
-            this.btnReport.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnReport.Location = new System.Drawing.Point(3, 49);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(206, 40);
-            this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "Report";
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnVoucher
             // 
@@ -674,6 +649,31 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // btnBillManagement
+            // 
+            this.btnBillManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBillManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBillManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBillManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBillManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBillManagement.FillColor = System.Drawing.Color.White;
+            this.btnBillManagement.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnBillManagement.ForeColor = System.Drawing.Color.Black;
+            this.btnBillManagement.HoverState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnBillManagement.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnBillManagement.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnBillManagement.HoverState.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_bill_white;
+            this.btnBillManagement.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.icon_bill_blue;
+            this.btnBillManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBillManagement.ImageOffset = new System.Drawing.Point(4, 0);
+            this.btnBillManagement.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnBillManagement.Location = new System.Drawing.Point(3, 3);
+            this.btnBillManagement.Name = "btnBillManagement";
+            this.btnBillManagement.Size = new System.Drawing.Size(206, 40);
+            this.btnBillManagement.TabIndex = 4;
+            this.btnBillManagement.Text = "Bill";
+            this.btnBillManagement.Click += new System.EventHandler(this.btnBillManagement_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -733,7 +733,7 @@
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnOrder;
         private Guna.UI2.WinForms.Guna2Button btnVoucher;
-        private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2Button btnBill;
+        private Guna.UI2.WinForms.Guna2Button btnBillManagement;
     }
 }

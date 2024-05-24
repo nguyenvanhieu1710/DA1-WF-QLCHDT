@@ -72,7 +72,7 @@ namespace QuanLyCuaHangDienThoai
             labelProductPrice.Name = "lblProductPrice";
             labelProductPrice.Size = new System.Drawing.Size(121, 24);
             labelProductPrice.TabIndex = 41;
-            labelProductPrice.Text = product.Price.ToString("N0") +"đ";
+            labelProductPrice.Text = product.Price.ToString("N0") + "đ";
 
             Guna2Button buttonAddToCart = new Guna2Button();
             buttonAddToCart.AutoRoundedCorners = true;
@@ -181,11 +181,11 @@ namespace QuanLyCuaHangDienThoai
             if (cart_BLL.CheckExit(product_DTO, accountOnline))
             {
                 MessageBox.Show("Products already in the cart", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return ;
+                return;
             }
             // vì id account và id customer là như nhau lên thêm cái nào cũng thế
             int result = 1;
-            if(result == cart_BLL.addCart(product_DTO, accountOnline))
+            if (result == cart_BLL.addCart(product_DTO, accountOnline))
             {
                 MessageBox.Show("Successfully added to cart", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -210,12 +210,15 @@ namespace QuanLyCuaHangDienThoai
             List<Category_DTO> list = Category_BLL.CategoryList();
             foreach (Category_DTO category in list)
             {
-                flpContainerCategory.Controls.Add(GenerateCategory(category));
+                if (category.IdCategory != 1)
+                {
+                    flpContainerCategory.Controls.Add(GenerateCategory(category));
+                }
             }
             List<Product_DTO> products = product_BLL.ProductList();
             foreach (Product_DTO product in products)
             {
-                if(product.Quantity > 0)
+                if (product.Quantity > 0 || product.IdProduct != 1)
                 {
                     flpContainerProduct.Controls.Add(GenerateProduct(product));
                 }
@@ -279,7 +282,10 @@ namespace QuanLyCuaHangDienThoai
             flpContainerProduct.Controls.Clear();
             foreach (Product_DTO Products in ProductList_search)
             {
-                flpContainerProduct.Controls.Add(GenerateProduct(Products));
+                if (Products.Quantity > 0 || Products.IdProduct != 1)
+                {
+                    flpContainerProduct.Controls.Add(GenerateProduct(Products));
+                }
             }
         }
 
@@ -295,7 +301,10 @@ namespace QuanLyCuaHangDienThoai
             flpContainerProduct.Controls.Clear();
             foreach (Product_DTO Products in productFilter)
             {
-                flpContainerProduct.Controls.Add(GenerateProduct(Products));
+                if (Products.Quantity > 0 || Products.IdProduct != 1)
+                {
+                    flpContainerProduct.Controls.Add(GenerateProduct(Products));
+                }
             }
         }
     }

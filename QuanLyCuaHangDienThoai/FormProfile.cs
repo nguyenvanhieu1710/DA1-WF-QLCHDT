@@ -32,14 +32,14 @@ namespace QuanLyCuaHangDienThoai
             int idOnline = 0;
             foreach (Account_DTO account in accountList)
             {
-                if(account.Status == "Online")
+                if (account.Status == "Online")
                 {
                     idOnline = account.IdAccount;
                 }
             }
             foreach (Customer_DTO customer in customerList)
             {
-                if(customer.IdCustomer == idOnline)
+                if (customer.IdCustomer == idOnline)
                 {
                     picImageCustomer.ImageLocation = customer.ImageCustomer;
                     txtUserName.Text = customer.CustomerName;
@@ -71,12 +71,16 @@ namespace QuanLyCuaHangDienThoai
             {
                 picImageCustomer.Image = new Bitmap(openFileDialog.FileName);
                 // MessageBox.Show("Đường dẫn của tệp hình ảnh đã chọn: " + openFileDialog.FileName);
+                fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+                // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
+                // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
+                saveImage = Application.StartupPath + @"\Image\" + fileName;
+                // MessageBox.Show(saveImage);
             }
-            fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
-            // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
-            // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
-            saveImage = Application.StartupPath + @"\Image\" + fileName;
-            // MessageBox.Show(saveImage);
+            else
+            {
+                //MessageBox.Show("Không chọn ảnh nào");
+            }
         }
         private bool CheckRegex()
         {

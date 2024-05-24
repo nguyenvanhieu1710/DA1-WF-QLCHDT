@@ -130,10 +130,10 @@ namespace BLL_CuaHangDienThoai
 
             foreach (Product_DTO item in Products)
             {
-                if (item.TradeMark == filter)
-                {
-                    list.Add(item);
-                }
+                //if (item.TradeMark == filter)
+                //{
+                //    list.Add(item);
+                //}
                 // tương đối
                 if (item.TradeMark.Contains(filter))
                 {

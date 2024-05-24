@@ -17,7 +17,7 @@ namespace QuanLyCuaHangDienThoai
 {
     public partial class FormUserManagement : Form
     {
-        
+
         public FormUserManagement()
         {
             InitializeComponent();
@@ -33,12 +33,16 @@ namespace QuanLyCuaHangDienThoai
             {
                 picCustomerImage.Image = new Bitmap(openFileDialog.FileName);
                 // MessageBox.Show("Đường dẫn của tệp hình ảnh đã chọn: " + openFileDialog.FileName);
+                fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+                // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
+                // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
+                saveImage = Application.StartupPath + @"\Image\" + fileName;
+                // MessageBox.Show(saveImage);
             }
-            fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
-            // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
-            // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
-            saveImage = Application.StartupPath + @"\Image\" + fileName;
-            // MessageBox.Show(saveImage);
+            else
+            {
+                //MessageBox.Show("Không chọn ảnh nào");
+            }
         }
         private Panel GenerateCustomer(Customer_DTO customer_DTO)
         {
@@ -113,7 +117,7 @@ namespace QuanLyCuaHangDienThoai
             lblQuantity.Text = customerList.Count.ToString() + " User";
             // cập nhật lại để tránh khi không chọn ảnh
             // mà vẫn có đường dẫn được lưu vào biến này sau lần nhấn trước đó
-            saveImage = ""; 
+            saveImage = "";
         }
         private void FormUserManagement_Load(object sender, EventArgs e)
         {
@@ -121,12 +125,12 @@ namespace QuanLyCuaHangDienThoai
         }
         private bool CheckRegex()
         {
-            if(txtIdUser.Text.Trim() == "")
+            if (txtIdUser.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter ID Customer");
                 return false;
             }
-            if(!RegexData.IsValidId(txtIdUser.Text.Trim()))
+            if (!RegexData.IsValidId(txtIdUser.Text.Trim()))
             {
                 MessageBox.Show("ID Customer not valid");
                 return false;
@@ -188,7 +192,7 @@ namespace QuanLyCuaHangDienThoai
                 // lưu vô đối tượng DTO để cho vào cơ sở dữ liệu
                 customer_DTO.ImageCustomer = saveImage;
                 picCustomerImage.Image.Save($@"{saveImage}");
-            }          
+            }
         }
         private void NoChooseImage(Customer_DTO customer_DTO)
         {
@@ -218,7 +222,7 @@ namespace QuanLyCuaHangDienThoai
             catch (Exception ex)
             {
                 throw ex;
-            }          
+            }
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -237,12 +241,12 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("The customer already exists");
                 return;
             }
-            if (saveImage == null || saveImage == "") 
+            if (saveImage == null || saveImage == "")
             {
                 // không chọn ảnh -> đường dẫn trống
                 NoChooseImage(customer_DTO);
             }
-            else 
+            else
             {
                 // chọn ảnh -> có đường dẫn
                 ChooseImage(customer_DTO);
@@ -372,12 +376,12 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            if(cbFilter.Text == "")
+            if (cbFilter.Text == "")
             {
                 MessageBox.Show("Please choose combobox");
                 return;
             }
-            
+
             List<Customer_DTO> customerFilter = customer_BLL.filterCustomer(cbFilter.Text);
             flpContainerCustomer.Controls.Clear();
             foreach (Customer_DTO customers in customerFilter)

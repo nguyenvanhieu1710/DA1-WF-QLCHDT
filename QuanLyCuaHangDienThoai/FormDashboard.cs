@@ -30,6 +30,9 @@ namespace QuanLyCuaHangDienThoai
             LoadDataOnChart();
         }
 
+        // Khai báo resultTable như biến toàn cục
+        private List<KeyValuePair<DateTime, decimal>> ResultTable;
+
         public struct RevenueByDate
         {
             public string Date { get; set; }
@@ -37,9 +40,9 @@ namespace QuanLyCuaHangDienThoai
         }
 
         //Fields & Properties
-        private DateTime startDate;
-        private DateTime endDate;
-        private int numberDays;
+        //private DateTime startDate;
+        //private DateTime endDate;
+        //private int numberDays;
 
         public int NumCustomers { get; private set; }
         public int NumProducts { get; private set; }
@@ -228,6 +231,9 @@ namespace QuanLyCuaHangDienThoai
             chart_grossRevenue.Series[0].XValueMember = "Date";
             chart_grossRevenue.Series[0].YValueMembers = "TotalAmount";
             chart_grossRevenue.DataBind();
+
+            // gán ra toàn cục để lưu vào excel
+            ResultTable = resultTable;
         }
 
 
@@ -351,6 +357,97 @@ namespace QuanLyCuaHangDienThoai
 
             LoadDataOnChart();
             ActivatedButton(sender, null);
+        }
+
+        private void btnPrintReport_Click(object sender, EventArgs e)
+        {
+            // Lấy đường dẫn lưu tệp Excel
+            string filePath = GetExcelSavePath();
+
+            if (String.IsNullOrEmpty(filePath))
+            {
+                // Xử lý trường hợp người dùng hủy chọn đường dẫn tệp
+                return;
+            }
+
+            // Khai báo các đối tượng Excel
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook excelworkBook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel.Worksheet excelSheet = (Microsoft.Office.Interop.Excel.Worksheet)excelworkBook.ActiveSheet;
+            //Microsoft.Office.Interop.Excel.Range excelCellrange;
+
+            // Viết tiêu đề cho Sản phẩm Nổi bật, Doanh thu Hàng ngày và các thông tin bổ sung
+            excelSheet.Cells[1, 1] = "Top 5 Sản phẩm";
+            excelSheet.Cells[8, 1] = "Doanh thu Hàng ngày";
+            excelSheet.Cells[1, 4] = "Số lượng đơn hàng";
+            excelSheet.Cells[3, 4] = "Tổng doanh thu";
+            excelSheet.Cells[5, 4] = "Tổng lợi nhuận";
+            excelSheet.Cells[7, 4] = "Số lượng khách hàng";
+            excelSheet.Cells[9, 4] = "Số lượng sản phẩm";
+
+            // Định dạng cột Sản phẩm Nổi bật
+            excelSheet.Columns[1].AutoFit(); // Tự động điều chỉnh độ rộng cột 1 (Tên sản phẩm)
+            //excelSheet.Columns[2].ColumnWidth = 20; // Cài đặt độ rộng cố định 20 cho cột 2 (Số lượng)
+
+            // Định dạng cột Doanh thu Hàng ngày
+            excelSheet.Columns[1].AutoFit(); // Tự động điều chỉnh độ rộng cột 1 (Ngày)
+            //excelSheet.Columns[2].ColumnWidth = 20; // Cài đặt độ rộng cố định 20 cho cột 2 (Tổng doanh thu)
+
+            // Điều chỉnh độ rộng cột 3 (chứa tiêu đề và dữ liệu)
+            excelSheet.Columns[3].AutoFit();
+            // Điều chỉnh độ rộng cột 4 (chứa tiêu đề và dữ liệu)
+            excelSheet.Columns[4].AutoFit();
+
+            // Viết dữ liệu Sản phẩm Nổi bật
+            int row = 2;
+            foreach (var item in TopProductsList.OrderByDescending(p => p.Value).Take(5))
+            {
+                excelSheet.Cells[row, 1] = item.Key;
+                excelSheet.Cells[row, 2] = item.Value;
+                row++;
+            }
+
+            // Viết dữ liệu Doanh thu Hàng ngày
+            row = 9;
+            foreach (var item in ResultTable)
+            {
+                excelSheet.Cells[row, 1] = item.Key.ToString("dd/MM/yyyy");
+                excelSheet.Cells[row, 2] = item.Value;
+                row++;
+            }
+
+            // Viết dữ liệu Số lượng đơn hàng
+            excelSheet.Cells[2, 4] = NumOrders;
+
+            // Viết dữ liệu Tổng doanh thu (đã lấy trước đó)
+            excelSheet.Cells[4, 4] = TotalRevenue;
+
+            // Viết dữ liệu Tổng lợi nhuận (đã lấy trước đó)
+            excelSheet.Cells[6, 4] = TotalProfit;
+
+            // Viết dữ liệu Số lượng khách hàng
+            excelSheet.Cells[8, 4] = NumCustomers;
+
+            // Viết dữ liệu Số lượng sản phẩm
+            excelSheet.Cells[10, 4] = products.Count();
+
+            // Lưu và đóng tệp Excel
+            excelworkBook.SaveAs(filePath);
+            excelworkBook.Close();
+            excel.Quit();
+        }
+        private string GetExcelSavePath()
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Save Statistics to Excel";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    return saveFileDialog.FileName;
+                }
+            }
+            return null;
         }
     }
 }

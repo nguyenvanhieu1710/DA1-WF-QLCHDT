@@ -20,6 +20,18 @@ namespace BLL_CuaHangDienThoai
             List<OrderDetail_DTO> list = OrderTable_DAL.OrderDetailList();
             return list;
         }
+        public bool CheckExit(OrderTable_DTO OrderTable_DTO)
+        {
+            List<OrderTable_DTO> list = OrderList();
+            foreach (OrderTable_DTO item in list)
+            {
+                if (OrderTable_DTO.IdOrderTable == item.IdOrderTable)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public int addOrder(OrderTable_DTO orderTable_DTO)
         {
             int result = OrderTable_DAL.addOrderTable(orderTable_DTO);
@@ -33,6 +45,11 @@ namespace BLL_CuaHangDienThoai
         public int updateOrder(OrderTable_DTO orderTable_DTO)
         {
             int result = OrderTable_DAL.updateOrder(orderTable_DTO);
+            return result;
+        }
+        public int deleteOrder(OrderTable_DTO OrderTable)
+        {
+            int result = OrderTable_DAL.deleteOrder(OrderTable);
             return result;
         }
     }

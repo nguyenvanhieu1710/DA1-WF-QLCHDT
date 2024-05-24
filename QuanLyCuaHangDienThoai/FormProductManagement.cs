@@ -72,7 +72,7 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter product detail");
                 return false;
             }
-            if(cbIdCategory.Text == "")
+            if (cbIdCategory.Text == "")
             {
                 MessageBox.Show("Please choose id category");
                 return false;
@@ -101,14 +101,16 @@ namespace QuanLyCuaHangDienThoai
             {
                 // MessageBox.Show("Path is not exists or not valid");
                 saveImage = saveImage.Replace(@"\\", @"\");
+                //Directory.CreateDirectory(saveImage); // tạo thư mục luôn trước khi lưu
                 picProductImage.Image.Save($@"{saveImage}");
             }
             else
             {
                 // lưu vô đối tượng DTO để cho vào cơ sở dữ liệu
                 Product_DTO.ImageProduct = saveImage;
+                //Directory.CreateDirectory(saveImage);
                 picProductImage.Image.Save($@"{saveImage}");
-            }           
+            }
         }
         private void NoChooseImage(Product_DTO Product_DTO)
         {
@@ -122,7 +124,7 @@ namespace QuanLyCuaHangDienThoai
                 // nếu trong database là ảnh trống thì cứ để nguyên và thoát ra thôi
                 return;
             }
-            
+
             try
             {
                 // Kiểm tra xem đường dẫn cũ tồn tại không
@@ -136,7 +138,7 @@ namespace QuanLyCuaHangDienThoai
                 }
                 // nếu đường dẫn đã tồn tại thì không cần save lại nữa
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -314,12 +316,16 @@ namespace QuanLyCuaHangDienThoai
                 //picProductImage.ImageLocation = img;
                 picProductImage.Image = new Bitmap(openFileDialog.FileName);
                 // MessageBox.Show("Đường dẫn của tệp hình ảnh đã chọn: " + openFileDialog.FileName);
+                fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+                // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
+                // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
+                saveImage = Application.StartupPath + @"\Image\" + fileName;
+                // MessageBox.Show(saveImage);
             }
-            fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
-            // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
-            // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
-            saveImage = Application.StartupPath + @"\Image\" + fileName;
-            // MessageBox.Show(saveImage);
+            else
+            {
+                //MessageBox.Show("Không chọn ảnh nào");
+            }
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

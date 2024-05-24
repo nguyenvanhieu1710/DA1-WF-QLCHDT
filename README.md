@@ -1,4 +1,5 @@
 # Đồ án 1: Xây dựng phần mềm quản lý cửa hàng điện thoại
+
 <p>Author : Nguyễn Văn Hiếu</p>
 <p>A student at UTEHY and in class 12522W.4</p>
 <p>Time: ...</p>
@@ -13,6 +14,19 @@
   <li>Nested form</li>
   <li>Delegate, Event</li>
 </ul>
+<h2>Demo</h2>
+<img src="../Image demo/Home.png" alt="Home" />
+<img src="../Image demo/Login.png" alt="Login" />
+<img src="../Image demo/Register.png" alt="Register" />
+<img src="../Image demo/UserManagement.png" alt="User Management" />
+<img src="../Image demo/Voucher.png" alt="Voucher" />
+<img src="../Image demo/Profile.png" alt="Profile" />
+<img src="../Image demo/Cart.png" alt="Cart" />
+<img src="../Image demo/Order.png" alt="Order" />
+<img src="../Image demo/OrderDetail.png" alt="Order Detail" />
+<img src="../Image demo/Pay.png" alt="Pay" />
+<img src="../Image demo/Bill.png" alt="Bill" />
+
 <h2>How to use my project</h2>
 <p>Please read the documentation first</p>
 <p>To use this project you need to make sure these things still work fine.</p>
@@ -23,3 +37,6 @@
     <li>Soure code</li>
     <li>File Database</li>
 </ul>
+<p>You might get an error with the guna framework, so please delete it and download it in the nuget packet</p>
+<p>Please go to SQL Server Management Studio 19 to get your server name and edit it in the DatabaseAccess.cs file and FormReportView.cs file to be able to run the server and database correctly.</p>
+<p>And finally, run the database script file and run the c# project</p>

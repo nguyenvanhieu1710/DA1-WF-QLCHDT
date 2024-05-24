@@ -81,8 +81,8 @@ namespace QuanLyCuaHangDienThoai
             btnDashboard.Visible = false;
             btnVoucherManagement.Visible = false;
             btnVoucher.Visible = false;
-            btnReport.Visible = false;
             btnBill.Visible = false;
+            btnBillManagement.Visible = false;
         }
         private void Navigation(Account_DTO account_DTO)
         {
@@ -102,8 +102,8 @@ namespace QuanLyCuaHangDienThoai
                 btnVoucherManagement.Visible = false;
                 btnOrder.Visible = false;
                 btnVoucher.Visible = false;
-                btnReport.Visible = false;
                 btnBill.Visible = false;
+                btnBillManagement.Visible = false;
             }
             if(account_DTO.Role == "Staff")
             {
@@ -112,8 +112,8 @@ namespace QuanLyCuaHangDienThoai
                 btnDashboard.Visible = true;
                 btnVoucherManagement.Visible = true;
                 btnOrder.Visible = true;
-                btnReport.Visible = true;
                 btnBill.Visible = true;
+                btnBillManagement.Visible = true;
 
                 btnHome.Visible = false;
                 btnUserManagement.Visible = false;
@@ -328,18 +328,19 @@ namespace QuanLyCuaHangDienThoai
             picTopic.Image = Properties.Resources.icon_order_blue;
             content(order);
         }
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            turnOnButton(sender);
-            lblTopic.Text = "Report";
-            picTopic.Image = Properties.Resources.icon_report_blue;
-            content(new FormReport());
-        }private void btnBill_Click(object sender, EventArgs e)
+        private void btnBill_Click(object sender, EventArgs e)
         {
             turnOnButton(sender);
             lblTopic.Text = "Bill";
             picTopic.Image = Properties.Resources.icon_bill_blue;
             content(new FormBill());
+        }
+        private void btnBillManagement_Click(object sender, EventArgs e)
+        {
+            turnOnButton(sender);
+            lblTopic.Text = "Bill Management";
+            picTopic.Image = Properties.Resources.icon_bill_blue;
+            content(new FormBillManagement());
         }
     }
 }
