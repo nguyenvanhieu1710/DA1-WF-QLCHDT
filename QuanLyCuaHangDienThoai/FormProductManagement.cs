@@ -52,9 +52,19 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter quantity");
                 return false;
             }
+            if (int.Parse(txtQuantity.Text.Trim()) < 0)
+            {
+                MessageBox.Show("Quantity is not valid");
+                return false;
+            }
             if (txtPrice.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter price");
+                return false;
+            }
+            if (int.Parse(txtPrice.Text.Trim()) < 0)
+            {
+                MessageBox.Show("Price is not valid");
                 return false;
             }
             if (txtIdTradeMark.Text.Trim() == "")

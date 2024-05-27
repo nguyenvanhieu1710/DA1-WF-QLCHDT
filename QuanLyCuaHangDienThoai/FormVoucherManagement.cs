@@ -52,14 +52,29 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter fixed price");
                 return false;
             }
+            if (int.Parse(txtFixedPrice.Text.Trim()) < 0)
+            {
+                MessageBox.Show("Fixed Price is not valid");
+                return false;
+            }
             if (txtMinimumPrice.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter minimum price");
                 return false;
             }
+            if (int.Parse(txtMinimumPrice.Text.Trim()) < 0)
+            {
+                MessageBox.Show("Minimum price is not valid");
+                return false;
+            }
             if (txtQuantity.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter quantity");
+                return false;
+            }
+            if (int.Parse(txtQuantity.Text.Trim()) < 0)
+            {
+                MessageBox.Show("Quantity is not valid");
                 return false;
             }
             if (cbIdCategory.Text.Trim() == "")

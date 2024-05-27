@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_CuaHangDienThoai", "DAL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_CuaHangDienThoai", "DTO_CuaHangDienThoai\DTO_CuaHangDienThoai.csproj", "{87BED94F-9395-4CFD-853C-EC2CE9136412}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{82EB91D7-B8B1-425C-965F-2CE5A3106D47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{87BED94F-9395-4CFD-853C-EC2CE9136412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87BED94F-9395-4CFD-853C-EC2CE9136412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87BED94F-9395-4CFD-853C-EC2CE9136412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82EB91D7-B8B1-425C-965F-2CE5A3106D47}.Debug|Any CPU.ActiveCfg = Debug
+		{82EB91D7-B8B1-425C-965F-2CE5A3106D47}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
