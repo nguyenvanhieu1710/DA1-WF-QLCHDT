@@ -19,17 +19,25 @@ namespace QuanLyCuaHangDienThoai
         {
             InitializeComponent();
         }
-
+        Customer_BLL customer_BLL = new Customer_BLL();
         private void FormBill_Load(object sender, EventArgs e)
+        {
+            refesh();
+        }
+        private void refesh()
         {
             flpContainer.Controls.Clear();
             turnOffScrollBars(flpContainer);
 
-            Customer_BLL customer_BLL = new Customer_BLL();
             List<Customer_DTO> customerList = customer_BLL.customerList();
-            foreach(Customer_DTO customer in customerList)
+            foreach (Customer_DTO customer in customerList)
             {
-                flpContainer.Controls.Add(GenerateCustomer(customer));
+                // 3 là dữ liệu ảo
+                if (customer.IdCustomer != 3)
+                {
+                    // customerList.Remove(customer);
+                    flpContainer.Controls.Add(GenerateCustomer(customer));
+                }
             }
         }
         private Panel GenerateCustomer(Customer_DTO customer_DTO)

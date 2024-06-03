@@ -306,7 +306,16 @@ namespace QuanLyCuaHangDienThoai
         private void Refrech()
         {
             List<Product_DTO> ProductList = Product_BLL.ProductList();
-            dgvProduct.DataSource = Product_BLL.productList();
+            foreach (Product_DTO products in ProductList)
+            {
+                // 1 là dữ liệu ảo
+                if (products.IdProduct == 1)
+                {
+                    ProductList.Remove(products);
+                    break;
+                }
+            }
+            dgvProduct.DataSource = ProductList;
             // số lượng product
             lblQuantityProduct.Text = ProductList.Count.ToString() + " Product";
             // cập nhật lại để tránh khi không chọn ảnh
@@ -359,7 +368,11 @@ namespace QuanLyCuaHangDienThoai
             List<Category_DTO> categoryList = category_BLL.CategoryList();
             foreach (Category_DTO category_DTO in categoryList)
             {
-                cbIdCategory.Items.Add(category_DTO.IdCategory);
+                // 1 là dữ liệu ảo
+                if (category_DTO.IdCategory != 1)
+                {
+                    cbIdCategory.Items.Add(category_DTO.IdCategory);
+                }
             }
         }
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)

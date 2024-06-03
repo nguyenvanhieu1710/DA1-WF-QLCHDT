@@ -26,7 +26,8 @@ namespace QuanLyCuaHangDienThoai
             List<Voucher_DTO> voucherList = Voucher_BLL.VoucherList();
             foreach (Voucher_DTO voucher in voucherList)
             {
-                if(voucher.Quantity > 0)
+                // 1 là dữ liệu ảo
+                if (voucher.Quantity > 0 || voucher.IdVoucher != 1)
                 {
                     flpContainerVoucher.Controls.Add(GenerateVoucher(voucher));
                 }

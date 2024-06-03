@@ -110,8 +110,12 @@ namespace QuanLyCuaHangDienThoai
             List<Customer_DTO> customerList = customer_BLL.customerList();
             foreach (Customer_DTO customer in customerList)
             {
-                // thêm các panel vào trong flowPanel
-                flpContainerCustomer.Controls.Add(GenerateCustomer(customer));
+                // 3 là dữ liệu ảo
+                if (customer.IdCustomer != 3)
+                {
+                    // customerList.Remove(customer);
+                    flpContainerCustomer.Controls.Add(GenerateCustomer(customer));
+                }
             }
             // số lượng user
             lblQuantity.Text = customerList.Count.ToString() + " User";

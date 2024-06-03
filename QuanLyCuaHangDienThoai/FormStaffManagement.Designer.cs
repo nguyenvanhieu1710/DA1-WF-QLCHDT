@@ -442,7 +442,7 @@
             this.btnRefrech.Name = "btnRefrech";
             this.btnRefrech.Size = new System.Drawing.Size(146, 45);
             this.btnRefrech.TabIndex = 9;
-            this.btnRefrech.Text = "Refrech";
+            this.btnRefrech.Text = "Refresh";
             this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
             // 
             // guna2Panel1

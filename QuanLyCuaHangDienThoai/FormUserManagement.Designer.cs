@@ -420,7 +420,7 @@
             this.btnRefrech.Name = "btnRefrech";
             this.btnRefrech.Size = new System.Drawing.Size(146, 45);
             this.btnRefrech.TabIndex = 17;
-            this.btnRefrech.Text = "Refrech";
+            this.btnRefrech.Text = "Refresh";
             this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
             // 
             // panel1

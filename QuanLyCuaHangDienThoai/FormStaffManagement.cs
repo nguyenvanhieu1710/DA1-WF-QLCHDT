@@ -23,7 +23,7 @@ namespace QuanLyCuaHangDienThoai
         Staff_BLL Staff_BLL = new Staff_BLL();
         private bool CheckRegex()
         {
-            if(txtIdStaff.Text.Trim() == "")
+            if (txtIdStaff.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter ID Staff");
                 return false;
@@ -63,12 +63,12 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Phone number not valid");
                 return false;
             }
-            if(txtAddress.Text.Trim() == "")
+            if (txtAddress.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter address");
                 return false;
             }
-            if(txtAddress.Text.Trim() == "")
+            if (txtAddress.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter Address");
                 return false;
@@ -128,8 +128,12 @@ namespace QuanLyCuaHangDienThoai
             List<Staff_DTO> StaffList = Staff_BLL.staffList();
             foreach (Staff_DTO Staff in StaffList)
             {
-                // thêm các panel vào trong flowPanel
-                flpContainerStaff.Controls.Add(GenerateStaff(Staff));
+                // 2 là dữ liệu ảo
+                if (Staff.IdStaff != 2)
+                {
+                    // StaffList.Remove(Staff);
+                    flpContainerStaff.Controls.Add(GenerateStaff(Staff));
+                }
             }
             // số lượng user
             lblQuantityStaff.Text = StaffList.Count.ToString() + " Staff";
@@ -151,11 +155,11 @@ namespace QuanLyCuaHangDienThoai
             {
                 picStaffImage.Image = new Bitmap(openFileDialog.FileName);
                 // MessageBox.Show("Đường dẫn của tệp hình ảnh đã chọn: " + openFileDialog.FileName);
-            fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
-            // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
-            // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
-            saveImage = Application.StartupPath + @"\Image\" + fileName;
-            // MessageBox.Show(saveImage);
+                fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+                // MessageBox.Show("Tên của tệp hình ảnh đã chọn: " + fileName);
+                // Application.StartupPath là cắm đường dẫn tới folder Debug trong folder bin
+                saveImage = Application.StartupPath + @"\Image\" + fileName;
+                // MessageBox.Show(saveImage);
             }
             else
             {

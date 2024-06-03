@@ -21,8 +21,17 @@ namespace QuanLyCuaHangDienThoai
         Voucher_BLL Voucher_BLL = new Voucher_BLL();
         private void Refrech()
         {
-            dgvVoucher.DataSource = Voucher_BLL.VoucherList();
             List<Voucher_DTO> Voucher_DTO = Voucher_BLL.VoucherList();
+            foreach(Voucher_DTO vouchers in  Voucher_DTO)
+            {
+                // 1 là dữ liệu ảo
+                if (vouchers.IdVoucher == 1)
+                {
+                    Voucher_DTO.Remove(vouchers);
+                    break;
+                }
+            }
+            dgvVoucher.DataSource = Voucher_DTO;
             lblQuantityVoucher.Text = Voucher_DTO.Count.ToString() + " Voucher";
             LoadDataComboBox();
         }
@@ -105,7 +114,11 @@ namespace QuanLyCuaHangDienThoai
             List<Category_DTO> categoryList = category_BLL.CategoryList();
             foreach (Category_DTO category_DTO in categoryList)
             {
-                cbIdCategory.Items.Add(category_DTO.IdCategory);
+                // 1 là dữ liệu ảo
+                if (category_DTO.IdCategory != 1)
+                {
+                    cbIdCategory.Items.Add(category_DTO.IdCategory);
+                }
             }
         }
         private void btnAddVoucher_Click(object sender, EventArgs e)

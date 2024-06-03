@@ -21,9 +21,18 @@ namespace QuanLyCuaHangDienThoai
         Category_BLL Category_BLL = new Category_BLL();
         private void Refrech()
         {
-            dgvCategory.DataSource = Category_BLL.categoryList();
-            List<Category_DTO> category_DTO = Category_BLL.CategoryList();
-            lblQuantityCategory.Text = category_DTO.Count.ToString() + " Category";
+            List<Category_DTO> categoryList = Category_BLL.CategoryList();
+            foreach (Category_DTO category in categoryList)
+            {
+                // 1 là dữ liệu ảo
+                if (category.IdCategory == 1)
+                {
+                    categoryList.Remove(category);
+                    break;
+                }
+            }
+            dgvCategory.DataSource = categoryList;
+            lblQuantityCategory.Text = categoryList.Count.ToString() + " Category";
         }
         private void FormCategoryManagement_Load(object sender, EventArgs e)
         {
