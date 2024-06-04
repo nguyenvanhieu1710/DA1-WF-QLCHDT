@@ -61,6 +61,11 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter fixed price");
                 return false;
             }
+            if (!RegexData.IsValidId(txtFixedPrice.Text.Trim()))
+            {
+                MessageBox.Show("Fixed Price is not valid");
+                return false;
+            }
             if (int.Parse(txtFixedPrice.Text.Trim()) < 0)
             {
                 MessageBox.Show("Fixed Price is not valid");
@@ -71,6 +76,11 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter minimum price");
                 return false;
             }
+            if (!RegexData.IsValidId(txtMinimumPrice.Text.Trim()))
+            {
+                MessageBox.Show("Minimum price is not valid");
+                return false;
+            }
             if (int.Parse(txtMinimumPrice.Text.Trim()) < 0)
             {
                 MessageBox.Show("Minimum price is not valid");
@@ -79,6 +89,11 @@ namespace QuanLyCuaHangDienThoai
             if (txtQuantity.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter quantity");
+                return false;
+            }
+            if (!RegexData.IsValidId(txtQuantity.Text.Trim()))
+            {
+                MessageBox.Show("Quantity is not valid");
                 return false;
             }
             if (int.Parse(txtQuantity.Text.Trim()) < 0)

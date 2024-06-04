@@ -137,10 +137,20 @@ namespace QuanLyCuaHangDienThoai
             {
                 MessageBox.Show("Please enter id customer");
                 return false;
-            }          
+            }
+            if (!RegexData.IsValidId(txtIdCustomer.Text.Trim()))
+            {
+                MessageBox.Show("ID customer not valid");
+                return false;
+            }
             if (txtIdStaff.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter id staff");
+                return false;
+            }
+            if (!RegexData.IsValidId(txtIdStaff.Text.Trim()))
+            {
+                MessageBox.Show("ID staff not valid");
                 return false;
             }
             if (txtOrderStatus.Text.Trim() == "")
@@ -151,6 +161,16 @@ namespace QuanLyCuaHangDienThoai
             if (txtTotalPrice.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter total price");
+                return false;
+            }
+            if (!RegexData.IsValidId(txtTotalPrice.Text.Trim()))
+            {
+                MessageBox.Show("Total price is not valid");
+                return false;
+            }
+            if (int.Parse(txtTotalPrice.Text.Trim()) < 0)
+            {
+                MessageBox.Show("Total price is not valid");
                 return false;
             }
             if (txtDeliveryAddress.Text.Trim() == "")

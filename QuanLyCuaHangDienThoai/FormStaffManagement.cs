@@ -68,11 +68,11 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter address");
                 return false;
             }
-            if (txtAddress.Text.Trim() == "")
-            {
-                MessageBox.Show("Please enter Address");
-                return false;
-            }
+            //if (txtAddress.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("Please enter Address");
+            //    return false;
+            //}
             //if (!RegexData.IsValidName(txtAddress.Text))
             //{
             //    MessageBox.Show("Addess not valid");

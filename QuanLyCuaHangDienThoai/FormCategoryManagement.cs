@@ -47,7 +47,7 @@ namespace QuanLyCuaHangDienThoai
             }
             if (!RegexData.IsValidId(txtIdCategory.Text.Trim()))
             {
-                MessageBox.Show("ID Category not valid");
+                MessageBox.Show("ID Category is not valid");
                 return false;
             }
             if (txtCategoryName.Text.Trim() == "")
@@ -58,6 +58,16 @@ namespace QuanLyCuaHangDienThoai
             if (txtProductDetail.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter phone number");
+                return false;
+            }
+            if (txtIdCategoryDad.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter ID Category dad");
+                return false;
+            }
+            if (!RegexData.IsValidId(txtIdCategoryDad.Text.Trim()))
+            {
+                MessageBox.Show("ID Category dad is not valid");
                 return false;
             }
             return true;

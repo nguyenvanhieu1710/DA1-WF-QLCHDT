@@ -51,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DateTimePickerDayCreated = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateTimePickerLaunchTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txtIdTradeMark = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTradeMark = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtIdProduct = new Guna.UI2.WinForms.Guna2TextBox();
@@ -281,7 +281,7 @@
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.Controls.Add(this.DateTimePickerDayCreated);
             this.guna2GroupBox1.Controls.Add(this.DateTimePickerLaunchTime);
-            this.guna2GroupBox1.Controls.Add(this.txtIdTradeMark);
+            this.guna2GroupBox1.Controls.Add(this.txtTradeMark);
             this.guna2GroupBox1.Controls.Add(this.txtPrice);
             this.guna2GroupBox1.Controls.Add(this.txtQuantity);
             this.guna2GroupBox1.Controls.Add(this.txtIdProduct);
@@ -411,25 +411,25 @@
             this.DateTimePickerLaunchTime.TabIndex = 14;
             this.DateTimePickerLaunchTime.Value = new System.DateTime(2024, 4, 5, 21, 44, 54, 397);
             // 
-            // txtIdTradeMark
+            // txtTradeMark
             // 
-            this.txtIdTradeMark.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIdTradeMark.DefaultText = "";
-            this.txtIdTradeMark.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIdTradeMark.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIdTradeMark.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdTradeMark.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdTradeMark.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIdTradeMark.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtIdTradeMark.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIdTradeMark.Location = new System.Drawing.Point(666, 45);
-            this.txtIdTradeMark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdTradeMark.Name = "txtIdTradeMark";
-            this.txtIdTradeMark.PasswordChar = '\0';
-            this.txtIdTradeMark.PlaceholderText = "Trade Mark";
-            this.txtIdTradeMark.SelectedText = "";
-            this.txtIdTradeMark.Size = new System.Drawing.Size(175, 58);
-            this.txtIdTradeMark.TabIndex = 13;
+            this.txtTradeMark.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTradeMark.DefaultText = "";
+            this.txtTradeMark.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTradeMark.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTradeMark.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTradeMark.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTradeMark.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTradeMark.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtTradeMark.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTradeMark.Location = new System.Drawing.Point(666, 45);
+            this.txtTradeMark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTradeMark.Name = "txtTradeMark";
+            this.txtTradeMark.PasswordChar = '\0';
+            this.txtTradeMark.PlaceholderText = "Trade Mark";
+            this.txtTradeMark.SelectedText = "";
+            this.txtTradeMark.Size = new System.Drawing.Size(175, 58);
+            this.txtTradeMark.TabIndex = 13;
             // 
             // txtPrice
             // 
@@ -631,7 +631,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnFix;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtIdTradeMark;
+        private Guna.UI2.WinForms.Guna2TextBox txtTradeMark;
         private Guna.UI2.WinForms.Guna2TextBox txtIdProduct;
         private Guna.UI2.WinForms.Guna2TextBox txtProductDetail;
         private Guna.UI2.WinForms.Guna2TextBox txtProductName;

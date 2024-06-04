@@ -52,6 +52,11 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter quantity");
                 return false;
             }
+            if (!RegexData.IsValidId(txtQuantity.Text.Trim()))
+            {
+                MessageBox.Show("Quantity is not valid");
+                return false;
+            }
             if (int.Parse(txtQuantity.Text.Trim()) < 0)
             {
                 MessageBox.Show("Quantity is not valid");
@@ -62,19 +67,19 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Please enter price");
                 return false;
             }
+            if (!RegexData.IsValidId(txtPrice.Text.Trim()))
+            {
+                MessageBox.Show("Price is not valid");
+                return false;
+            }
             if (int.Parse(txtPrice.Text.Trim()) < 0)
             {
                 MessageBox.Show("Price is not valid");
                 return false;
             }
-            if (txtIdTradeMark.Text.Trim() == "")
+            if (txtTradeMark.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter trade mark");
-                return false;
-            }
-            if (txtIdProduct.Text.Trim() == "")
-            {
-                MessageBox.Show("Please enter id Product");
                 return false;
             }
             if (txtProductDetail.Text.Trim() == "")
@@ -97,7 +102,7 @@ namespace QuanLyCuaHangDienThoai
             Product_DTO.ProductName = txtProductName.Text;
             Product_DTO.Quantity = int.Parse(txtQuantity.Text);
             Product_DTO.Price = decimal.Parse(txtPrice.Text);
-            Product_DTO.TradeMark = txtIdTradeMark.Text;
+            Product_DTO.TradeMark = txtTradeMark.Text;
             Product_DTO.ImageProduct = saveImage;
             Product_DTO.IdCategory = int.Parse(cbIdCategory.Text);
             Product_DTO.ProductDetail = txtProductDetail.Text;
@@ -298,7 +303,7 @@ namespace QuanLyCuaHangDienThoai
             txtProductName.Text = "";
             txtQuantity.Text = "";
             txtPrice.Text = "";
-            txtIdTradeMark.Text = "";
+            txtTradeMark.Text = "";
             picProductImage.Image = null;
             txtIdProduct.Text = "";
             txtProductDetail.Text = "";
@@ -382,7 +387,7 @@ namespace QuanLyCuaHangDienThoai
             txtProductName.Text = row.Cells[1].Value.ToString();
             txtQuantity.Text = row.Cells[2].Value.ToString();
             txtPrice.Text = row.Cells[3].Value.ToString();
-            txtIdTradeMark.Text = row.Cells[4].Value.ToString();
+            txtTradeMark.Text = row.Cells[4].Value.ToString();
             DateTimePickerLaunchTime.Text = row.Cells[5].Value.ToString();
             picProductImage.ImageLocation = row.Cells[6].Value.ToString();
             DateTimePickerDayCreated.Text = row.Cells[7].Value.ToString();
